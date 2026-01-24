@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ConscientAI - Pragmatic, Human-centered AI Solutions & Research</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap" rel="stylesheet">
+    <style>
+      #hamburger-btn.open span:nth-child(1) {
+        transform: translateY(7px) rotate(45deg);
+      }
+
+      #hamburger-btn.open span:nth-child(2) {
+        opacity: 0;
+      }
+
+      #hamburger-btn.open span:nth-child(3) {
+        transform: translateY(-7px) rotate(-45deg);
+      }
+
+      .scroll-lock {
+        position: fixed;
+        inset: 0;
+        width: 100%;
+        overflow: hidden;
+      }
+
+      /* Fix for mobile viewport height */
+      @supports (-webkit-touch-callout: none) {
+        .hero-section {
+          min-height: -webkit-fill-available;
+        }
+      }
+
+      /* Smooth scroll behavior */
+      html {
+        scroll-behavior: smooth;
+        -webkit-overflow-scrolling: touch;
+      }
+
+      /* Prevent bounce/overscroll on body */
+      body {
+        overscroll-behavior-y: none;
+      }
+    </style>
+  </head>
+
+  <body class="relative flex flex-col min-h-screen">
+    <!-- Global Grid Background with gradient fade -->
+    <div class="absolute top-0 left-0 right-0 bottom-0 -z-10">
+      <div class="w-full h-full"
+           style="
+             background-image:
+               repeating-linear-gradient(to right, #e0e0e0 0 1px, transparent 1px 20px),
+               repeating-linear-gradient(to bottom, #e0e0e0 0 1px, transparent 1px 20px);
+             background-size: 20px 20px;
+             mask-image: linear-gradient(to bottom, transparent 0%, rgba(0,0,0,0.8) 100%);
+             -webkit-mask-image: linear-gradient(to bottom, transparent 0%, rgba(0,0,0,0.8) 100%);
+           ">
+      </div>
+    </div>
+    <!-- Above-the-fold container -->
+    <div id="above-fold" class="flex flex-col sm:h-screen">
+      <!-- Header -->
+      <header class="flex justify-between items-center p-4 bg-transparent relative z-50">
+        <div class="flex items-center">
+          <img src="logo.svg" alt="Company Logo" class="h-10 w-auto">
+        </div>
+        <!-- Desktop Menu -->
+        <nav class="hidden sm:flex space-x-4 text-sm font-normal text-gray-800">
+          <a href="#" class="hover:underline">Services</a>
+          <a href="#" class="hover:underline">Research</a>
+          <a href="#" class="hover:underline">Case Studies</a>
+          <a href="#" class="hover:underline">About</a>
+        </nav>
+        <!-- Mobile Hamburger -->
+        <div class="sm:hidden">
+          <button id="hamburger-btn" class="relative w-6 h-4 flex flex-col justify-between items-center">
+            <span class="block w-6 h-[2px] bg-gray-800 transition-all duration-300 ease-in-out"></span>
+            <span class="block w-6 h-[2px] bg-gray-800 transition-all duration-300 ease-in-out"></span>
+            <span class="block w-6 h-[2px] bg-gray-800 transition-all duration-300 ease-in-out"></span>
+          </button>
+        </div>
+      </header>
+
+      <!-- Mobile Menu -->
+      <nav id="mobile-menu" class="hidden fixed top-[60px] left-0 w-full h-[calc(100vh-60px)] bg-white flex flex-col items-center justify-center space-y-6 text-lg sm:hidden z-40 transition-all duration-300">
+        <a href="#" class="block hover:underline">Services</a>
+        <a href="#" class="block hover:underline">Research</a>
+        <a href="#" class="block hover:underline">Case Studies</a>
+        <a href="#" class="block hover:underline">About</a>
+      </nav>
+
+      <!-- Hero + Cards (split within viewport) -->
+      <div class="flex flex-col flex-1">
+        <!-- Hero -->
+        <section id="hero-section" class="hero-section flex flex-col items-center justify-center text-center px-8 py-6 bg-transparent sm:min-h-0 sm:flex-[0.6] sm:py-16">
+          <!-- Title -->
+          <h1 class="text-5xl sm:text-6xl leading-tight sm:leading-snug mb-4" style="font-family: 'Crimson Text', sans-serif; color:#12133e;">
+            <span>Pragmatic, </span>
+            <span class="bg-[#e8f9fc]/90 px-2">
+              Human-centered
+            </span>
+            <span class="block">AI Solutions & Research</span>
+          </h1>
+          <!-- Sub text -->
+          <p class="text-lg sm:text-xl mb-6 text-gray-600 max-w-2xl">
+            <!-- Some introductory text for the hero section. Add a short, compelling line that explains your value proposition. -->
+            From cutting-edge research to production-ready systems, helping businesses adopt AI with confidence since 2017.
+          </p>
+          <!-- Call to action -->
+          <button class="px-8 font-medium py-3 bg-gradient-to-r from-[#1b6d90] to-[#ab6183] text-white rounded-full shadow-md hover:opacity-90 transition">
+            Read latest insights ↗
+          </button>
+        </section>
+        <!-- 3-column content -->
+        <section class="grid grid-cols-1 sm:grid-cols-3 flex-1 sm:flex-[0.4] gap-4 p-4">
+          <!-- Services card -->
+          <a href="#" class="group block h-full">
+            <div class="flex flex-col h-full p-4 bg-[#eaf6fb] bg-opacity-70 text-center rounded-lg">
+              <!-- Services icon -->
+              <div class="flex-[2] flex items-center justify-center">
+                <svg class="w-16 h-16 sm:w-24 sm:h-24 transition-transform duration-700 group-hover:-translate-y-1" viewBox="0 0 100 100">
+                  <!-- Hexagon outline -->
+                  <path fill="none" stroke="#1e6899" stroke-width="1" d="M50 5 L88.97 27.5 L88.97 72.5 L50 95 L11.03 72.5 L11.03 27.5 Z"/>
+                  <!-- Internal edges -->
+                  <line x1="50" y1="5" x2="50" y2="50" stroke="#1e6899" stroke-width="1" stroke-dasharray="2,2"/>
+                  <line x1="88.97" y1="72.5" x2="50" y2="50" stroke="#1e6899" stroke-width="1" stroke-dasharray="2,2"/>
+                  <line x1="11.03" y1="72.5" x2="50" y2="50" stroke="#1e6899" stroke-width="1" stroke-dasharray="2,2"/>
+                  <line x1="50" y1="95" x2="50" y2="50" stroke="#1e6899" stroke-width="1"/>
+                  <line x1="11.03" y1="27.5" x2="50" y2="50" stroke="#1e6899" stroke-width="1"/>
+                  <line x1="88.97" y1="27.5" x2="50" y2="50" stroke="#1e6899" stroke-width="1"/>
+                </svg>
+              </div>
+              <!-- Services description -->
+              <div class="flex-[1] mt-4 flex flex-col justify-center">
+                <h3 class="text-xl font-semibold text-left mb-1">Services</h3>
+                <p class="text-left text-gray-700 text-sm leading-relaxed">
+                  We design and implement tailored AI solutions that balance innovation with usability. Our focus is on delivering measurable impact for your business.
+                </p>
+              </div>
+            </div>
+          </a>
+          <!-- Research card -->
+          <a href="#" class="group block h-full">
+            <div class="flex flex-col h-full p-4 bg-[#fde8ed] bg-opacity-70 text-center rounded-lg">
+              <!-- Research icon -->
+              <div class="flex-[2] flex items-center justify-center">
+                <svg class="w-16 h-16 sm:w-24 sm:h-24 transition-transform duration-700 group-hover:-translate-y-1" viewBox="0 0 100 100">
+                  <!-- Sphere outline -->
+                  <path fill="none" stroke="#ab6183" stroke-width="1"
+                        d="M50,5 A45,45 0 1,1 50,95 A45,45 0 1,1 50,5"/>
+                  <!-- Bottom half of equator (behind, dashed) -->
+                  <path fill="none" stroke="#ab6183" stroke-width="1" d="M5,50 A45,12 0 0,0 95,50"/>
+                  <!-- Top half of equator (front, solid) -->
+                  <path fill="none" stroke="#ab6183" stroke-width="1" stroke-dasharray="2,2" d="M5,50 A45,12 0 0,1 95,50"/>
+                </svg>
+              </div>
+              <!-- Research description -->
+              <div class="flex-[1] mt-4 flex flex-col justify-center">
+                <h3 class="text-xl font-semibold text-left mb-1">Research</h3>
+                <p class="text-left text-gray-700 text-sm leading-relaxed">
+                  Our research blends deep technical inquiry with human-centered design principles. Explore how AI can enhance creativity ethics, and, decision-making.
+                </p>
+              </div>
+            </div>
+          </a>
+          <!-- Case studies card -->
+          <a href="#" class="group block h-full">
+            <div class="flex flex-col h-full p-4 bg-[#e8f9fc] bg-opacity-70 text-center rounded-lg">
+              <!-- Case studies icon -->
+              <div class="flex-[2] flex items-center justify-center">
+                <svg class="w-16 h-16 sm:w-24 sm:h-24 transition-transform duration-700 group-hover:-translate-y-1" viewBox="0 0 100 100">
+                  <!-- Top left -->
+                  <line x1="5" y1="50" x2="50" y2="5" stroke="#4aa2b5" stroke-width="1"/>
+                  <!-- Top middle -->
+                  <line x1="50" y1="5" x2="50" y2="72.5" stroke="#4aa2b5" stroke-width="1"/>
+                  <!-- Top right -->
+                  <line x1="50" y1="5" x2="95" y2="50" stroke="#4aa2b5" stroke-width="1"/>
+                  <!-- Middle left -->
+                  <line x1="5" y1="50" x2="50" y2="72.5" stroke="#4aa2b5" stroke-width="1"/>
+                  <!-- Middle right -->
+                  <line x1="95" y1="50" x2="50" y2="72.5" stroke="#4aa2b5" stroke-width="1"/>
+                  <!-- Bottom right -->
+                  <line x1="95" y1="50" x2="50" y2="95" stroke="#4aa2b5" stroke-width="1"/>
+                  <!-- Bottom middle -->
+                  <line x1="50" y1="95" x2="50" y2="72.5" stroke="#4aa2b5" stroke-width="1"/>
+                  <!-- Bottom left -->
+                  <line x1="5" y1="50" x2="50" y2="95" stroke="#4aa2b5" stroke-width="1"/>
+                  <line x1="5" y1="50" x2="50" y2="27.5" stroke="#4aa2b5" stroke-width="1" stroke-dasharray="2,2"/>
+                  <line x1="95" y1="50" x2="50" y2="27.5" stroke="#4aa2b5" stroke-width="1" stroke-dasharray="2,2"/>
+                </svg>
+              </div>
+              <!-- Case studies description -->
+              <div class="flex-[1] mt-4 flex flex-col justify-center">
+                <h3 class="text-xl font-semibold text-left mb-1">Case Studies</h3>
+                <p class="text-left text-gray-700 text-sm leading-relaxed">
+                  See how organizations achieved transformation through applied AI expertise. Each story highlights real-world impact, strategy and measurable success.
+                </p>
+              </div>
+            </div>
+          </a>
+        </section>
+      </div>
+    </div>
+    <!-- Footer -->
+    <footer class="bg-[#101010] text-white py-12">
+      <div class="container mx-auto px-6 md:px-12">
+        <!-- Top content: logo + columns -->
+        <div class="flex flex-col md:flex-row md:justify-between md:items-start gap-8">
+          <!-- Logo placeholder -->
+          <div class="flex-shrink-0 text-center md:text-left">
+            <img src="logo_white.svg" alt="Company Logo" class="h-10 w-auto mb-4 mx-auto md:mx-0">
+            <!-- <p class="text-gray-400 text-sm">Your Company Tagline</p> -->
+          </div>
+          <!-- Menu column -->
+          <div class="text-center md:text-left">
+            <h3 class="font-semibold mb-4">Links</h3>
+            <ul class="space-y-2">
+              <li><a href="#" class="hover:text-orange-400 transition-colors">Home</a></li>
+              <li><a href="#" class="hover:text-orange-400 transition-colors">Services</a></li>
+              <li><a href="#" class="hover:text-orange-400 transition-colors">Research</a></li>
+              <li><a href="#" class="hover:text-orange-400 transition-colors">Case Studies</a></li>
+            </ul>
+          </div>
+          <!-- Contact/Social column -->
+          <div class="text-center md:text-left">
+            <h3 class="font-semibold mb-4">Contact</h3>
+            <p class="text-gray-400 mb-2">contact@conscient.ai</p>
+            <!-- <p class="text-gray-400 mb-4">+1 234 567 890</p> -->
+            <div class="flex justify-center md:justify-start gap-4">
+              <!-- Placeholder social icons -->
+              <div class="w-8 h-8 bg-gray-700 rounded-full"></div>
+              <div class="w-8 h-8 bg-gray-700 rounded-full"></div>
+              <div class="w-8 h-8 bg-gray-700 rounded-full"></div>
+            </div>
+          </div>
+        </div>
+        <!-- Bottom copyright -->
+        <div class="mt-12 text-center text-gray-500 text-sm">
+          &copy; 2017-2026 ConscientAI. All rights reserved.
+        </p>
+      </div>
+    </footer>
+    <script>
+      const btn = document.getElementById('hamburger-btn');
+      const menu = document.getElementById('mobile-menu');
+      const html = document.documentElement;
+      const body = document.body;
+      const heroSection = document.getElementById('hero-section');
+
+      let scrollY = 0;
+      let initialHeightSet = false;
+
+      // Fix viewport height on mobile browsers
+      function setViewportHeight() {
+        const vh = window.innerHeight * 0.01;
+        document.documentElement.style.setProperty('--vh', `${vh}px`);
+        
+        // On mobile, set exact height for hero only - but only once on initial load
+        if (window.innerWidth < 640 && !initialHeightSet) {
+          const viewportHeight = window.innerHeight;
+          
+          // Calculate remaining space for hero after header
+          const header = document.querySelector('header');
+          if (header && heroSection) {
+            const headerHeight = header.offsetHeight;
+            const heroHeight = viewportHeight - headerHeight;
+            heroSection.style.height = `${heroHeight}px`;
+            heroSection.style.minHeight = `${heroHeight}px`;
+            heroSection.style.maxHeight = `${heroHeight}px`;
+            initialHeightSet = true; // Lock the height
+          }
+        } else if (window.innerWidth >= 640) {
+          // Desktop: remove inline styles, let CSS handle it
+          if (heroSection) {
+            heroSection.style.height = '';
+            heroSection.style.minHeight = '';
+            heroSection.style.maxHeight = '';
+          }
+          initialHeightSet = false; // Reset for next mobile view
+        }
+      }
+
+      // Initial set
+      setViewportHeight();
+
+      // Update on resize and orientation change
+      window.addEventListener('resize', () => {
+        // Reset flag on significant resize (desktop/mobile switch)
+        if ((window.innerWidth >= 640 && initialHeightSet) || 
+            (window.innerWidth < 640 && !initialHeightSet)) {
+          initialHeightSet = false;
+        }
+        setViewportHeight();
+      });
+      
+      window.addEventListener('orientationchange', () => {
+        initialHeightSet = false; // Reset on orientation change
+        setTimeout(setViewportHeight, 100);
+      });
+
+      function openMenu() {
+        menu.classList.remove('hidden');
+        btn.classList.add('open');
+
+        // lock scroll position
+        scrollY = window.scrollY || window.pageYOffset;
+        body.style.top = `-${scrollY}px`;
+        html.classList.add('scroll-lock');
+        body.classList.add('scroll-lock');
+      }
+
+      function closeMenu() {
+        menu.classList.add('hidden');
+        btn.classList.remove('open');
+
+        html.classList.remove('scroll-lock');
+        body.classList.remove('scroll-lock');
+        body.style.top = '';
+        window.scrollTo(0, scrollY); // restore
+      }
+
+      btn.addEventListener('click', () => {
+        menu.classList.contains('hidden') ? openMenu() : closeMenu();
+      });
+
+      menu.querySelectorAll('a').forEach(a => a.addEventListener('click', closeMenu));
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') closeMenu();
+      });
+
+      // Prevent scroll jump on Android
+      let lastScrollY = window.scrollY;
+      window.addEventListener('scroll', () => {
+        lastScrollY = window.scrollY;
+      }, { passive: true });
+    </script>
+  </body>
+</html>
