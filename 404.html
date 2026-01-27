@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 - ConscientAI</title>
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="icon" sizes="32x32" href="favicon-32x32.png" type="image/png">
+    <link rel="icon" sizes="16x16" href="favicon-16x16.png" type="image/png">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    <style>
+      #hamburger-btn.open span:nth-child(1) {
+        transform: translateY(7px) rotate(45deg);
+      }
+
+      #hamburger-btn.open span:nth-child(2) {
+        opacity: 0;
+      }
+
+      #hamburger-btn.open span:nth-child(3) {
+        transform: translateY(-7px) rotate(-45deg);
+      }
+
+      .scroll-lock {
+        position: fixed;
+        inset: 0;
+        width: 100%;
+        overflow: hidden;
+      }
+
+      /* Smooth scroll behavior */
+      html {
+        scroll-behavior: smooth;
+        -webkit-overflow-scrolling: touch;
+      }
+
+      /* Prevent bounce/overscroll on body */
+      body {
+        overscroll-behavior-y: none;
+      }
+    </style>
+  </head>
+
+  <body class="relative flex flex-col min-h-screen">
+    <!-- Global Grid Background with gradient fade -->
+    <div class="fixed top-0 left-0 right-0 bottom-0 -z-10">
+      <div class="w-full h-full"
+           style="
+             background-image:
+               repeating-linear-gradient(to right, #e0e0e0 0 1px, transparent 1px 20px),
+               repeating-linear-gradient(to bottom, #e0e0e0 0 1px, transparent 1px 20px);
+             background-size: 20px 20px;
+             mask-image: linear-gradient(to bottom, transparent 0%, rgba(0,0,0,0.8) 100%);
+             -webkit-mask-image: linear-gradient(to bottom, transparent 0%, rgba(0,0,0,0.8) 100%);
+           ">
+      </div>
+    </div>
+    <!-- Above-the-fold container -->
+    <div id="above-fold" class="flex flex-col min-h-[100dvh]">
+      <!-- Header -->
+      <header class="flex justify-between items-center p-4 bg-transparent relative z-50">
+        <div class="flex items-center">
+          <a href="/">
+            <img src="/logo.svg" alt="Company Logo" class="h-10 w-auto">
+          </a>
+        </div>
+        <!-- Desktop Menu -->
+        <nav class="hidden sm:flex space-x-4 text-sm font-normal text-gray-800">
+          <a href="#" class="hover:underline">Services</a>
+          <a href="#" class="hover:underline">Research</a>
+          <a href="#" class="hover:underline">Case Studies</a>
+          <a href="#" class="hover:underline">About</a>
+        </nav>
+        <!-- Mobile Hamburger -->
+        <div class="sm:hidden">
+          <button id="hamburger-btn" class="relative w-6 h-4 flex flex-col justify-between items-center">
+            <span class="block w-6 h-[2px] bg-gray-800 transition-all duration-300 ease-in-out"></span>
+            <span class="block w-6 h-[2px] bg-gray-800 transition-all duration-300 ease-in-out"></span>
+            <span class="block w-6 h-[2px] bg-gray-800 transition-all duration-300 ease-in-out"></span>
+          </button>
+        </div>
+      </header>
+
+      <!-- Mobile Menu -->
+      <nav id="mobile-menu" class="hidden fixed top-[60px] left-0 w-full h-[calc(100vh-60px)] bg-white flex flex-col items-center justify-center space-y-6 text-lg sm:hidden z-40 transition-all duration-300">
+        <a href="#" class="block hover:underline">Services</a>
+        <a href="#" class="block hover:underline">Research</a>
+        <a href="#" class="block hover:underline">Case Studies</a>
+        <a href="#" class="block hover:underline">About</a>
+      </nav>
+
+      <main id="hero-section" class="flex flex-col flex-1 items-center px-4 sm:px-8">
+        <div class="flex flex-col flex-1 items-center justify-center text-center px-8 py-12 sm:px-12 max-w-4xl w-full bg-white">
+          <h1 class="text-5xl sm:text-6xl mb-8" style="font-family: 'Crimson Text', sans-serif; color:#12133e;">
+            404
+          </h1>
+          <p>
+            This page doesn’t exist or may have been moved. Try going back to the <a href="/" class="hover:underline">homepage</a>.
+          </p>
+        </div>
+      </main>
+    </div>
+    <!-- Footer -->
+    <footer class="bg-[#101010] text-white py-12">
+      <div class="container mx-auto px-6 md:px-12">
+        <!-- Top content: logo + columns -->
+        <div class="flex flex-col md:flex-row md:justify-between md:items-start gap-8">
+          <!-- Logo placeholder -->
+          <div class="flex-shrink-0 text-center md:text-left">
+            <img src="/logo_white.svg" alt="Company Logo" class="h-10 w-auto mb-4 mx-auto md:mx-0">
+            <!-- <p class="text-gray-400 text-sm">Your Company Tagline</p> -->
+          </div>
+          <!-- Menu column -->
+          <div class="text-center md:text-left">
+            <h3 class="font-semibold mb-4">Links</h3>
+            <ul class="space-y-2">
+              <li><a href="#" class="hover:text-orange-400 transition-colors">Home</a></li>
+              <li><a href="#" class="hover:text-orange-400 transition-colors">Services</a></li>
+              <li><a href="#" class="hover:text-orange-400 transition-colors">Research</a></li>
+              <li><a href="#" class="hover:text-orange-400 transition-colors">Case Studies</a></li>
+            </ul>
+          </div>
+          <!-- Contact/Social column -->
+          <div class="text-center md:text-left">
+            <h3 class="font-semibold mb-4">Contact</h3>
+            <p class="text-gray-400 mb-4">contact@conscient.ai</p>
+            <!-- <p class="text-gray-400 mb-4">+1 234 567 890</p> -->
+            <div class="flex justify-center md:justify-start gap-4">
+              <div class="w-8 h-8">
+                <a href="https://www.linkedin.com/company/conscientai" target="_blank" aria-label="LinkedIn" class="text-gray-400 hover:text-[#2867B2] transition">
+                  <!-- https://icons.getbootstrap.com/icons/linkedin/ -->
+                  <i class="bi bi-linkedin"></i>
+                </a>
+              </div>
+              <div class="w-8 h-8">
+                <a href="https://x.com/ConscientAI" target="_blank" aria-label="X" class="text-gray-400 hover:text-white transition">
+                  <!-- https://icons.getbootstrap.com/icons/twitter-x/ -->
+                  <i class="bi bi-twitter-x"></i>
+                </a>
+              </div>
+              <div class="w-8 h-8">
+                <a href="https://www.facebook.com/ConscientAI/" target="_blank" aria-label="Facebook" class="text-gray-400 hover:text-[#0866FF] transition">
+                  <!-- https://icons.getbootstrap.com/icons/facebook/ -->
+                  <i class="bi bi-facebook"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Bottom copyright -->
+        <p class="mt-12 text-center text-gray-500 text-sm">
+          &copy; 2017-2026 ConscientAI. All rights reserved.
+        </p>
+      </div>
+    </footer>
+    <script>
+      const btn = document.getElementById('hamburger-btn');
+      const menu = document.getElementById('mobile-menu');
+      const html = document.documentElement;
+      const body = document.body;
+      const heroSection = document.getElementById('hero-section');
+
+      let scrollY = 0;
+      let initialHeightSet = false;
+
+      // Fix viewport height on mobile browsers
+      function setViewportHeight() {
+        const vh = window.innerHeight * 0.01;
+        document.documentElement.style.setProperty('--vh', `${vh}px`);
+        
+        // On mobile, set exact height for hero only - but only once on initial load
+        if (window.innerWidth < 640 && !initialHeightSet) {
+          const viewportHeight = window.innerHeight;
+          
+          // Calculate remaining space for hero after header
+          const header = document.querySelector('header');
+          if (header && heroSection) {
+            const headerHeight = header.offsetHeight;
+            const heroHeight = viewportHeight - headerHeight;
+            heroSection.style.minHeight = `${heroHeight}px`;
+            initialHeightSet = true; // Lock the height
+          }
+        } else if (window.innerWidth >= 640) {
+          // Desktop: remove inline styles, let CSS handle it
+          if (heroSection) {
+            heroSection.style.height = '';
+            heroSection.style.minHeight = '';
+            heroSection.style.maxHeight = '';
+          }
+          initialHeightSet = false; // Reset for next mobile view
+        }
+      }
+
+      // Initial set
+      setViewportHeight();
+
+      // Update on resize and orientation change
+      window.addEventListener('resize', () => {
+        // Reset flag on significant resize (desktop/mobile switch)
+        if ((window.innerWidth >= 640 && initialHeightSet) || 
+            (window.innerWidth < 640 && !initialHeightSet)) {
+          initialHeightSet = false;
+        }
+        setViewportHeight();
+      });
+      
+      window.addEventListener('orientationchange', () => {
+        initialHeightSet = false; // Reset on orientation change
+        setTimeout(setViewportHeight, 100);
+      });
+
+      function openMenu() {
+        menu.classList.remove('hidden');
+        btn.classList.add('open');
+
+        // lock scroll position
+        scrollY = window.scrollY || window.pageYOffset;
+        body.style.top = `-${scrollY}px`;
+        html.classList.add('scroll-lock');
+        body.classList.add('scroll-lock');
+      }
+
+      function closeMenu() {
+        menu.classList.add('hidden');
+        btn.classList.remove('open');
+
+        html.classList.remove('scroll-lock');
+        body.classList.remove('scroll-lock');
+        body.style.top = '';
+        window.scrollTo(0, scrollY); // restore
+      }
+
+      btn.addEventListener('click', () => {
+        menu.classList.contains('hidden') ? openMenu() : closeMenu();
+      });
+
+      menu.querySelectorAll('a').forEach(a => a.addEventListener('click', closeMenu));
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') closeMenu();
+      });
+
+      // Prevent scroll jump on Android
+      let lastScrollY = window.scrollY;
+      window.addEventListener('scroll', () => {
+        lastScrollY = window.scrollY;
+      }, { passive: true });
+    </script>
+  </body>
+</html>
