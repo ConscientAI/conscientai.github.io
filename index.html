@@ -59,9 +59,15 @@
       <div class="w-full h-full"
            style="
              background-image:
-               repeating-linear-gradient(to right, #e0e0e0 0 1px, transparent 1px 20px),
-               repeating-linear-gradient(to bottom, #e0e0e0 0 1px, transparent 1px 20px);
-             background-size: 20px 20px;
+               /* The mask: White stripes that cover the middle of the lines */
+               linear-gradient(to right, #ffffff 40%, transparent 40%),
+               linear-gradient(to bottom, #ffffff 40%, transparent 40%),
+               /* The grid: Actual grid lines */
+               linear-gradient(to right, #d9d9d9 1px, transparent 1px),
+               linear-gradient(to bottom, #d9d9d9 1px, transparent 1px);
+             background-size: 20px 20px, 20px 20px, 20px 20px, 20px 20px;
+             background-position: 6px 6px, 6px 6px, 0px 0px, 0px 0px;
+             /* Page-wide vertical gradient */
              mask-image: linear-gradient(to bottom, transparent 0%, rgba(0,0,0,0.8) 100%);
              -webkit-mask-image: linear-gradient(to bottom, transparent 0%, rgba(0,0,0,0.8) 100%);
            ">
