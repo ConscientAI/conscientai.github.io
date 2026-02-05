@@ -50,6 +50,15 @@
       body {
         overscroll-behavior-y: none;
       }
+      /* Title text animation */
+      @keyframes highlight {
+        from { clip-path: inset(0 100% 0 0); }
+        to { clip-path: inset(0 0 0 0); }
+      }
+
+      .animate-highlight {
+        animation: highlight 2s ease-out 0.5s both;
+      }
     </style>
   </head>
 
@@ -112,10 +121,11 @@
         <!-- Hero -->
         <section id="hero-section" class="hero-section flex flex-col items-center justify-center text-center px-8 py-6 bg-transparent sm:min-h-0 sm:flex-[0.6] sm:py-16">
           <!-- Title -->
-          <h1 class="text-5xl sm:text-6xl leading-tight sm:leading-snug mb-4" style="font-family: 'Crimson Text', sans-serif; color:#12133e;">
-            <span>Pragmatic, </span>
-            <span class="bg-[#e8f9fc]/90 px-2">
-              Human-centered
+          <h1 class="max-[380px]:text-4xl text-5xl sm:text-6xl max-[380px]:leading-snug leading-tight sm:leading-snug mb-4" style="font-family: 'Crimson Text', sans-serif; color:#12133e;">
+            <!-- No newline between below <span> blocks to avoid extra space between 'Pragmatic,' and 'Human-centered' -->
+            <span>Pragmatic,</span><span class="relative inline-flex items-baseline overflow-hidden whitespace-nowrap">
+              <span class="absolute inset-0 bg-[#e8f9fc]/90 -z-10 animate-highlight"></span>
+              &nbsp;Human-centered&nbsp;
             </span>
             <span class="block">AI Solutions & Research</span>
           </h1>
