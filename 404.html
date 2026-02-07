@@ -154,7 +154,7 @@
         </div>
         <!-- Bottom copyright -->
         <p class="mt-12 text-center text-gray-500 text-sm">
-          &copy; 2017-2026 ConscientAI. All rights reserved.
+          &copy; 2017-<span id="current-year">2026</span> ConscientAI. All rights reserved.
         </p>
       </div>
     </footer>
@@ -195,6 +195,11 @@
       document.addEventListener('keydown', (e) => {
         if (e.key === 'Escape') closeMenu();
       });
+
+      // Dynamically set copyright current year
+      const now = new Date();
+      const currentYear = now.getUTCFullYear();
+      document.getElementById('current-year').textContent = currentYear;
     </script>
   </body>
 </html>
