@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Research - ConscientAI</title>
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="icon" sizes="32x32" href="/favicon-32x32.png" type="image/png">
+    <link rel="icon" sizes="16x16" href="/favicon-16x16.png" type="image/png">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    <style>
+      #hamburger-btn.open span:nth-child(1) {
+        transform: translateY(7px) rotate(45deg);
+      }
+
+      #hamburger-btn.open span:nth-child(2) {
+        opacity: 0;
+      }
+
+      #hamburger-btn.open span:nth-child(3) {
+        transform: translateY(-7px) rotate(-45deg);
+      }
+
+      .scroll-lock {
+        position: fixed;
+        inset: 0;
+        width: 100%;
+        overflow: hidden;
+      }
+
+      /* Smooth scroll behavior */
+      html {
+        -webkit-overflow-scrolling: touch;
+      }
+
+      /* Standard fix to hide default arrows */
+      summary::-webkit-details-marker {
+        display: none;
+      }
+
+      summary {
+        list-style: none;
+      }
+    </style>
+  </head>
+
+  <body class="relative flex flex-col min-h-screen">
+    <!-- Global Grid Background with gradient fade -->
+    <div class="fixed top-0 left-0 right-0 bottom-0 -z-10 hidden lg:block bg-gradient-to-t from-gray-50 to-white">
+      <div class="w-full h-full"
+           style="
+             background-image:
+               /* The mask: White stripes that cover the middle of the lines */
+               linear-gradient(to right, #f9fafb 40%, transparent 40%),
+               linear-gradient(to bottom, #f9fafb 40%, transparent 40%),
+               /* The grid: Actual grid lines */
+               linear-gradient(to right, #d9d9d9 1px, transparent 1px),
+               linear-gradient(to bottom, #d9d9d9 1px, transparent 1px);
+             background-size: 20px 20px, 20px 20px, 20px 20px, 20px 20px;
+             background-position: 6px 6px, 6px 6px, 0px 0px, 0px 0px;
+             /* Page-wide vertical gradient */
+             mask-image: linear-gradient(to bottom, transparent 0%, rgba(0,0,0,0.8) 100%);
+             -webkit-mask-image: linear-gradient(to bottom, transparent 0%, rgba(0,0,0,0.8) 100%);
+           ">
+      </div>
+    </div>
+    <!-- Above-the-fold container -->
+    <div id="above-fold" class="flex flex-col min-h-[100svh]">
+      <!-- Header -->
+      <header class="flex justify-between items-center p-4 bg-transparent relative z-50">
+        <div class="flex items-center">
+          <a href="/">
+            <img src="/logo.svg" alt="Company Logo" class="h-10 w-auto">
+          </a>
+        </div>
+        <!-- Desktop Menu -->
+        <nav class="hidden sm:flex space-x-4 text-xs font-medium uppercase tracking-widest">
+          <a href="#" class="hover:underline">Services</a>
+          <a href="/research" class="hover:underline">Research</a>
+          <a href="/case-studies" class="hover:underline">Case Studies</a>
+          <a href="#" class="hover:underline">About</a>
+        </nav>
+        <!-- Mobile Hamburger -->
+        <div class="sm:hidden">
+          <button id="hamburger-btn" class="relative w-6 h-4 flex flex-col justify-between items-center">
+            <span class="block w-6 h-[2px] bg-gray-800 transition-all duration-300 ease-in-out"></span>
+            <span class="block w-6 h-[2px] bg-gray-800 transition-all duration-300 ease-in-out"></span>
+            <span class="block w-6 h-[2px] bg-gray-800 transition-all duration-300 ease-in-out"></span>
+          </button>
+        </div>
+      </header>
+
+      <!-- Mobile Menu -->
+      <nav id="mobile-menu" class="hidden fixed top-[60px] left-0 w-full h-[calc(100vh-60px)] bg-white flex flex-col items-center justify-center space-y-6 text-lg font-medium uppercase tracking-widest sm:hidden z-40 transition-all duration-300">
+        <a href="#" class="block hover:underline">Services</a>
+        <a href="/research" class="block hover:underline">Research</a>
+        <a href="/case-studies" class="block hover:underline">Case Studies</a>
+        <a href="#" class="block hover:underline">About</a>
+      </nav>
+
+      <main id="hero-section" class="flex flex-col flex-1 items-center px-0 lg:px-8">
+        <div class="flex-1 w-full lg:max-w-4xl bg-white flex flex-col p-8">
+          <header class="flex flex-col md:grid md:grid-cols-4 bg-[#fde8ed] bg-opacity-70 rounded-lg">
+            <div class="md:col-span-1 flex justify-center items-center overflow-hidden px-2 pt-6 pb-0 md:py-8 md:pl-8 md:pr-0">
+              <div class="aspect-square h-24 w-24 md:h-full md:w-full max-h-full max-w-full flex items-center justify-center overflow-hidden md:p-2">
+                <svg class="transition-transform duration-700 group-hover:-translate-y-1" viewBox="0 0 100 100">
+                  <!-- Sphere outline -->
+                  <path fill="none" stroke="#ab6183" stroke-width="1"
+                        d="M50,5 A45,45 0 1,1 50,95 A45,45 0 1,1 50,5"/>
+                  <!-- Bottom half of equator (behind, dashed) -->
+                  <path fill="none" stroke="#ab6183" stroke-width="1" d="M5,50 A45,12 0 0,0 95,50"/>
+                  <!-- Top half of equator (front, solid) -->
+                  <path fill="none" stroke="#ab6183" stroke-width="1" stroke-dasharray="2,2" d="M5,50 A45,12 0 0,1 95,50"/>
+                </svg>
+              </div>
+            </div>
+            <div class="md:col-span-3 flex flex-col justify-center px-6 pt-4 pb-6 md:py-4 md:pl-6 md:pr-12 text-center md:text-left">
+              <h1 class="text-4xl sm:text-5xl md:pl-1" style="font-family: 'Crimson Text', sans-serif;">
+                Research
+              </h1>
+              <!-- Take background color (#fde8ed) and drop lightness (in HSL) to 35% from 95% -> #A40E32. -->
+              <hr class="border-0 border-t border-[#a40e32]/10 mt-2 mb-3">
+              <p class="md:pl-2">
+                Research is at our core. Being involved in both theoretical and applied research keeps us at the cutting edge of AI.
+              </p>
+            </div>
+          </header>
+          <div class="flex-1 mt-8 w-full">
+            <details class="group border-b border-gray-200 transition-all duration-300 hover:bg-gray-50">
+              <summary class="flex flex-col sm:flex-row justify-between items-start py-6 px-2 list-none outline-none cursor-pointer">
+                <div class="flex-1 sm:pr-6 w-full">
+                  <h3 class="font-semibold mb-1 leading-snug">
+                    Adapter-based Multi-document Summarisation: Opinion Summarisation Use Case
+                  </h3>
+                  <p class="text-sm mb-2">
+                    Kushan Hewapathirana, Nisansa de Silva, C.D. Athuraliya
+                  </p>
+                  <div class="text-gray-500 flex flex-wrap text-sm items-center gap-y-2">
+                    <span class="italic mr-3 w-full sm:w-auto">
+                      International Conference on Agents and Artificial Intelligence (ICAART)
+                    </span>
+                    <div class="flex items-center justify-between sm:justify-start w-full sm:w-auto gap-3">
+                      <div class="flex items-center gap-3">
+                        <span title="Abstract">
+                          <i class="bi bi-file-earmark-text hover:text-gray-900 group-open:hidden"></i>
+                          <i class="bi bi-file-earmark-text-fill text-gray-900 hidden group-open:inline-block"></i>
+                        </span>
+                      </div>
+                      <span class="sm:hidden text-xs uppercase tracking-widest font-bold text-gray-400">Mar 2026</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="hidden sm:block flex-shrink-0 text-right min-w-[80px]">
+                  <span class="text-xs uppercase tracking-widest font-bold text-gray-400">Mar 2026</span>
+                </div>
+              </summary>
+              <div class="px-2 pb-4">
+                <div>
+                  <h4 class="text-xs uppercase tracking-widest text-gray-400 font-bold mb-3">Abstract</h4>
+                  <p class="text-gray-600 leading-relaxed w-full">
+                    This study explores adapter-based fine-tuning to enhance the PRIMERA model for opinion summarisation. PRIMERA, a state-of-the-art multi-document summarisation (MDS) model, exhibits strong transfer potential owing to its pre-training on large-scale MDS corpora. Leveraging adapter architectures, this work demonstrates substantial improvements when extending PRIMERA to opinion summarisation through parameter-efficient fine-tuning. In addition, an LLM-based evaluation paradigm is introduced using the DeepEval framework, enabling semantic and sentiment-aware assessment beyond lexical-overlap metrics such as ROUGE. To improve training efficiency, an agentic optimisation framework is proposed, where evaluation reasoning guides iterative adapter configuration, reducing fine-tuning cycles while maintaining performance. Results show that adapter-augmented PRIMERA surpasses the opinion summarisation baseline ADASUM, establishing a reproducible, interpretable, and computationally efficient path for low-resource MDS. Overall, this work highlights how adapter-based fine-tuning and reasoning-guided optimisation together advance both performance and applicability in opinion summarisation.
+                  </p>
+                </div>
+              </div>
+            </details>
+            <details class="group border-b border-gray-200 transition-all duration-300 hover:bg-gray-50">
+              <summary class="flex flex-col sm:flex-row justify-between items-start py-6 px-2 list-none outline-none cursor-pointer">
+                <div class="flex-1 sm:pr-6 w-full">
+                  <h3 class="font-semibold mb-1 leading-snug">
+                    Domain Adaptation for Multi-document Summarisation: A Case Study in the Medical Research Domain
+                  </h3>
+                  <p class="text-sm mb-2">
+                    Kushan Hewapathirana, Nisansa de Silva, C.D. Athuraliya, Piumi Kandanaarachchi
+                  </p>
+                  <div class="text-gray-500 flex flex-wrap text-sm items-center gap-y-2">
+                    <span class="italic mr-3 w-full sm:w-auto">
+                      Pacific Asia Conference on Language, Information and Computation (PACLIC)
+                    </span>
+                    <div class="flex items-center justify-between sm:justify-start w-full sm:w-auto gap-3">
+                      <div class="flex items-center gap-3">
+                        <span title="Abstract">
+                          <i class="bi bi-file-earmark-text hover:text-gray-900 group-open:hidden"></i>
+                          <i class="bi bi-file-earmark-text-fill text-gray-900 hidden group-open:inline-block"></i>
+                        </span>
+                      </div>
+                      <span class="sm:hidden text-xs uppercase tracking-widest font-bold text-gray-400">Dec 2025</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="hidden sm:block flex-shrink-0 text-right min-w-[80px]">
+                  <span class="text-xs uppercase tracking-widest font-bold text-gray-400">Dec 2025</span>
+                </div>
+              </summary>
+              <div class="px-2 pb-4">
+                <div>
+                  <h4 class="text-xs uppercase tracking-widest text-gray-400 font-bold mb-3">Abstract</h4>
+                  <p class="text-gray-600 leading-relaxed w-full">
+                    Effectively summarising medical research is critical for supporting evidence-based decision-making in healthcare. While fine-tuning task-specific models on domain data is established practice, the comparative advantages over increasingly capable general-purpose LLMs remain an open question. This study systematically evaluates domain-adapted PRIMERA against several open-source large language models (LLaMA 3.2 3B, Mistral 7B, OpenChat 7B, and Gemma 7B) in zero-shot settings using the MS&Hat;2 dataset, which includes 20,000 systematic reviews summarising over 470,000 medical studies. Fine-tuning leads to notable improvements in ROUGE scores&mdash;ROUGE-1 from 12.8 to 33.0, ROUGE-2 from 2.0 to 6.5, and ROUGE-L from 8.1 to 22.6. Comparative evaluation indicates that the fine-tuned model consistently achieves stronger performance across all three ROUGE metrics, human evaluations, and LLM-as-a-judge assessments. These results suggest that domain-adapted models can offer advantages over general-purpose LLMs in specialised settings, particularly where factual accuracy and coverage are critical, though at the cost of reduced flexibility across domains.
+                  </p>
+                </div>
+              </div>
+            </details>
+            <details class="group border-b border-gray-200 transition-all duration-300 hover:bg-gray-50">
+              <summary class="flex flex-col sm:flex-row justify-between items-start py-6 px-2 list-none outline-none cursor-pointer">
+                <div class="flex-1 sm:pr-6 w-full">
+                  <h3 class="font-semibold mb-1 leading-snug">
+                    Adapter-based Fine-tuning for PRIMERA
+                  </h3>
+                  <p class="text-sm mb-2">
+                    Kushan Hewapathirana, Nisansa de Silva, C.D. Athuraliya
+                  </p>
+                  <div class="text-gray-500 flex flex-wrap text-sm items-center gap-y-2">
+                    <span class="italic mr-3 w-full sm:w-auto">
+                      Applied Data Science & Artificial Intelligence Conference (ADScAI)
+                    </span>
+                    <div class="flex items-center justify-between sm:justify-start w-full sm:w-auto gap-3">
+                      <div class="flex items-center gap-3">
+                        <span title="Abstract">
+                          <i class="bi bi-file-earmark-text hover:text-gray-900 group-open:hidden"></i>
+                          <i class="bi bi-file-earmark-text-fill text-gray-900 hidden group-open:inline-block"></i>
+                        </span>
+                        <a href="https://dl.lib.uom.lk/items/d4b84faa-57f8-4c3e-973e-30e8dcf53da3" target="_blank" class="hover:text-teal-600 transition-colors" title="Publication">
+                          <i class="bi bi-globe"></i>
+                        </a>
+                      </div>
+                      <span class="sm:hidden text-xs uppercase tracking-widest font-bold text-gray-400">Apr 2025</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="hidden sm:block flex-shrink-0 text-right min-w-[80px]">
+                  <span class="text-xs uppercase tracking-widest font-bold text-gray-400">Apr 2025</span>
+                </div>
+              </summary>
+              <div class="px-2 pb-4">
+                <div>
+                  <h4 class="text-xs uppercase tracking-widest text-gray-400 font-bold mb-3">Abstract</h4>
+                  <p class="text-gray-600 leading-relaxed w-full">
+                    Multi-document summarisation (MDS) involves generating concise summaries from clusters of related documents. PRIMERA (Pyramid-based Masked Sentence Pre-training for Multi-document Summarisation) is a pre-trained model specifically designed for MDS, utilizing the LED architecture to handle long sequences effectively. Despite its capabilities, fine-tuning PRIMERA for specific tasks remains resourceintensive. To mitigate this, we explore the integration of adapter modules&mdash;small, trainable components inserted within transformer layers&mdash;that allow models to adapt to new tasks by updating only a fraction of the parameters, thereby reducing computational requirements.
+                  </p>
+                </div>
+              </div>
+            </details>
+            <details class="group border-b border-gray-200 transition-all duration-300 hover:bg-gray-50">
+              <summary class="flex flex-col sm:flex-row justify-between items-start py-6 px-2 list-none outline-none cursor-pointer">
+                <div class="flex-1 sm:pr-6 w-full">
+                  <h3 class="font-semibold mb-1 leading-snug">
+                    M2DS: Multilingual Dataset for Multi-document Summarisation
+                  </h3>
+                  <p class="text-sm mb-2">
+                    Kushan Hewapathirana, Nisansa de Silva, C.D. Athuraliya
+                  </p>
+                  <div class="text-gray-500 flex flex-wrap text-sm items-center gap-y-2">
+                    <span class="italic mr-3 w-full sm:w-auto">
+                      International Conference on Computational Collective Intelligence (ICCCI)
+                    </span>
+                    <div class="flex items-center justify-between sm:justify-start w-full sm:w-auto gap-3">
+                      <div class="flex items-center gap-3">
+                        <span title="Abstract">
+                          <i class="bi bi-file-earmark-text hover:text-gray-900 group-open:hidden"></i>
+                          <i class="bi bi-file-earmark-text-fill text-gray-900 hidden group-open:inline-block"></i>
+                        </span>
+                        <a href="https://link.springer.com/chapter/10.1007/978-3-031-70248-8_17" target="_blank" class="hover:text-teal-600 transition-colors" title="Publication">
+                          <i class="bi bi-globe"></i>
+                        </a>
+                        <a href="https://arxiv.org/pdf/2407.12336" target="_blank" class="hover:text-red-600 transition-colors" title="PDF">
+                          <i class="bi bi-filetype-pdf"></i>
+                        </a>
+                      </div>
+                      <span class="sm:hidden text-xs uppercase tracking-widest font-bold text-gray-400">Sep 2024</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="hidden sm:block flex-shrink-0 text-right min-w-[80px]">
+                  <span class="text-xs uppercase tracking-widest font-bold text-gray-400">Sep 2024</span>
+                </div>
+              </summary>
+              <div class="px-2 pb-4">
+                <div>
+                  <h4 class="text-xs uppercase tracking-widest text-gray-400 font-bold mb-3">Abstract</h4>
+                  <p class="text-gray-600 leading-relaxed w-full">
+                    In the rapidly evolving digital era, there is an increasing demand for concise information as individuals seek to distil key insights from various sources. Recent attention from researchers on Multi-document Summarisation (MDS) has resulted in diverse datasets covering customer reviews, academic papers, medical and legal documents, and news articles. However, the English-centric nature of these datasets has created a conspicuous void for multilingual datasets in today’s globalised digital landscape, where linguistic diversity is celebrated. Media platforms such as British Broadcasting Corporation (BBC) have disseminated news in 20+ languages for decades. With only 380 million people speaking English natively as their first language, accounting for less than 5% of the global population, the vast majority primarily relies on other languages. These facts underscore the need for inclusivity in MDS research, utilising resources from diverse languages. Recognising this gap, we present the Multilingual Dataset for Multi-document Summarisation (M2DS), which, to the best of our knowledge, is the first dataset of its kind. It includes document-summary pairs in five languages from BBC articles published during the 2010–2023 period. This paper introduces M2DS, emphasising its unique multilingual aspect, and includes baseline scores from state-of-the-art MDS models evaluated on our dataset.
+                  </p>
+                </div>
+              </div>
+            </details>
+            <details class="group border-b border-gray-200 transition-all duration-300 hover:bg-gray-50">
+              <summary class="flex flex-col sm:flex-row justify-between items-start py-6 px-2 list-none outline-none cursor-pointer">
+                <div class="flex-1 sm:pr-6 w-full">
+                  <h3 class="font-semibold mb-1 leading-snug">
+                    Multi-Document Summarization: A Comparative Evaluation
+                  </h3>
+                  <p class="text-sm mb-2">
+                    Kushan Hewapathirana, Nisansa de Silva, C.D. Athuraliya
+                  </p>
+                  <div class="text-gray-500 flex flex-wrap text-sm items-center gap-y-2">
+                    <span class="italic mr-3 w-full sm:w-auto">
+                      International Conference on Industrial and Information Systems (ICIIS)
+                    </span>
+                    <div class="flex items-center justify-between sm:justify-start w-full sm:w-auto gap-3">
+                      <div class="flex items-center gap-3">
+                        <span title="Abstract">
+                          <i class="bi bi-file-earmark-text hover:text-gray-900 group-open:hidden"></i>
+                          <i class="bi bi-file-earmark-text-fill text-gray-900 hidden group-open:inline-block"></i>
+                        </span>
+                        <a href="https://ieeexplore.ieee.org/abstract/document/10253581" target="_blank" class="hover:text-teal-600 transition-colors" title="Publication">
+                          <i class="bi bi-globe"></i>
+                        </a>
+                        <a href="https://arxiv.org/pdf/2309.04951" target="_blank" class="hover:text-red-600 transition-colors" title="PDF">
+                          <i class="bi bi-filetype-pdf"></i>
+                        </a>
+                      </div>
+                      <span class="sm:hidden text-xs uppercase tracking-widest font-bold text-gray-400">Aug 2023</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="hidden sm:block flex-shrink-0 text-right min-w-[80px]">
+                  <span class="text-xs uppercase tracking-widest font-bold text-gray-400">Aug 2023</span>
+                </div>
+              </summary>
+              <div class="px-2 pb-4">
+                <div>
+                  <h4 class="text-xs uppercase tracking-widest text-gray-400 font-bold mb-3">Abstract</h4>
+                  <p class="text-gray-600 leading-relaxed w-full">
+                    This paper is aimed at evaluating state-of-the-art models for Multi-document Summarization (MDS) on different types of datasets in various domains and investigating the limitations of existing models to determine future research directions. To address this gap, we conducted an extensive literature review to identify state-of-the-art models and datasets. We analyzed the performance of PRIMERA and PEGASUS models on BigSurvey-MDS and MS&Hat;2 datasets, which posed unique challenges due to their varied domains. Our findings show that the General-Purpose Pretrained Model LED outperforms PRIMERA and PEGASUS on the MS^2 dataset. We used the ROUGE score as a performance metric to evaluate the identified models on different datasets. Our study provides valuable insights into the models' strengths and weaknesses, as well as their applicability in different domains. This work serves as a reference for future MDS research and contributes to the development of accurate and robust models which can be utilized on demanding datasets with academically and/or scientifically complex data as well as generalized, relatively simple datasets.
+                  </p>
+                </div>
+              </div>
+            </details>
+            <details class="group border-b border-gray-200 transition-all duration-300 hover:bg-gray-50">
+              <summary class="flex flex-col sm:flex-row justify-between items-start py-6 px-2 list-none outline-none cursor-pointer">
+                <div class="flex-1 sm:pr-6 w-full">
+                  <h3 class="font-semibold mb-1 leading-snug">
+                    AI for Mitigating Effects of Climate and Weather Changes in Agriculture
+                  </h3>
+                  <p class="text-sm mb-2">
+                    Narmada Balasooriya, C.D. Athuraliya, Janak Gunatilleke
+                  </p>
+                  <div class="text-gray-500 flex flex-wrap text-sm items-center gap-y-2">
+                    <span class="italic mr-3 w-full sm:w-auto">
+                      AI for Social Good Workshop, International Conference on Machine Learning (ICML)
+                    </span>
+                    <div class="flex items-center justify-between sm:justify-start w-full sm:w-auto gap-3">
+                      <div class="flex items-center gap-3">
+                        <span title="Abstract">
+                          <i class="bi bi-file-earmark-text hover:text-gray-900 group-open:hidden"></i>
+                          <i class="bi bi-file-earmark-text-fill text-gray-900 hidden group-open:inline-block"></i>
+                        </span>
+                        <a href="https://aiforsocialgood.github.io/icml2019/proposals.htm" target="_blank" class="hover:text-teal-600 transition-colors" title="Publication">
+                          <i class="bi bi-globe"></i>
+                        </a>
+                        <a href="https://aiforsocialgood.github.io/icml2019/accepted/track2/pdfs/57_aisg_icml2019.pdf" target="_blank" class="hover:text-red-600 transition-colors" title="PDF">
+                          <i class="bi bi-filetype-pdf"></i>
+                        </a>
+                      </div>
+                      <span class="sm:hidden text-xs uppercase tracking-widest font-bold text-gray-400">June 2019</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="hidden sm:block flex-shrink-0 text-right min-w-[80px]">
+                  <span class="text-xs uppercase tracking-widest font-bold text-gray-400">June 2019</span>
+                </div>
+              </summary>
+              <div class="px-2 pb-4">
+                <div>
+                  <h4 class="text-xs uppercase tracking-widest text-gray-400 font-bold mb-3">Abstract</h4>
+                  <p class="text-gray-600 leading-relaxed w-full">
+                    In recent years, floods, landslides and droughts have become an annual occurrence in Sri Lanka. Despite the efforts made by the government and other entities, these natural disasters remain challenging mainly to the people who live in high risk areas. It is also crucial to predict such disasters early on to facilitate evacuation of people living in these areas. Furthermore, Sri Lankan economy largely depends on agriculture, yet this sector still remains untouched by recent advancements of AI and other predictive analytics techniques. There is an increased tendency amongst Sri Lankan youth to refrain from agriculture sector due to the lack of technology adoption and risks associated with it. The work by Peiris et.al demonstrates how seasonal climate data is used to predict coconut yield in Sri Lanka. Another Sri Lankan tech company has initiated the project AiGrow to increase the use of state-of-the-art technology in agriculture sector by utilizing AI, smart sensor systems and fertigation systems (automated fertilizer delivery machine). Regionally, Pulse Lab Jakarta has developed a visualization tool to track the impact of forest and peatland fires in Indonesia.
+                  </p>
+                </div>
+              </div>
+            </details>
+            <details class="group border-b border-gray-200 transition-all duration-300 hover:bg-gray-50">
+              <summary class="flex flex-col sm:flex-row justify-between items-start py-6 px-2 list-none outline-none cursor-pointer">
+                <div class="flex-1 sm:pr-6 w-full">
+                  <h3 class="font-semibold mb-1 leading-snug">
+                    Visualizing the Consequences of Climate Change Using Cycle-Consistent Adversarial Networks
+                  </h3>
+                  <p class="text-sm mb-2">
+                    Victor Schmidt, Alexandra Luccioni, S. Karthik Mukkavilli, Kris Sankaran, Yoshua Bengio, Narmada Balasooriya, Jennifer Chayes
+                  </p>
+                  <div class="text-gray-500 flex flex-wrap text-sm items-center gap-y-2">
+                    <span class="italic mr-3 w-full sm:w-auto">
+                      AI for Social Good Workshop, International Conference on Learning Representations (ICLR)
+                    </span>
+                    <div class="flex items-center justify-between sm:justify-start w-full sm:w-auto gap-3">
+                      <div class="flex items-center gap-3">
+                        <span title="Abstract">
+                          <i class="bi bi-file-earmark-text hover:text-gray-900 group-open:hidden"></i>
+                          <i class="bi bi-file-earmark-text-fill text-gray-900 hidden group-open:inline-block"></i>
+                        </span>
+                        <a href="https://aiforsocialgood.github.io/iclr2019/acceptedpapers.htm" target="_blank" class="hover:text-teal-600 transition-colors" title="Publication">
+                          <i class="bi bi-globe"></i>
+                        </a>
+                        <a href="https://aiforsocialgood.github.io/iclr2019/accepted/track1/pdfs/24_aisg_iclr2019.pdf" target="_blank" class="hover:text-red-600 transition-colors" title="PDF">
+                          <i class="bi bi-filetype-pdf"></i>
+                        </a>
+                      </div>
+                      <span class="sm:hidden text-xs uppercase tracking-widest font-bold text-gray-400">May 2019</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="hidden sm:block flex-shrink-0 text-right min-w-[80px]">
+                  <span class="text-xs uppercase tracking-widest font-bold text-gray-400">May 2019</span>
+                </div>
+              </summary>
+              <div class="px-2 pb-4">
+                <div>
+                  <h4 class="text-xs uppercase tracking-widest text-gray-400 font-bold mb-3">Abstract</h4>
+                  <p class="text-gray-600 leading-relaxed w-full">
+                    We present a project that aims to generate images that depict accurate, vivid, and personalized outcomes of climate change using Cycle-Consistent Adversarial Networks (CycleGANs). By training our CycleGAN model on street-view images of houses before and after extreme weather events (e.g. floods, forest fires, etc.), we learn a mapping that can then be applied to images of locations that have not yet experienced these events. This visual transformation is paired with climate model predictions to assess likelihood and type of climate-related events in the long term (50 years) in order to bring the future closer in the viewer’s mind. The eventual goal of our project is to enable individuals to make more informed choices about their climate future by creating a more visceral understanding of the effects of climate change, while maintaining scientific credibility by drawing on climate model projections.
+                  </p>
+                </div>
+              </div>
+            </details>
+            <details class="group border-b border-gray-200 transition-all duration-300 hover:bg-gray-50">
+              <summary class="flex flex-col sm:flex-row justify-between items-start py-6 px-2 list-none outline-none cursor-pointer">
+                <div class="flex-1 sm:pr-6 w-full">
+                  <h3 class="font-semibold mb-1 leading-snug">
+                    Context-aware Capsule Network for Multi-label Classification
+                  </h3>
+                  <p class="text-sm mb-2">
+                    Sameera Ramasinghe, C.D. Athuraliya, Salman H. Khan
+                  </p>
+                  <div class="text-gray-500 flex flex-wrap text-sm items-center gap-y-2">
+                    <span class="italic mr-3 w-full sm:w-auto">
+                      Workshop on Brain-Driven Computer Vision, European Conference on Computer Vision (ECCV)
+                    </span>
+                    <div class="flex items-center justify-between sm:justify-start w-full sm:w-auto gap-3">
+                      <div class="flex items-center gap-3">
+                        <span title="Abstract">
+                          <i class="bi bi-file-earmark-text hover:text-gray-900 group-open:hidden"></i>
+                          <i class="bi bi-file-earmark-text-fill text-gray-900 hidden group-open:inline-block"></i>
+                        </span>
+                        <a href="https://openaccess.thecvf.com/content_eccv_2018_workshops/w17/html/Ramasinghe_A_Context-aware_Capsule_Network_for_Multi-label_Classification_ECCVW_2018_paper.html" target="_blank" class="hover:text-teal-600 transition-colors" title="Publication">
+                          <i class="bi bi-globe"></i>
+                        </a>
+                        <a href="https://openaccess.thecvf.com/content_ECCVW_2018/papers/11131/Ramasinghe_A_Context-aware_Capsule_Network_for_Multi-label_Classification_ECCVW_2018_paper.pdf" target="_blank" class="hover:text-red-600 transition-colors" title="PDF">
+                          <i class="bi bi-filetype-pdf"></i>
+                        </a>
+                      </div>
+                      <span class="sm:hidden text-xs uppercase tracking-widest font-bold text-gray-400">Sep 2018</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="hidden sm:block flex-shrink-0 text-right min-w-[80px]">
+                  <span class="text-xs uppercase tracking-widest font-bold text-gray-400">Sep 2018</span>
+                </div>
+              </summary>
+              <div class="px-2 pb-4">
+                <div>
+                  <h4 class="text-xs uppercase tracking-widest text-gray-400 font-bold mb-3">Abstract</h4>
+                  <p class="text-gray-600 leading-relaxed w-full">
+                    Recently proposed Capsule Network is a brain inspired architecture that brings a new paradigm to deep learning by modelling input domain variations through vector based representations. Despite being a seminal contribution, CapsNet does not explicitly model structured relationships between the detected entities and among the capsule features for related inputs. Motivated by the working of cortical network in HVS, we seek to resolve CapsNet limitations by proposing several intuitive modifications to the CapsNet architecture. We introduce, (1) a novel routing weight initialization technique, (2) an improved CapsNet design that exploits semantic relationships between the primary capsule activations using a densely connected Conditional Random Field and (3) a Cholesky transformation based correlation module to learn a general priority scheme. Our proposed design allows CapsNet to scale better to more complex problems, such as the multi-label classification task, where semantically related categories co-exist with various interdependencies. We present theoretical bases for our extensions and demonstrate significant improvements on ADE20K scene dataset.
+                  </p>
+                </div>
+              </div>
+            </details>
+          </div>
+        </div>
+      </main>
+    </div>
+    <!-- Footer -->
+    <footer class="bg-[#101010] text-white py-12">
+      <div class="container mx-auto px-6 md:px-12">
+        <!-- Top content: logo + columns -->
+        <div class="flex flex-col md:flex-row md:justify-between md:items-start gap-8">
+          <!-- Logo placeholder -->
+          <div class="flex-shrink-0 text-center md:text-left">
+            <img src="/logo_white.svg" alt="Company Logo" class="h-10 w-auto mb-4 mx-auto md:mx-0">
+          </div>
+          <!-- Menu column -->
+          <div class="text-center md:text-left">
+            <h3 class="text-sm font-semibold uppercase tracking-widest mb-4">Links</h3>
+            <ul class="space-y-2">
+              <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Home</a></li>
+              <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Services</a></li>
+              <li><a href="/research" class="text-gray-400 hover:text-white transition-colors">Research</a></li>
+              <li><a href="/case-studies" class="text-gray-400 hover:text-white transition-colors">Case Studies</a></li>
+            </ul>
+          </div>
+          <!-- Contact/Social column -->
+          <div class="text-center md:text-left">
+            <h3 class="text-sm font-semibold uppercase tracking-widest mb-4">Contact</h3>
+            <p class="text-gray-400 mb-4">contact@conscient.ai</p>
+            <!-- <p class="text-gray-400 mb-4">+1 234 567 890</p> -->
+            <div class="flex justify-center md:justify-start gap-4">
+              <div class="w-8 h-8">
+                <a href="https://www.linkedin.com/company/conscientai" target="_blank" aria-label="LinkedIn" class="text-gray-400 hover:text-[#2867B2] transition">
+                  <!-- https://icons.getbootstrap.com/icons/linkedin/ -->
+                  <i class="bi bi-linkedin"></i>
+                </a>
+              </div>
+              <div class="w-8 h-8">
+                <a href="https://x.com/ConscientAI" target="_blank" aria-label="X" class="text-gray-400 hover:text-white transition">
+                  <!-- https://icons.getbootstrap.com/icons/twitter-x/ -->
+                  <i class="bi bi-twitter-x"></i>
+                </a>
+              </div>
+              <div class="w-8 h-8">
+                <a href="https://www.facebook.com/ConscientAI/" target="_blank" aria-label="Facebook" class="text-gray-400 hover:text-[#0866FF] transition">
+                  <!-- https://icons.getbootstrap.com/icons/facebook/ -->
+                  <i class="bi bi-facebook"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Bottom copyright -->
+        <p class="mt-12 text-center text-gray-500 text-sm">
+          &copy; 2017-<span id="current-year">2026</span> ConscientAI. All rights reserved.
+        </p>
+      </div>
+    </footer>
+    <script>
+      const btn = document.getElementById('hamburger-btn');
+      const menu = document.getElementById('mobile-menu');
+      const html = document.documentElement;
+      const body = document.body;
+
+      let scrollY = 0;
+
+      function openMenu() {
+        menu.classList.remove('hidden');
+        btn.classList.add('open');
+
+        // lock scroll position
+        scrollY = window.scrollY || window.pageYOffset;
+        body.style.top = `-${scrollY}px`;
+        html.classList.add('scroll-lock');
+        body.classList.add('scroll-lock');
+      }
+
+      function closeMenu() {
+        menu.classList.add('hidden');
+        btn.classList.remove('open');
+
+        html.classList.remove('scroll-lock');
+        body.classList.remove('scroll-lock');
+        body.style.top = '';
+        window.scrollTo(0, scrollY); // restore
+      }
+
+      btn.addEventListener('click', () => {
+        menu.classList.contains('hidden') ? openMenu() : closeMenu();
+      });
+
+      menu.querySelectorAll('a').forEach(a => a.addEventListener('click', closeMenu));
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') closeMenu();
+      });
+
+      // Dynamically set copyright current year
+      const now = new Date();
+      const currentYear = now.getUTCFullYear();
+      document.getElementById('current-year').textContent = currentYear;
+    </script>
+  </body>
+</html>
