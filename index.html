@@ -74,6 +74,16 @@
       .animate-highlight {
         animation: highlight 2s ease-out 0.5s both;
       }
+
+      /* Call to action button shimmer */
+      @keyframes shimmer {
+        from {
+          transform: translateX(-150%);
+        }
+        to {
+          transform: translateX(150%);
+        }
+      }
     </style>
   </head>
 
@@ -162,8 +172,15 @@
             From cutting-edge research to production-ready systems, helping businesses adopt AI with confidence since 2017.
           </p>
           <!-- Call to action -->
-          <button class="px-8 font-medium py-3 bg-gradient-to-r from-[#1b6d90] to-[#ab6183] text-white rounded-full shadow-md hover:opacity-90 transition">
-            Read latest insights ↗
+          <button class="group relative overflow-hidden pl-6 pr-5 text-sm font-bold py-3 bg-gradient-to-r from-[#1b6d90] to-[#ab6183] text-white rounded-full shadow-md">
+            <!-- Dark overlay for hover/active transition -->
+            <span class="absolute inset-0 bg-black opacity-0 transition-opacity duration-100 group-hover:opacity-10 group-hover:delay-[100ms] group-active:opacity-10"></span>
+            <!-- Shimmer -->
+            <span class="absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/20 to-transparent pointer-events-none group-hover:animate-[shimmer_1s_ease-out]"></span>
+            <!-- Button text -->
+            <span class="relative z-10 uppercase tracking-wider flex items-center justify-center gap-1 pointer-events-none">
+              Read latest insights<i class="bi bi-arrow-up-right [-webkit-text-stroke:1px]"></i>
+            </span>
           </button>
         </section>
         <!-- 3-column content -->
