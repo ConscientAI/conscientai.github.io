@@ -66,25 +66,6 @@
   </head>
 
   <body class="relative flex flex-col min-h-screen">
-    <!-- Global Grid Background with gradient fade -->
-    <div class="fixed top-0 left-0 right-0 bottom-0 -z-10 hidden lg:block bg-gradient-to-t from-gray-50 to-white">
-      <div class="w-full h-full"
-           style="
-             background-image:
-               /* The mask: White stripes that cover the middle of the lines */
-               linear-gradient(to right, #f9fafb 40%, transparent 40%),
-               linear-gradient(to bottom, #f9fafb 40%, transparent 40%),
-               /* The grid: Actual grid lines */
-               linear-gradient(to right, #d9d9d9 1px, transparent 1px),
-               linear-gradient(to bottom, #d9d9d9 1px, transparent 1px);
-             background-size: 20px 20px, 20px 20px, 20px 20px, 20px 20px;
-             background-position: 6px 6px, 6px 6px, 0px 0px, 0px 0px;
-             /* Page-wide vertical gradient */
-             mask-image: linear-gradient(to bottom, transparent 0%, rgba(0,0,0,0.8) 100%);
-             -webkit-mask-image: linear-gradient(to bottom, transparent 0%, rgba(0,0,0,0.8) 100%);
-           ">
-      </div>
-    </div>
     <!-- Above-the-fold container -->
     <div id="above-fold" class="flex flex-col min-h-[100svh]">
       <!-- Header -->
