@@ -12,6 +12,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Geist:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
     <style>
       #hamburger-btn.open span:nth-child(1) {
@@ -104,44 +105,42 @@
 
       <main id="hero-section" class="flex flex-col flex-1 items-center px-0 lg:px-8">
         <div class="w-full lg:max-w-4xl bg-white flex flex-col p-8">
-          <header class="flex flex-col md:grid md:grid-cols-4 bg-white">
-            <div class="md:col-span-1 flex justify-center items-center overflow-hidden md:py-6 md:pr-6 md:pl-0">
-              <div class="aspect-square h-24 w-24 md:h-full md:w-full max-h-full max-w-full flex items-center justify-center border border-gray-200 overflow-hidden">
-                <a href="https://rungopher.com">
-                  <img src="/rungopher.jpg" alt="RunGopher logo" class="max-h-full max-w-full object-contain">
-                </a>
+          <header class="flex flex-col md:flex-row items-center md:items-stretch gap-4 md:gap-8 mt-8">
+            <div class="flex-shrink-0 md:ml-3">
+              <div class="aspect-square h-24 w-24 md:h-36 md:w-36 flex items-center justify-center overflow-hidden border border-gray-100 rounded-lg">
+                <img src="/rungopher.jpg" alt="RunGopher logo" class="max-h-full max-w-full object-contain">
               </div>
             </div>
-            <div class="md:col-span-3 flex flex-col justify-center px-6 py-6 md:py-4 text-center md:text-left">
-              <h1 class="text-2xl sm:text-3xl lg:text-4xl leading-tight mb-2 sm:mb-4" style="font-family: 'Crimson Text', sans-serif; color:#12133e;">
+            <div class="flex flex-col justify-center text-center md:text-left md:py-2">
+              <h1 class="text-gray-800 font-medium text-2xl md:text-3xl tracking-wider mb-2" style="font-family: 'Geist', sans-serif;">
                 Conversational AI for Marketing
               </h1>
-              <p class="text-gray-600">
-                RunGopher, Australia
-              </p>
+              <span class="text-xs font-bold uppercase tracking-[0.2em] text-gray-400">
+                Marketing Technology&nbsp;&bull;&nbsp;Australia
+              </span>
             </div>
           </header>
-          <div class="h-1 w-full bg-gradient-to-r from-[#1b6d90] to-[#ab6183]"></div>
-          <div class="flex-1">
-            <br>
-            <p>How do you teach a machine to send text messages like a human?</p>
-            <br>
-            <p>This was the challenge RunGopher brought to us back in 2018, when they wanted to scale their automated messaging platform geared at customized SMS marketing campaigns. Their uniqueness is in the personalized messages sent to each user, which read similar to those written by a human, rather than sounding machine generated&mdash;successfully drawing responses from the recipients. RunGopher already had an effective, rule-based system in place for continuing the conversation with each individual responding to the initial message, but they wanted to improve their message flow, and to make the core platform more robust and scalable. We recognized this as an ideal use case to employ cutting edge natural language processing (NLP) techniques which we proposed, and subsequently built for RunGopher.</p>
-            <br>
-            <h2 class="text-xl font-semibold mb-2">Scaling the conversational model with deep learning</h2>
-            <p>With AI, it is possible to derive sensible insights, even from vague responses. Since we already knew this was an instance needing an NLP solution, we immediately started looking at the best technique for this specific use case: what models and tools can be utilized to make the engagements more natural, and what impact would this solution ultimately have on the user experience.</p>
-            <br>
-            <p>While doing our research, we came across Bidirectional Encoder Representations from Transformers by Google, commonly referred to as BERT, a deep learning based technique that allows training of models for a number of downstream NLP tasks, for example sentence classification and sentiment analysis. Newly released at the time, BERT was the state of the art technique, performing significantly better than other widely used approaches. It also overcame a classic problem with the  models which already existed at the time&mdash;the inability to distinguish between different usages of the same word. For example, BERT could accurately interpret the difference between a “bank” where one deposits money, and the “bank” of a river, based on the sentence structure and the context. Since the ability to discern the accurate use of words was very important in this instance, BERT was a good candidate for RunGopher, especially because the AI solution was tasked with understanding user responses and carrying out conversations just as a human would.</p>
-            <br>
-            <h2 class="text-xl font-semibold mb-2">Accurate recognition of user intent with NLP</h2>
-            <p>When working on this conversational model, we had to overcome the challenges inherent to human language, and decide on how to overcome them. For example, a language model may show subpar performance in understanding sarcasm or satire, and in these instances we must take a pragmatic approach.</p>
-            <br>
-            <p>In late 2018, when we were designing this solution, Google BERT was just released and frameworks like Hugging Face Transformers had not gained popularity. As a result, we had to extend BERT for tasks such as online inference and model chaining. With these extensions and custom models, we managed to successfully employ BERT for RunGopher’s use case, which performed far more robustly, achieving over 90% accuracy in recognizing user intent from their messages. It also enabled an analysis of the user responses to draw valuable business insights to further optimize the RunGopher platform.</p>
-            <br>
-            <p>With the help of the ConscientAI team, RunGopher possibly became one of the earliest companies to use a state of the art technique such as BERT in a production system, going beyond experimentation. This showcases our ability to adapt fast and embrace new developments in the field of AI&mdash;an albeit rapidly progressing field&mdash;to bring about successful business solutions to our clients.</p>
-            <br>
-            <p>If you are looking to improve business processes with similar AI solutions, reach out to us, we would love to help you!</p>
-            <br>
+          <div class="flex-1 p-2 mt-4 md:mt-6">
+            <div class="border-t-2 border-gray-100">
+              <p class="text-gray-800 mt-12">How do you teach a machine to send text messages like a human?</p>
+              <br>
+              <p class="text-gray-800">This was the challenge RunGopher brought to us back in 2018, when they wanted to scale their automated messaging platform geared at customized SMS marketing campaigns. Their uniqueness is in the personalized messages sent to each user, which read similar to those written by a human, rather than sounding machine generated&mdash;successfully drawing responses from the recipients. RunGopher already had an effective, rule-based system in place for continuing the conversation with each individual responding to the initial message, but they wanted to improve their message flow, and to make the core platform more robust and scalable. We recognized this as an ideal use case to employ cutting edge natural language processing (NLP) techniques which we proposed, and subsequently built for RunGopher.</p>
+              <br>
+              <h2 class="text-xl font-medium mb-2">Scaling the conversational model with deep learning</h2>
+              <p class="text-gray-800">With AI, it is possible to derive sensible insights, even from vague responses. Since we already knew this was an instance needing an NLP solution, we immediately started looking at the best technique for this specific use case: what models and tools can be utilized to make the engagements more natural, and what impact would this solution ultimately have on the user experience.</p>
+              <br>
+              <p class="text-gray-800">While doing our research, we came across Bidirectional Encoder Representations from Transformers by Google, commonly referred to as BERT, a deep learning based technique that allows training of models for a number of downstream NLP tasks, for example sentence classification and sentiment analysis. Newly released at the time, BERT was the state of the art technique, performing significantly better than other widely used approaches. It also overcame a classic problem with the  models which already existed at the time&mdash;the inability to distinguish between different usages of the same word. For example, BERT could accurately interpret the difference between a “bank” where one deposits money, and the “bank” of a river, based on the sentence structure and the context. Since the ability to discern the accurate use of words was very important in this instance, BERT was a good candidate for RunGopher, especially because the AI solution was tasked with understanding user responses and carrying out conversations just as a human would.</p>
+              <br>
+              <h2 class="text-xl font-medium mb-2">Accurate recognition of user intent with NLP</h2>
+              <p class="text-gray-800">When working on this conversational model, we had to overcome the challenges inherent to human language, and decide on how to overcome them. For example, a language model may show subpar performance in understanding sarcasm or satire, and in these instances we must take a pragmatic approach.</p>
+              <br>
+              <p class="text-gray-800">In late 2018, when we were designing this solution, Google BERT was just released and frameworks like Hugging Face Transformers had not gained popularity. As a result, we had to extend BERT for tasks such as online inference and model chaining. With these extensions and custom models, we managed to successfully employ BERT for RunGopher’s use case, which performed far more robustly, achieving over 90% accuracy in recognizing user intent from their messages. It also enabled an analysis of the user responses to draw valuable business insights to further optimize the RunGopher platform.</p>
+              <br>
+              <p class="text-gray-800">With the help of the ConscientAI team, RunGopher possibly became one of the earliest companies to use a state of the art technique such as BERT in a production system, going beyond experimentation. This showcases our ability to adapt fast and embrace new developments in the field of AI&mdash;an albeit rapidly progressing field&mdash;to bring about successful business solutions to our clients.</p>
+              <br>
+              <p class="text-gray-800">If you are looking to improve business processes with similar AI solutions, reach out to us, we would love to help you!</p>
+              <br>
+            </div>
           </div>
         </div>
       </main>
