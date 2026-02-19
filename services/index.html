@@ -112,205 +112,207 @@
         <a href="/about" class="animate-mobile-menu-item opacity-0 [animation-delay:400ms] block transition-colors duration-200 active:text-gray-400">About</a>
       </nav>
 
-      <main class="flex flex-col flex-1 items-center px-0 lg:px-8">
-        <div class="flex-1 w-full lg:max-w-4xl bg-white flex flex-col p-8">
-          <header class="flex flex-col md:grid md:grid-cols-4 bg-[#eaf6fb] bg-opacity-70 rounded-lg">
-            <div class="md:col-span-1 flex justify-center items-center overflow-hidden px-2 pt-6 pb-0 md:py-8 md:pl-8 md:pr-0">
-              <div class="aspect-square h-24 w-24 md:h-full md:w-full max-h-full max-w-full flex items-center justify-center overflow-hidden md:p-2">
-                <svg viewBox="0 0 100 100">
-                  <!-- Hexagon outline -->
-                  <path fill="none" stroke="#1e6899" stroke-width="1" d="M50 5 L88.97 27.5 L88.97 72.5 L50 95 L11.03 72.5 L11.03 27.5 Z"/>
-                  <!-- Internal edges -->
-                  <line x1="50" y1="5" x2="50" y2="50" stroke="#1e6899" stroke-width="1" stroke-dasharray="2,2"/>
-                  <line x1="88.97" y1="72.5" x2="50" y2="50" stroke="#1e6899" stroke-width="1" stroke-dasharray="2,2"/>
-                  <line x1="11.03" y1="72.5" x2="50" y2="50" stroke="#1e6899" stroke-width="1" stroke-dasharray="2,2"/>
-                  <line x1="50" y1="95" x2="50" y2="50" stroke="#1e6899" stroke-width="1"/>
-                  <line x1="11.03" y1="27.5" x2="50" y2="50" stroke="#1e6899" stroke-width="1"/>
-                  <line x1="88.97" y1="27.5" x2="50" y2="50" stroke="#1e6899" stroke-width="1"/>
-                </svg>
+      <main class="flex flex-col flex-1">
+        <section class="w-full bg-[#eaf6fb]/70 py-8 md:py-12">
+          <div class="max-w-4xl mx-auto px-8 md:pl-8 md:pr-12">
+            <div class="flex flex-col md:grid md:grid-cols-4 gap-6 items-center">
+              <div class="md:col-span-1 flex justify-center">
+                <div class="w-24 h-24 md:w-40 md:h-40">
+                  <svg viewBox="0 0 100 100" class="w-full h-full">
+                    <!-- Hexagon outline -->
+                    <path fill="none" stroke="#1e6899" stroke-width="1" d="M50 5 L88.97 27.5 L88.97 72.5 L50 95 L11.03 72.5 L11.03 27.5 Z"/>
+                    <!-- Internal edges -->
+                    <line x1="50" y1="5" x2="50" y2="50" stroke="#1e6899" stroke-width="1" stroke-dasharray="2,2"/>
+                    <line x1="88.97" y1="72.5" x2="50" y2="50" stroke="#1e6899" stroke-width="1" stroke-dasharray="2,2"/>
+                    <line x1="11.03" y1="72.5" x2="50" y2="50" stroke="#1e6899" stroke-width="1" stroke-dasharray="2,2"/>
+                    <line x1="50" y1="95" x2="50" y2="50" stroke="#1e6899" stroke-width="1"/>
+                    <line x1="11.03" y1="27.5" x2="50" y2="50" stroke="#1e6899" stroke-width="1"/>
+                    <line x1="88.97" y1="27.5" x2="50" y2="50" stroke="#1e6899" stroke-width="1"/>
+                  </svg>
+                </div>
+              </div>
+              <div class="md:col-span-3 text-center md:text-left">
+                <span class="text-xs font-bold uppercase tracking-[0.2em] text-[#1e6899] mb-2 block">
+                  Services
+                </span>
+                <h1 class="text-gray-800 font-medium text-2xl sm:text-3xl tracking-wider md:pl-1" style="font-family: 'Geist', sans-serif;">
+                  Architecting next-generation AI
+                </h1>
+                <!-- Take background color (#eaf6fb) and drop lightness (in HSL) to 35% from 95% -> #1d7296 -->
+                <hr class="border-0 border-t border-[#1d7296]/10 mt-2 mb-3">
+                <p class="text-gray-600 max-w-2xl">
+                  We translate complex research into industrial-strength solutions, building bespoke AI systems that solve real-world engineering challenges.
+                </p>
               </div>
             </div>
-            <div class="md:col-span-3 flex flex-col justify-center px-6 pt-4 pb-6 md:py-4 md:pl-6 md:pr-12 text-center md:text-left">
-              <span class="text-xs font-bold uppercase tracking-[0.2em] text-[#1e6899] mb-1 md:pl-1">
-                Services
-              </span>
-              <h1 class="text-gray-800 font-medium text-2xl sm:text-3xl tracking-wider md:pl-1" style="font-family: 'Geist', sans-serif;">
-                Architecting next-generation AI
-              </h1>
-              <!-- Take background color (#eaf6fb) and drop lightness (in HSL) to 35% from 95% -> #1d7296. -->
-              <hr class="border-0 border-t border-[#1d7296]/10 mt-2 mb-3">
-              <p class="text-gray-600 md:pl-2">
-                We translate complex research into industrial-strength solutions, building bespoke AI systems that solve real-world engineering challenges.
-              </p>
+          </div>
+        </section>
+        <div class="w-full max-w-4xl mx-auto p-8">
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-4">
+            <div class="group flex flex-col px-2 pt-2 pb-4 h-full">
+              <div class="flex items-center gap-2">
+                <div class="relative w-28 h-28 flex-shrink-0 flex items-center justify-center transition-transform duration-500 group-hover:scale-105 p-3">
+                  <div class="absolute w-14 h-14 top-[29.5%] left-[20.5%] bg-[#eaf6fb]/70 rounded-full transition-transform duration-500 group-hover:scale-110"></div>
+                  <svg viewBox="0 0 70.6 71.2" class="relative z-10 w-full h-full" preserveAspectRatio="xMidYMid meet">
+                    <g fill="none" stroke="#1e6899" stroke-width="1" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M49.4,15.7c-13.4-10-32.3-7.4-42.4,6s-7.4,32.3,6,42.4s32.3,7.4,42.4-6c8.1-10.8,8.1-25.6,0-36.4"/>
+                      <path d="M40.7,24.5c-8.5-5.2-19.7-2.5-24.9,6s-2.5,19.7,6,24.9s19.7,2.5,24.9-6c3.6-5.8,3.6-13.1,0-18.9"/>
+                      <line x1="31.4" y1="39.8" x2="55.2" y2="16"/>
+                      <polyline points="31.2,40 55,16.3 61.8,16.3 69.6,8.4 62.4,9 63.1,1 55.4,8.8 55,16.3"/>
+                      <path d="M31.3,33.9L31.3,33.9c-3.3,0-6,2.7-6,6c0,3.3,2.7,6,6,6c3.3,0,6-2.7,6-6"/>
+                    </g>
+                  </svg>
+                </div>
+                <h3 class="text-gray-700 font-medium text-xl sm:text-2xl tracking-wider md:pl-1">
+                  AI Strategy
+                </h3>
+              </div>
+              <div class="flex-grow pt-1 pb-4 border-b-4 border-[#1d7296]/10 transition-colors duration-500 group-hover:border-[#1d7296]/20">
+                <p class="text-gray-600 leading-relaxed text-sm">
+                  Starting in AI when you only have a problem or data can be quite challenging. We devise an executable AI strategy starting from your problem or data. Value proposition first, technology second.
+                </p>
+              </div>
             </div>
-          </header>
-          <div class="flex-1 mt-8 w-full">
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-4">
-              <div class="group flex flex-col px-2 pt-2 pb-4 h-full">
-                <div class="flex items-center gap-2">
-                  <div class="relative w-28 h-28 flex-shrink-0 flex items-center justify-center transition-transform duration-500 group-hover:scale-105 p-3">
-                    <div class="absolute w-14 h-14 top-[29.5%] left-[20.5%] bg-[#eaf6fb]/70 rounded-full transition-transform duration-500 group-hover:scale-110"></div>
-                    <svg viewBox="0 0 70.6 71.2" class="relative z-10 w-full h-full" preserveAspectRatio="xMidYMid meet">
-                      <g fill="none" stroke="#1e6899" stroke-width="1" stroke-linecap="round" stroke-linejoin="round">
-                        <path d="M49.4,15.7c-13.4-10-32.3-7.4-42.4,6s-7.4,32.3,6,42.4s32.3,7.4,42.4-6c8.1-10.8,8.1-25.6,0-36.4"/>
-                        <path d="M40.7,24.5c-8.5-5.2-19.7-2.5-24.9,6s-2.5,19.7,6,24.9s19.7,2.5,24.9-6c3.6-5.8,3.6-13.1,0-18.9"/>
-                        <line x1="31.4" y1="39.8" x2="55.2" y2="16"/>
-                        <polyline points="31.2,40 55,16.3 61.8,16.3 69.6,8.4 62.4,9 63.1,1 55.4,8.8 55,16.3"/>
-                        <path d="M31.3,33.9L31.3,33.9c-3.3,0-6,2.7-6,6c0,3.3,2.7,6,6,6c3.3,0,6-2.7,6-6"/>
-                      </g>
-                    </svg>
-                  </div>
-                  <h3 class="text-gray-700 font-medium text-xl sm:text-2xl tracking-wider md:pl-1">
-                    AI Strategy
-                  </h3>
+            <div class="group flex flex-col px-2 pt-2 pb-4 h-full">
+              <div class="flex items-center gap-2">
+                <div class="relative w-28 h-28 flex-shrink-0 flex items-center justify-center transition-transform duration-500 group-hover:scale-105 p-3">
+                  <div class="absolute w-14 h-14 top-[25%] left-[25%] bg-[#eaf6fb]/70 rounded-full transition-transform duration-500 group-hover:scale-110"></div>
+                  <svg viewBox="0 0 79 83.8" class="relative z-10 w-full h-full" preserveAspectRatio="xMidYMid meet">
+                    <g fill="none" stroke="#1e6899" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round">
+                      <circle cx="39.5" cy="7" r="6"/>
+                      <line x1="39.5" y1="26.7" x2="39.5" y2="13"/>
+                      <circle cx="39.5" cy="76.8" r="6"/>
+                      <line x1="39.5" y1="57.1" x2="39.5" y2="70.8"/>
+                      <rect x="24.3" y="26.7" width="30.4" height="30.4"/>
+                      <circle cx="72" cy="22.4" r="6"/>
+                      <line x1="54.9" y1="32.2" x2="66.8" y2="25.4"/>
+                      <circle cx="7" cy="22.4" r="6"/>
+                      <line x1="24.1" y1="32.2" x2="12.2" y2="25.4"/>
+                      <circle cx="7" cy="61.3" r="6"/>
+                      <line x1="24.1" y1="51.5" x2="12.2" y2="58.3"/>
+                      <circle cx="72" cy="61.3" r="6"/>
+                      <line x1="54.9" y1="51.5" x2="66.8" y2="58.3"/>
+                    </g>
+                  </svg>
                 </div>
-                <div class="flex-grow pt-1 pb-4 border-b-4 border-[#1d7296]/10 transition-colors duration-500 group-hover:border-[#1d7296]/20">
-                  <p class="text-gray-600 leading-relaxed text-sm">
-                    Starting in AI when you only have a problem or data can be quite challenging. We devise an executable AI strategy starting from your problem or data. Value proposition first, technology second.
-                  </p>
-                </div>
+                <h3 class="text-gray-700 font-medium text-xl sm:text-2xl tracking-wider md:pl-1">
+                  Data & Analytics Architecture
+                </h3>
               </div>
-              <div class="group flex flex-col px-2 pt-2 pb-4 h-full">
-                <div class="flex items-center gap-2">
-                  <div class="relative w-28 h-28 flex-shrink-0 flex items-center justify-center transition-transform duration-500 group-hover:scale-105 p-3">
-                    <div class="absolute w-14 h-14 top-[25%] left-[25%] bg-[#eaf6fb]/70 rounded-full transition-transform duration-500 group-hover:scale-110"></div>
-                    <svg viewBox="0 0 79 83.8" class="relative z-10 w-full h-full" preserveAspectRatio="xMidYMid meet">
-                      <g fill="none" stroke="#1e6899" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round">
-                        <circle cx="39.5" cy="7" r="6"/>
-                        <line x1="39.5" y1="26.7" x2="39.5" y2="13"/>
-                        <circle cx="39.5" cy="76.8" r="6"/>
-                        <line x1="39.5" y1="57.1" x2="39.5" y2="70.8"/>
-                        <rect x="24.3" y="26.7" width="30.4" height="30.4"/>
-                        <circle cx="72" cy="22.4" r="6"/>
-                        <line x1="54.9" y1="32.2" x2="66.8" y2="25.4"/>
-                        <circle cx="7" cy="22.4" r="6"/>
-                        <line x1="24.1" y1="32.2" x2="12.2" y2="25.4"/>
-                        <circle cx="7" cy="61.3" r="6"/>
-                        <line x1="24.1" y1="51.5" x2="12.2" y2="58.3"/>
-                        <circle cx="72" cy="61.3" r="6"/>
-                        <line x1="54.9" y1="51.5" x2="66.8" y2="58.3"/>
-                      </g>
-                    </svg>
-                  </div>
-                  <h3 class="text-gray-700 font-medium text-xl sm:text-2xl tracking-wider md:pl-1">
-                    Data & Analytics Architecture
-                  </h3>
-                </div>
-                <div class="flex-grow pt-1 pb-4 border-b-4 border-[#1d7296]/10 transition-colors duration-500 group-hover:border-[#1d7296]/20">
-                  <p class="text-gray-600 leading-relaxed text-sm">
-                    Right architecture is key when building scalable AI solutions. We use years&rsquo; experience to design the best AI architecture for you with the right algorithms, tooling and infrastructure.
-                  </p>
-                </div>
+              <div class="flex-grow pt-1 pb-4 border-b-4 border-[#1d7296]/10 transition-colors duration-500 group-hover:border-[#1d7296]/20">
+                <p class="text-gray-600 leading-relaxed text-sm">
+                  Right architecture is key when building scalable AI solutions. We use years&rsquo; experience to design the best AI architecture for you with the right algorithms, tooling and infrastructure.
+                </p>
               </div>
-              <div class="group flex flex-col px-2 pt-2 pb-4 h-full">
-                <div class="flex items-center gap-2">
-                  <div class="relative w-28 h-28 flex-shrink-0 flex items-center justify-center transition-transform duration-500 group-hover:scale-105 p-3">
-                    <div class="absolute w-14 h-14 top-[25%] left-[17%] bg-[#eaf6fb]/70 rounded-full transition-transform duration-500 group-hover:scale-110"></div>
-                    <svg viewBox="0 0 79.1 64" class="relative z-10 w-full h-full" preserveAspectRatio="xMidYMid meet">
-                      <g fill="none" stroke="#1e6899" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round">
-                        <path d="M32,17.2V4.3C32,2.5,30.5,1,28.7,1H4.3C2.5,1,1,2.5,1,4.3v55.4C1,61.5,2.5,63,4.3,63h24.4
-                        c1.8,0,3.3-1.5,3.3-3.3V46.4"/>
-                        <polyline points="23,20.9 54.5,20.9 59.1,16.3"/>
-                        <line x1="23" y1="28.2" x2="66.1" y2="28.2"/>
-                        <polyline points="23,35.4 55,35.4 59.4,40"/>
-                        <polyline points="23,42.7 40.1,42.7 45.1,47.9"/>
-                        <circle cx="63.2" cy="11.9" r="6"/>
-                        <circle cx="72.1" cy="28.2" r="6"/>
-                        <circle cx="63.5" cy="44.3" r="6"/>
-                        <circle cx="49.3" cy="52.1" r="6"/>
-                      </g>
-                    </svg>
-                  </div>
-                  <h3 class="text-gray-700 font-medium text-xl sm:text-2xl tracking-wider md:pl-1">
-                    ML Engineering
-                  </h3>
+            </div>
+            <div class="group flex flex-col px-2 pt-2 pb-4 h-full">
+              <div class="flex items-center gap-2">
+                <div class="relative w-28 h-28 flex-shrink-0 flex items-center justify-center transition-transform duration-500 group-hover:scale-105 p-3">
+                  <div class="absolute w-14 h-14 top-[25%] left-[17%] bg-[#eaf6fb]/70 rounded-full transition-transform duration-500 group-hover:scale-110"></div>
+                  <svg viewBox="0 0 79.1 64" class="relative z-10 w-full h-full" preserveAspectRatio="xMidYMid meet">
+                    <g fill="none" stroke="#1e6899" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M32,17.2V4.3C32,2.5,30.5,1,28.7,1H4.3C2.5,1,1,2.5,1,4.3v55.4C1,61.5,2.5,63,4.3,63h24.4
+                      c1.8,0,3.3-1.5,3.3-3.3V46.4"/>
+                      <polyline points="23,20.9 54.5,20.9 59.1,16.3"/>
+                      <line x1="23" y1="28.2" x2="66.1" y2="28.2"/>
+                      <polyline points="23,35.4 55,35.4 59.4,40"/>
+                      <polyline points="23,42.7 40.1,42.7 45.1,47.9"/>
+                      <circle cx="63.2" cy="11.9" r="6"/>
+                      <circle cx="72.1" cy="28.2" r="6"/>
+                      <circle cx="63.5" cy="44.3" r="6"/>
+                      <circle cx="49.3" cy="52.1" r="6"/>
+                    </g>
+                  </svg>
                 </div>
-                <div class="flex-grow pt-1 pb-4 border-b-4 border-[#1d7296]/10 transition-colors duration-500 group-hover:border-[#1d7296]/20">
-                  <p class="text-gray-600 leading-relaxed text-sm">
-                    Training machine learning (ML) models is only a part of the problem. Best ML models are the ones that solve problems in the wild. We engineer systems to put ML models into real use.
-                  </p>
-                </div>
+                <h3 class="text-gray-700 font-medium text-xl sm:text-2xl tracking-wider md:pl-1">
+                  ML Engineering
+                </h3>
               </div>
-              <div class="group flex flex-col px-2 pt-2 pb-4 h-full">
-                <div class="flex items-center gap-2">
-                  <div class="relative w-28 h-28 flex-shrink-0 flex items-center justify-center transition-transform duration-500 group-hover:scale-105 p-3">
-                    <div class="absolute w-14 h-14 top-[3.5%] left-[29.5%] bg-[#eaf6fb]/70 rounded-full transition-transform duration-500 group-hover:scale-110"></div>
-                    <svg viewBox="0 0 77.6 77.9" class="relative z-10 w-full h-full" preserveAspectRatio="xMidYMid meet">
-                      <g fill="none" stroke="#1e6899" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round">
-                        <path d="M2.33,55.29S17,45.6,26.8,48.85c5.87,1.95,13.56,5.77,22.41,9.8A2.94,2.94,0,0,0,52,58.44l16.15-10.6s4.18-3.3,7.29.53c0,0,3.51,3.48-1.86,7.07,0,0-21,15.13-28.35,19.58C42.85,76.47,40.82,78,34,75c0,0-11.51-5.44-15.68-6.22s-6-2.3-17.36,8.18"/>
-                        <path d="M28.62,61.19s10,5.47,18.29,5.23c0,0,7.38-.08,3.58-7.19"/>
-                        <path d="M36.5,45.49V40.11c-.24-6.3-5.06-10.49-5.06-10.49"/>
-                        <path d="M50.16,45.49V40.11C50.16,34.5,55.74,29,55.74,29a17.1,17.1,0,0,0,4-11.06A16.69,16.69,0,0,0,43.31,1,16.69,16.69,0,0,0,26.87,17.91a17.14,17.14,0,0,0,4.57,11.71"/>
-                        <polyline points="36.39 21.87 40.94 26.23 51.45 13.68"/>
-                      </g>
-                    </svg>
-                  </div>
-                  <h3 class="text-gray-700 font-medium text-xl sm:text-2xl tracking-wider md:pl-1">
-                    Chief AI Officer
-                  </h3>
-                </div>
-                <div class="flex-grow pt-1 pb-4 border-b-4 border-[#1d7296]/10 transition-colors duration-500 group-hover:border-[#1d7296]/20">
-                  <p class="text-gray-600 leading-relaxed text-sm">
-                    We work closely with founders and leadership teams as the Chief AI Officer from early stages of AI products and services. Zero technical knowledge is expected, we will break it down for you.
-                  </p>
-                </div>
+              <div class="flex-grow pt-1 pb-4 border-b-4 border-[#1d7296]/10 transition-colors duration-500 group-hover:border-[#1d7296]/20">
+                <p class="text-gray-600 leading-relaxed text-sm">
+                  Training machine learning (ML) models is only a part of the problem. Best ML models are the ones that solve problems in the wild. We engineer systems to put ML models into real use.
+                </p>
               </div>
-              <div class="group flex flex-col px-2 pt-2 pb-4 h-full">
-                <div class="flex items-center gap-2">
-                  <div class="relative w-28 h-28 flex-shrink-0 flex items-center justify-center transition-transform duration-500 group-hover:scale-105 p-3">
-                    <div class="absolute w-14 h-14 top-[14%] left-[25%] bg-[#eaf6fb]/70 rounded-full transition-transform duration-500 group-hover:scale-110"></div>
-                    <svg viewBox="0 0 63.5 70.8" class="relative z-10 w-full h-full" preserveAspectRatio="xMidYMid meet">
-                      <g fill="none" stroke="#1e6899" stroke-width="1" stroke-linecap="round" stroke-linejoin="round">
-                        <polyline points="44.4,24 61,1 61,12.3 "/>
-                        <line x1="29.5" y1="22.9" x2="35.3" y2="26"/>
-                        <line x1="11.1" y1="34.1" x2="19.9" y2="24.6"/>
-                        <rect x="2.2" y="52.3" width="9.8" height="17.4"/>
-                        <rect x="19.3" y="39.8" width="9.8" height="29.9"/>
-                        <rect x="35.9" y="46.9" width="9.8" height="22.9"/>
-                        <rect x="52.7" y="32" width="9.8" height="37.7"/>
-                        <line x1="49.3" y1="3.5" x2="61" y2="1"/>
-                        <circle cx="7" cy="38.5" r="6"/>
-                        <circle cx="24.2" cy="20" r="6"/>
-                        <circle cx="40.8" cy="28.8" r="6"/>
-                      </g>
-                    </svg>
-                  </div>
-                  <h3 class="text-gray-700 font-medium text-xl sm:text-2xl tracking-wider md:pl-1">
-                    AI Consultancy
-                  </h3>
+            </div>
+            <div class="group flex flex-col px-2 pt-2 pb-4 h-full">
+              <div class="flex items-center gap-2">
+                <div class="relative w-28 h-28 flex-shrink-0 flex items-center justify-center transition-transform duration-500 group-hover:scale-105 p-3">
+                  <div class="absolute w-14 h-14 top-[3.5%] left-[29.5%] bg-[#eaf6fb]/70 rounded-full transition-transform duration-500 group-hover:scale-110"></div>
+                  <svg viewBox="0 0 77.6 77.9" class="relative z-10 w-full h-full" preserveAspectRatio="xMidYMid meet">
+                    <g fill="none" stroke="#1e6899" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M2.33,55.29S17,45.6,26.8,48.85c5.87,1.95,13.56,5.77,22.41,9.8A2.94,2.94,0,0,0,52,58.44l16.15-10.6s4.18-3.3,7.29.53c0,0,3.51,3.48-1.86,7.07,0,0-21,15.13-28.35,19.58C42.85,76.47,40.82,78,34,75c0,0-11.51-5.44-15.68-6.22s-6-2.3-17.36,8.18"/>
+                      <path d="M28.62,61.19s10,5.47,18.29,5.23c0,0,7.38-.08,3.58-7.19"/>
+                      <path d="M36.5,45.49V40.11c-.24-6.3-5.06-10.49-5.06-10.49"/>
+                      <path d="M50.16,45.49V40.11C50.16,34.5,55.74,29,55.74,29a17.1,17.1,0,0,0,4-11.06A16.69,16.69,0,0,0,43.31,1,16.69,16.69,0,0,0,26.87,17.91a17.14,17.14,0,0,0,4.57,11.71"/>
+                      <polyline points="36.39 21.87 40.94 26.23 51.45 13.68"/>
+                    </g>
+                  </svg>
                 </div>
-                <div class="flex-grow pt-1 pb-4 border-b-4 border-[#1d7296]/10 transition-colors duration-500 group-hover:border-[#1d7296]/20">
-                  <p class="text-gray-600 leading-relaxed text-sm">
-                    Wondering how AI will add value to your product or service but not sure where to start? We have helped many businesses implement AI and transform their products&thinsp;/&thinsp;services for today&rsquo;s world.
-                  </p>
-                </div>
+                <h3 class="text-gray-700 font-medium text-xl sm:text-2xl tracking-wider md:pl-1">
+                  Chief AI Officer
+                </h3>
               </div>
-              <div class="group flex flex-col px-2 pt-2 pb-4 h-full">
-                <div class="flex items-center gap-2">
-                  <div class="relative w-28 h-28 flex-shrink-0 flex items-center justify-center transition-transform duration-500 group-hover:scale-105 p-3">
-                    <div class="absolute w-14 h-14 top-[26%] left-[24%] bg-[#eaf6fb]/70 rounded-full transition-transform duration-500 group-hover:scale-110"></div>
-                    <svg viewBox="0 0 88.34 78.66" class="relative z-10 w-full h-full" preserveAspectRatio="xMidYMid meet">
-                      <g fill="none" stroke="#1e6899" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round">
-                        <path d="M28.64,4.47s20.44-11.81,35,8.1"/>
-                        <line x1="64.59" y1="6.13" x2="63.68" y2="12.66"/>
-                        <line x1="57.33" y1="12.66" x2="63.68" y2="12.57"/>
-                        <path d="M54.34,74.19S33.9,86,19.3,66.09"/>
-                        <line x1="18.39" y1="72.52" x2="19.3" y2="66"/>
-                        <line x1="25.65" y1="66" x2="19.3" y2="66.09"/>
-                        <path d="M27.94,57.78V48.39h5.55s2.64-.14,2.64-4.07V37.69h3.51a.87.87,0,0,0,.8-1.22l-4.32-9.7a1.27,1.27,0,0,1-.1-.64c.22-2.33.77-16.29-17.82-16.29,0,0-17.21.3-17.21,17.31a17,17,0,0,0,5,11c2.19,2.2,3.43,5.85,3.43,12v8.17"/>
-                        <path d="M60.4,67.51V58.12H54.85S52.2,58,52.2,54.05V47.42H48.7a.87.87,0,0,1-.8-1.22l4-9a4.11,4.11,0,0,0,.36-1.85c-.18-3.44.41-15.74,17.86-15.74,0,0,17.21.3,17.21,17.31a17,17,0,0,1-5,11c-2.19,2.2-3.43,5.85-3.43,12V68"/>
-                      </g>
-                    </svg>
-                  </div>
-                  <h3 class="text-gray-700 font-medium text-xl sm:text-2xl tracking-wider md:pl-1">
-                    Training and Workshops
-                  </h3>
+              <div class="flex-grow pt-1 pb-4 border-b-4 border-[#1d7296]/10 transition-colors duration-500 group-hover:border-[#1d7296]/20">
+                <p class="text-gray-600 leading-relaxed text-sm">
+                  We work closely with founders and leadership teams as the Chief AI Officer from early stages of AI products and services. Zero technical knowledge is expected, we will break it down for you.
+                </p>
+              </div>
+            </div>
+            <div class="group flex flex-col px-2 pt-2 pb-4 h-full">
+              <div class="flex items-center gap-2">
+                <div class="relative w-28 h-28 flex-shrink-0 flex items-center justify-center transition-transform duration-500 group-hover:scale-105 p-3">
+                  <div class="absolute w-14 h-14 top-[14%] left-[25%] bg-[#eaf6fb]/70 rounded-full transition-transform duration-500 group-hover:scale-110"></div>
+                  <svg viewBox="0 0 63.5 70.8" class="relative z-10 w-full h-full" preserveAspectRatio="xMidYMid meet">
+                    <g fill="none" stroke="#1e6899" stroke-width="1" stroke-linecap="round" stroke-linejoin="round">
+                      <polyline points="44.4,24 61,1 61,12.3 "/>
+                      <line x1="29.5" y1="22.9" x2="35.3" y2="26"/>
+                      <line x1="11.1" y1="34.1" x2="19.9" y2="24.6"/>
+                      <rect x="2.2" y="52.3" width="9.8" height="17.4"/>
+                      <rect x="19.3" y="39.8" width="9.8" height="29.9"/>
+                      <rect x="35.9" y="46.9" width="9.8" height="22.9"/>
+                      <rect x="52.7" y="32" width="9.8" height="37.7"/>
+                      <line x1="49.3" y1="3.5" x2="61" y2="1"/>
+                      <circle cx="7" cy="38.5" r="6"/>
+                      <circle cx="24.2" cy="20" r="6"/>
+                      <circle cx="40.8" cy="28.8" r="6"/>
+                    </g>
+                  </svg>
                 </div>
-                <div class="flex-grow pt-1 pb-4 border-b-4 border-[#1d7296]/10 transition-colors duration-500 group-hover:border-[#1d7296]/20">
-                  <p class="text-gray-600 leading-relaxed text-sm">
-                    We love sharing what we know. Our experience in both the industry and academia can get your team up to speed in AI. We have trained many individuals to be experts in the field and built communities from the ground up.
-                  </p>
+                <h3 class="text-gray-700 font-medium text-xl sm:text-2xl tracking-wider md:pl-1">
+                  AI Consultancy
+                </h3>
+              </div>
+              <div class="flex-grow pt-1 pb-4 border-b-4 border-[#1d7296]/10 transition-colors duration-500 group-hover:border-[#1d7296]/20">
+                <p class="text-gray-600 leading-relaxed text-sm">
+                  Wondering how AI will add value to your product or service but not sure where to start? We have helped many businesses implement AI and transform their products&thinsp;/&thinsp;services for today&rsquo;s world.
+                </p>
+              </div>
+            </div>
+            <div class="group flex flex-col px-2 pt-2 pb-4 h-full">
+              <div class="flex items-center gap-2">
+                <div class="relative w-28 h-28 flex-shrink-0 flex items-center justify-center transition-transform duration-500 group-hover:scale-105 p-3">
+                  <div class="absolute w-14 h-14 top-[26%] left-[24%] bg-[#eaf6fb]/70 rounded-full transition-transform duration-500 group-hover:scale-110"></div>
+                  <svg viewBox="0 0 88.34 78.66" class="relative z-10 w-full h-full" preserveAspectRatio="xMidYMid meet">
+                    <g fill="none" stroke="#1e6899" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M28.64,4.47s20.44-11.81,35,8.1"/>
+                      <line x1="64.59" y1="6.13" x2="63.68" y2="12.66"/>
+                      <line x1="57.33" y1="12.66" x2="63.68" y2="12.57"/>
+                      <path d="M54.34,74.19S33.9,86,19.3,66.09"/>
+                      <line x1="18.39" y1="72.52" x2="19.3" y2="66"/>
+                      <line x1="25.65" y1="66" x2="19.3" y2="66.09"/>
+                      <path d="M27.94,57.78V48.39h5.55s2.64-.14,2.64-4.07V37.69h3.51a.87.87,0,0,0,.8-1.22l-4.32-9.7a1.27,1.27,0,0,1-.1-.64c.22-2.33.77-16.29-17.82-16.29,0,0-17.21.3-17.21,17.31a17,17,0,0,0,5,11c2.19,2.2,3.43,5.85,3.43,12v8.17"/>
+                      <path d="M60.4,67.51V58.12H54.85S52.2,58,52.2,54.05V47.42H48.7a.87.87,0,0,1-.8-1.22l4-9a4.11,4.11,0,0,0,.36-1.85c-.18-3.44.41-15.74,17.86-15.74,0,0,17.21.3,17.21,17.31a17,17,0,0,1-5,11c-2.19,2.2-3.43,5.85-3.43,12V68"/>
+                    </g>
+                  </svg>
                 </div>
+                <h3 class="text-gray-700 font-medium text-xl sm:text-2xl tracking-wider md:pl-1">
+                  Training and Workshops
+                </h3>
+              </div>
+              <div class="flex-grow pt-1 pb-4 border-b-4 border-[#1d7296]/10 transition-colors duration-500 group-hover:border-[#1d7296]/20">
+                <p class="text-gray-600 leading-relaxed text-sm">
+                  We love sharing what we know. Our experience in both the industry and academia can get your team up to speed in AI. We have trained many individuals to be experts in the field and built communities from the ground up.
+                </p>
               </div>
             </div>
           </div>
