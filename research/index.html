@@ -119,13 +119,14 @@
               <div class="md:col-span-1 flex justify-center">
                 <div class="w-24 h-24 md:w-40 md:h-40">
                   <svg viewBox="0 0 100 100" class="w-full h-full">
-                    <!-- Sphere outline -->
-                    <path fill="none" stroke="#ab6183" stroke-width="1"
-                          d="M50,5 A45,45 0 1,1 50,95 A45,45 0 1,1 50,5"/>
-                    <!-- Bottom half of equator (behind, dashed) -->
-                    <path fill="none" stroke="#ab6183" stroke-width="1" d="M5,50 A45,12 0 0,0 95,50"/>
-                    <!-- Top half of equator (front, solid) -->
-                    <path fill="none" stroke="#ab6183" stroke-width="1" stroke-dasharray="2,2" d="M5,50 A45,12 0 0,1 95,50"/>
+                    <g fill="none" stroke="#ab6183" stroke-width="1">
+                      <!-- Sphere outline -->
+                      <path d="M50,5 A45,45 0 1,1 50,95 A45,45 0 1,1 50,5"/>
+                      <!-- Bottom half of equator (behind, dashed) -->
+                      <path d="M5,50 A45,12 0 0,0 95,50"/>
+                      <!-- Top half of equator (front, solid) -->
+                      <path stroke-dasharray="2,2" d="M5,50 A45,12 0 0,1 95,50"/>
+                    </g>
                   </svg>
                 </div>
               </div>
