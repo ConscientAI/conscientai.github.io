@@ -84,6 +84,21 @@
           transform: translateX(150%);
         }
       }
+
+      .grainy-overlay {
+        position: relative;
+        isolation: isolate;
+      }
+
+      .grainy-overlay::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        z-index: -1;
+        opacity: 0.3;
+        filter: contrast(120%) brightness(120%);
+        background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+      }
     </style>
   </head>
 
@@ -167,19 +182,15 @@
             <span class="block">AI Solutions & Research</span>
           </h1>
           <!-- Sub text -->
-          <p class="text-lg sm:text-xl mb-6 text-gray-600 max-w-2xl">
+          <p class="text-lg sm:text-xl mb-6 text-gray-800 max-w-2xl">
             <!-- Some introductory text for the hero section. Add a short, compelling line that explains your value proposition. -->
             From cutting-edge research to production-ready systems, helping businesses adopt AI with confidence since 2017.
           </p>
           <!-- Call to action -->
-          <button class="group relative overflow-hidden pl-6 pr-5 text-sm font-bold py-3 bg-gradient-to-r from-[#1b6d90] to-[#ab6183] text-white rounded-full shadow-md">
-            <!-- Dark overlay for hover/active transition -->
-            <span class="absolute inset-0 bg-black opacity-0 transition-opacity duration-100 group-hover:opacity-10 group-hover:delay-[100ms] group-active:opacity-10"></span>
-            <!-- Shimmer -->
-            <span class="absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/20 to-transparent pointer-events-none group-hover:animate-[shimmer_1s_ease-out]"></span>
+          <button class="group relative overflow-hidden pl-6 pr-5 text-sm font-bold bg-white py-3 border border-gray-800 rounded-full shadow-md transition-shadow duration-300 hover:shadow-lg">
             <!-- Button text -->
             <span class="relative z-10 uppercase tracking-wider flex items-center justify-center gap-1 pointer-events-none">
-              Read latest insights<i class="bi bi-arrow-right [-webkit-text-stroke:1px] ml-1 inline-block transition-transform duration-500 group-hover:translate-x-0.5"></i>
+              Read latest insights<i class="bi bi-arrow-right [-webkit-text-stroke:1px] inline-block transition-transform duration-500 group-hover:translate-x-1"></i>
             </span>
           </button>
         </section>
@@ -187,11 +198,11 @@
         <section class="grid grid-cols-1 sm:grid-cols-3 flex-1 sm:flex-[0.4] gap-4 p-4">
           <!-- Services card -->
           <a href="/services" class="group block h-full">
-            <div class="flex flex-col h-full p-4 bg-[#eaf6fb] bg-opacity-70 text-center rounded-lg">
+            <div class="flex flex-col h-full p-4 grainy-overlay bg-[#eaf6fb] text-center rounded-lg border border-[#113a55] shadow-sm transition-shadow duration-300 hover:shadow-lg">
               <!-- Services icon -->
               <div class="flex-[2] flex items-center justify-center">
                 <svg class="w-16 h-16 sm:w-24 sm:h-24 transition-transform duration-700 group-hover:-translate-y-1" viewBox="0 0 100 100">
-                  <g fill="none" stroke="#1e6899" stroke-width="1">
+                  <g fill="none" stroke="#113a55" stroke-width="1">
                     <!-- Hexagon outline -->
                     <path d="M50 5 L88.97 27.5 L88.97 72.5 L50 95 L11.03 72.5 L11.03 27.5 Z"/>
                     <!-- Internal edges -->
@@ -207,7 +218,7 @@
               <!-- Services description -->
               <div class="flex-[1] mt-4 flex flex-col justify-center">
                 <h3 class="text-lg font-semibold uppercase tracking-widest text-left mb-1">Services</h3>
-                <p class="text-left text-gray-700 text-sm leading-relaxed">
+                <p class="text-left text-[#081d2b] text-sm leading-relaxed">
                   We design and implement tailored AI solutions that balance innovation with usability. Our focus is on delivering measurable impact for your business.
                 </p>
               </div>
@@ -215,11 +226,11 @@
           </a>
           <!-- Research card -->
           <a href="/research" class="group block h-full">
-            <div class="flex flex-col h-full p-4 bg-[#fde8ed] bg-opacity-70 text-center rounded-lg">
+            <div class="flex flex-col h-full p-4 grainy-overlay bg-[#fde8ed] text-center rounded-lg border border-[#5e081d] shadow-sm transition-shadow duration-300 hover:shadow-lg">
               <!-- Research icon -->
               <div class="flex-[2] flex items-center justify-center">
                 <svg class="w-16 h-16 sm:w-24 sm:h-24 transition-transform duration-700 group-hover:-translate-y-1" viewBox="0 0 100 100">
-                  <g fill="none" stroke="#ab6183" stroke-width="1">
+                  <g fill="none" stroke="#5e081d" stroke-width="1">
                     <!-- Sphere outline -->
                     <path d="M50,5 A45,45 0 1,1 50,95 A45,45 0 1,1 50,5"/>
                     <!-- Bottom half of equator (behind, dashed) -->
@@ -232,7 +243,7 @@
               <!-- Research description -->
               <div class="flex-[1] mt-4 flex flex-col justify-center">
                 <h3 class="text-lg font-semibold uppercase tracking-widest text-left mb-1">Research</h3>
-                <p class="text-left text-gray-700 text-sm leading-relaxed">
+                <p class="text-left text-[#2f040e] text-sm leading-relaxed">
                   Our research blends deep technical inquiry with human-centered design principles. Explore how AI can enhance creativity ethics, and, decision-making.
                 </p>
               </div>
@@ -240,11 +251,11 @@
           </a>
           <!-- Case studies card -->
           <a href="/case-studies" class="group block h-full">
-            <div class="flex flex-col h-full p-4 bg-[#e8f9fc] bg-opacity-70 text-center rounded-lg">
+            <div class="flex flex-col h-full p-4 grainy-overlay bg-[#e8f9fc] text-center rounded-lg border border-[#0c4e5a] shadow-sm transition-shadow duration-300 hover:shadow-lg">
               <!-- Case studies icon -->
               <div class="flex-[2] flex items-center justify-center">
                 <svg class="w-16 h-16 sm:w-24 sm:h-24 transition-transform duration-700 group-hover:-translate-y-1" viewBox="0 0 100 100">
-                  <g fill="none" stroke="#4aa2b5" stroke-width="1">
+                  <g fill="none" stroke="#0c4e5a" stroke-width="1">
                     <!-- Top left -->
                     <line x1="5" y1="50" x2="50" y2="5"/>
                     <!-- Top middle -->
@@ -269,7 +280,7 @@
               <!-- Case studies description -->
               <div class="flex-[1] mt-4 flex flex-col justify-center">
                 <h3 class="text-lg font-semibold uppercase tracking-widest text-left mb-1">Case Studies</h3>
-                <p class="text-left text-gray-700 text-sm leading-relaxed">
+                <p class="text-left text-[#06272d] text-sm leading-relaxed">
                   See how organizations achieved transformation through applied AI expertise. Each story highlights real-world impact, strategy and measurable success.
                 </p>
               </div>

@@ -62,6 +62,21 @@
       summary {
         list-style: none;
       }
+
+      .grainy-overlay {
+        position: relative;
+        isolation: isolate;
+      }
+
+      .grainy-overlay::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        z-index: -1;
+        opacity: 0.3;
+        filter: contrast(120%) brightness(120%);
+        background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+      }
     </style>
   </head>
 
@@ -113,13 +128,13 @@
       </nav>
 
       <main class="flex flex-col flex-1">
-        <section class="w-full bg-[#fde8ed]/70 py-8 md:py-12">
+        <section class="w-full grainy-overlay bg-[#fde8ed] py-8 md:py-12">
           <div class="max-w-4xl mx-auto px-8 md:pl-8 md:pr-12">
             <div class="flex flex-col md:grid md:grid-cols-4 gap-6 items-center">
               <div class="md:col-span-1 flex justify-center">
                 <div class="w-24 h-24 md:w-40 md:h-40">
                   <svg viewBox="0 0 100 100" class="w-full h-full">
-                    <g fill="none" stroke="#ab6183" stroke-width="1">
+                    <g fill="none" stroke="#5e081d" stroke-width="1">
                       <!-- Sphere outline -->
                       <path d="M50,5 A45,45 0 1,1 50,95 A45,45 0 1,1 50,5"/>
                       <!-- Bottom half of equator (behind, dashed) -->
@@ -131,15 +146,15 @@
                 </div>
               </div>
               <div class="md:col-span-3 text-center md:text-left">
-                <span class="text-xs font-bold uppercase tracking-[0.2em] text-[#ab6183] mb-2 block">
+                <span class="text-xs font-bold uppercase tracking-[0.2em] text-[#5e081d] mb-2 block">
                   Research
                 </span>
-                <h1 class="text-gray-800 font-medium text-2xl sm:text-3xl tracking-wider md:pl-1" style="font-family: 'Geist', sans-serif;">
+                <h1 class="font-medium text-2xl sm:text-3xl tracking-wider md:pl-1" style="font-family: 'Geist', sans-serif;">
                   Exploring the frontiers of AI
                 </h1>
                 <!-- Take background color (#fde8ed) and drop lightness (in HSL) to 35% from 95% -> #a40e32 -->
                 <hr class="border-0 border-t border-[#a40e32]/10 mt-2 mb-3">
-                <p class="text-gray-600 max-w-2xl">
+                <p class="text-[#2f040e] max-w-2xl">
                   Research is at our core. Being involved in both theoretical and applied research keeps us at the cutting edge of AI.
                 </p>
               </div>

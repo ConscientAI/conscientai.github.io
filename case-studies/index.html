@@ -53,6 +53,21 @@
       .animate-mobile-menu-item {
         animation: fade-in 0.6s ease-out forwards;
       }
+
+      .grainy-overlay {
+        position: relative;
+        isolation: isolate;
+      }
+
+      .grainy-overlay::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        z-index: -1;
+        opacity: 0.3;
+        filter: contrast(120%) brightness(120%);
+        background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+      }
     </style>
   </head>
 
@@ -104,13 +119,13 @@
       </nav>
 
       <main class="flex flex-col flex-1">
-        <section class="w-full bg-[#e8f9fc]/70 py-8 md:py-12">
+        <section class="w-full grainy-overlay bg-[#e8f9fc] py-8 md:py-12">
           <div class="max-w-4xl mx-auto px-8 md:pl-8 md:pr-12">
             <div class="flex flex-col md:grid md:grid-cols-4 gap-6 items-center">
               <div class="md:col-span-1 flex justify-center">
                 <div class="w-24 h-24 md:w-40 md:h-40">
                   <svg class="transition-transform duration-700 group-hover:-translate-y-1" viewBox="0 0 100 100">
-                    <g fill="none" stroke="#4aa2b5" stroke-width="1">
+                    <g fill="none" stroke="#0c4e5a" stroke-width="1">
                       <!-- Top left -->
                       <line x1="5" y1="50" x2="50" y2="5"/>
                       <!-- Top middle -->
@@ -135,15 +150,15 @@
               </div>
               <div class="md:col-span-3 text-center md:text-left">
                 <!-- Take shape stroke color (#4aa2b5) and drop lightness (in HSL) to 45% from 50% -> #4392a3 -->
-                <span class="text-xs font-bold uppercase tracking-[0.2em] text-[#4392a3] mb-2 block">
+                <span class="text-xs font-bold uppercase tracking-[0.2em] text-[#0c4e5a] mb-2 block">
                   Case Studies
                 </span>
-                <h1 class="text-gray-800 font-medium text-2xl sm:text-3xl tracking-wider md:pl-1" style="font-family: 'Geist', sans-serif;">
+                <h1 class="font-medium text-2xl sm:text-3xl tracking-wider md:pl-1" style="font-family: 'Geist', sans-serif;">
                   Real-world impact, proven results
                 </h1>
                 <!-- Take background color (#e8f9fc) and drop lightness (in HSL) to 35% from 95% -> #15899e -->
                 <hr class="border-0 border-t border-[#15899e]/10 mt-2 mb-3">
-                <p class="text-gray-600 max-w-2xl">
+                <p class="text-[#06272d] max-w-2xl">
                   Read how we helped businesses implement cutting edge AI and transform their products and services.
                 </p>
               </div>
@@ -379,7 +394,7 @@
       // Grid content
       const grid = document.getElementById('case-study-grid');
       grid.innerHTML = caseStudies.map(caseStudy => `
-        <div onclick="openModal('${caseStudy.id}')" class="group flex flex-col p-4 bg-white cursor-pointer h-full border border-gray-100 transition-colors duration-300 hover:border-gray-300">
+        <div onclick="openModal('${caseStudy.id}')" class="group flex flex-col p-4 bg-white cursor-pointer h-full border border-[#0c4e5a] shadow-sm transition-shadow duration-300 hover:shadow-lg rounded-lg">
           <div class="mb-4">
             <div class="w-24 h-24 mb-2 overflow-hidden">
               <img src="${caseStudy.logo}" alt="${caseStudy.name} logo" class="w-full h-full object-cover">
@@ -388,7 +403,7 @@
             <h3 class="text-xl font-medium leading-tight">${caseStudy.name}</h3>
           </div>
           <p class="text-gray-800 leading-relaxed mb-6">${caseStudy.summary}</p>
-          <div class="mt-auto flex items-center text-[#4392a3] font-semibold text-xs uppercase tracking-widest">
+          <div class="mt-auto flex items-center text-[#0c4e5a] font-semibold text-xs uppercase tracking-widest">
             Learn more <i class="bi bi-arrow-right ml-1 transition-transform group-hover:translate-x-1"></i>
           </div>
         </div>
@@ -404,7 +419,7 @@
 
         content.innerHTML = `
           <div class="flex flex-col sm:flex-row items-start sm:items-center gap-4 sm:gap-6 mb-8">
-            <div class="w-24 h-24 flex-shrink-0 overflow-hidden border border-gray-100">
+            <div class="w-24 h-24 flex-shrink-0 overflow-hidden border border-gray-200 rounded-lg">
               <img src="${caseStudy.logo}" alt="${caseStudy.name} logo" class="w-full h-full object-cover">
             </div>
             <div class="flex flex-col justify-center sm:min-h-[6rem]">
@@ -431,7 +446,7 @@
             </div>
             ${caseStudy.fullCaseStudyUrl ? `
               <a href="${caseStudy.fullCaseStudyUrl}"
-                 class="inline-flex items-center mt-6 text-[#4392a3] font-semibold text-xs uppercase tracking-widest group/link">
+                 class="inline-flex items-center mt-6 text-[#0c4e5a] font-semibold text-xs uppercase tracking-widest group/link">
                  Read full case study
                  <i class="bi bi-arrow-right ml-1 transition-transform group-hover/link:translate-x-1"></i>
               </a>
