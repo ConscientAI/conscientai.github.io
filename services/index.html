@@ -119,15 +119,17 @@
               <div class="md:col-span-1 flex justify-center">
                 <div class="w-24 h-24 md:w-40 md:h-40">
                   <svg viewBox="0 0 100 100" class="w-full h-full">
-                    <!-- Hexagon outline -->
-                    <path fill="none" stroke="#1e6899" stroke-width="1" d="M50 5 L88.97 27.5 L88.97 72.5 L50 95 L11.03 72.5 L11.03 27.5 Z"/>
-                    <!-- Internal edges -->
-                    <line x1="50" y1="5" x2="50" y2="50" stroke="#1e6899" stroke-width="1" stroke-dasharray="2,2"/>
-                    <line x1="88.97" y1="72.5" x2="50" y2="50" stroke="#1e6899" stroke-width="1" stroke-dasharray="2,2"/>
-                    <line x1="11.03" y1="72.5" x2="50" y2="50" stroke="#1e6899" stroke-width="1" stroke-dasharray="2,2"/>
-                    <line x1="50" y1="95" x2="50" y2="50" stroke="#1e6899" stroke-width="1"/>
-                    <line x1="11.03" y1="27.5" x2="50" y2="50" stroke="#1e6899" stroke-width="1"/>
-                    <line x1="88.97" y1="27.5" x2="50" y2="50" stroke="#1e6899" stroke-width="1"/>
+                    <g fill="none" stroke="#1e6899" stroke-width="1">
+                      <!-- Hexagon outline -->
+                      <path d="M50 5 L88.97 27.5 L88.97 72.5 L50 95 L11.03 72.5 L11.03 27.5 Z"/>
+                      <!-- Internal edges -->
+                      <line x1="50" y1="5" x2="50" y2="50" stroke-dasharray="2,2"/>
+                      <line x1="88.97" y1="72.5" x2="50" y2="50" stroke-dasharray="2,2"/>
+                      <line x1="11.03" y1="72.5" x2="50" y2="50" stroke-dasharray="2,2"/>
+                      <line x1="50" y1="95" x2="50" y2="50"/>
+                      <line x1="11.03" y1="27.5" x2="50" y2="50"/>
+                      <line x1="88.97" y1="27.5" x2="50" y2="50"/>
+                    </g>
                   </svg>
                 </div>
               </div>
