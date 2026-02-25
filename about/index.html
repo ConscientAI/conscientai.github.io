@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About - ConscientAI</title>
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="icon" sizes="32x32" href="favicon-32x32.png" type="image/png">
+    <link rel="icon" sizes="16x16" href="favicon-16x16.png" type="image/png">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    <style>
+      #hamburger-btn.open span:nth-child(1) {
+        transform: translateY(7px) rotate(45deg);
+      }
+
+      #hamburger-btn.open span:nth-child(2) {
+        opacity: 0;
+      }
+
+      #hamburger-btn.open span:nth-child(3) {
+        transform: translateY(-7px) rotate(-45deg);
+      }
+
+      .scroll-lock {
+        position: fixed;
+        inset: 0;
+        width: 100%;
+        overflow: hidden;
+      }
+
+      /* Smooth scroll behavior */
+      html {
+        -webkit-overflow-scrolling: touch;
+      }
+      /* Mobile menu animation */
+      @keyframes fade-in {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .animate-mobile-menu-item {
+        animation: fade-in 0.6s ease-out forwards;
+      }
+
+      .grainy-image-overlay {
+        position: relative;
+        isolation: isolate;
+      }
+
+      .grainy-image-overlay::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        z-index: 10;
+        opacity: 0.2;
+        pointer-events: none;
+        filter: contrast(150%) brightness(100%);
+        background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+      }
+
+      /* Hide horizontal scrollbar for Chrome, Safari and Opera */
+      .no-scrollbar::-webkit-scrollbar {
+        display: none;
+      }
+      /* Hide horizontal scrollbar for IE, Edge and Firefox */
+      .no-scrollbar {
+        -ms-overflow-style: none;  /* IE and Edge */
+        scrollbar-width: none;  /* Firefox */
+      }
+    </style>
+  </head>
+
+  <body class="relative flex flex-col min-h-screen">
+    <!-- Above-the-fold container -->
+    <div id="above-fold" class="flex flex-col min-h-[100svh]">
+      <!-- Header -->
+      <header class="flex justify-between items-center p-4 bg-transparent relative z-50 shadow-[0_20px_50px_rgba(0,0,0,0.02)]">
+        <div class="flex items-center">
+          <a href="/">
+            <img src="/logo.svg" alt="Company Logo" class="h-10 w-auto">
+          </a>
+        </div>
+        <!-- Desktop Menu -->
+        <nav class="hidden sm:flex space-x-6 text-xs font-medium uppercase tracking-widest">
+          <a href="/services" class="group relative py-1">
+            Services
+            <span class="absolute bottom-[2px] left-0 h-[1px] w-0 bg-gray-900 transition-all duration-300 group-hover:w-full"></span>
+          </a>
+          <a href="/research" class="group relative py-1">
+            Research
+            <span class="absolute bottom-[2px] left-0 h-[1px] w-0 bg-gray-900 transition-all duration-300 group-hover:w-full"></span>
+          </a>
+          <a href="/case-studies" class="group relative py-1">
+            Case Studies
+            <span class="absolute bottom-[2px] left-0 h-[1px] w-0 bg-gray-900 transition-all duration-300 group-hover:w-full"></span>
+          </a>
+          <a href="#" class="group relative py-1">
+            About
+            <span class="absolute bottom-[2px] left-0 h-[1px] w-0 bg-gray-900 transition-all duration-300 group-hover:w-full"></span>
+          </a>
+        </nav>
+        <!-- Mobile Hamburger -->
+        <div class="sm:hidden">
+          <button id="hamburger-btn" class="relative w-6 h-4 flex flex-col justify-between items-center">
+            <span class="block w-6 h-[2px] bg-gray-800 transition-all duration-300 ease-in-out"></span>
+            <span class="block w-6 h-[2px] bg-gray-800 transition-all duration-300 ease-in-out"></span>
+            <span class="block w-6 h-[2px] bg-gray-800 transition-all duration-300 ease-in-out"></span>
+          </button>
+        </div>
+      </header>
+
+      <!-- Mobile Menu -->
+      <nav id="mobile-menu" class="hidden fixed inset-0 w-full h-full bg-white flex flex-col items-center justify-center space-y-8 text-lg uppercase tracking-widest sm:hidden z-40">
+        <a href="/services" class="animate-mobile-menu-item opacity-0 [animation-delay:100ms] block transition-colors duration-200 active:text-gray-400">Services</a>
+        <a href="/research" class="animate-mobile-menu-item opacity-0 [animation-delay:200ms] block transition-colors duration-200 active:text-gray-400">Research</a>
+        <a href="/case-studies" class="animate-mobile-menu-item opacity-0 [animation-delay:300ms] block transition-colors duration-200 active:text-gray-400">Case Studies</a>
+        <a href="/about" class="animate-mobile-menu-item opacity-0 [animation-delay:400ms] block transition-colors duration-200 active:text-gray-400">About</a>
+      </nav>
+
+      <main class="flex flex-col items-center px-4">
+        <div class="w-full lg:max-w-3xl pt-16 sm:pt-24 pb-8">
+          <h2 class="text-3xl sm:text-4xl md:text-5xl leading-tight mb-12 italic text-left" style="font-family: 'Crimson Text', serif;">
+            ConscientAI is an award-winning AI technology company and research lab. We make AI accessible for businesses.
+          </h2>
+          <div class="text-gray-800 leading-relaxed">
+            <p class="mb-4">
+              Our team brings together experience from world-leading institutions and enterprises, with years of hands-on work applying cutting-edge AI across domains. Since our inception in 2017, ConscientAI has grown into a globally recognized AI solutions provider, serving clients across North America, Europe, Australia, Japan, and Sri Lanka.
+            </p>
+            <div class="py-2">
+              <figure class="group">
+                <div class="relative w-full h-64 md:h-96 rounded-lg overflow-hidden grainy-image-overlay">
+                  <img src="/img/photos/asiaberlin_2025.jpg" alt="AsiaBerlin Summit 2025" class="w-full h-full object-cover saturate-150">
+                  <div class="absolute inset-0 bg-black/20 mix-blend-multiply pointer-events-none z-10"></div>
+                  <div class="absolute bottom-0 left-0 p-2 bg-black/50 z-20">
+                    <a href="https://bizenglish.adaderana.lk/sri-lanka-takes-asiaberlin-by-storm-showcasing-innovation-startup-potential/" target="_blank" class="flex items-center text-[10px] font-bold uppercase tracking-widest text-gray-300 hover:text-white transition-colors">
+                      <i class="bi bi-camera-fill mr-1.5"></i>Adaderana Biz
+                    </a>
+                  </div>
+                </div>
+                <figcaption class="mt-3 text-center">
+                  <p class="text-sm text-gray-400 max-w-[90%] mx-auto">
+                    ConscientAI with the Sri Lankan delegation at 
+                    <a href="https://abs2025.asia.berlin" target="_blank" class="text-gray-400 underline decoration-gray-400/50 underline-offset-2 transition-all duration-300 hover:text-gray-600 hover:decoration-gray-600">AsiaBerlin Summit 2025</a>
+                  </p>
+                </figcaption>
+              </figure>
+            </div>
+            <p class="mt-4 mb-4">
+              We combine deep research with practical engineering. Our work has been recognized through industry awards and publications at top-tier conferences, including research featured in National Geographic. ConscientAI operates globally and is incorporated in Sri Lanka (ConscientAI Labs (Pvt) Ltd) and the United States (ConscientAI LLC).
+            </p>
+            <div class="flex md:grid md:grid-cols-2 gap-4 py-2 overflow-x-auto md:overflow-visible snap-x snap-mandatory no-scrollbar">
+              <figure class="group min-w-[85%] md:min-w-full snap-center">
+                <div class="relative aspect-square rounded-lg overflow-hidden grainy-image-overlay">
+                  <img src="/img/photos/paclic_2025.jpg" alt="PACLIC 2025" class="w-full h-full object-cover saturate-150">
+                  <div class="absolute inset-0 bg-black/20 mix-blend-multiply pointer-events-none z-10"></div>
+                </div>
+                <figcaption class="mt-3 text-center">
+                  <p class="text-sm text-gray-400 leading-relaxed max-w-[90%] mx-auto">
+                    Presenting our research at <a href="https://vlsp.org.vn/paclic2025/home" target="_blank" class="text-gray-400 underline decoration-gray-400/50 underline-offset-2 transition-all duration-300 hover:text-gray-600 hover:decoration-gray-600">PACLIC 2025</a>
+                  </p>
+                </figcaption>
+              </figure>
+              <figure class="group min-w-[85%] md:min-w-full snap-center">
+                <div class="relative aspect-square rounded-lg overflow-hidden grainy-image-overlay">
+                  <img src="/img/photos/wsai_2018.jpg" alt="World Summit AI 2018" class="w-full h-full object-cover saturate-100">
+                  <div class="absolute inset-0 bg-black/20 mix-blend-multiply pointer-events-none z-10"></div>
+                </div>
+                <figcaption class="mt-3 text-center">
+                  <p class="text-sm text-gray-400 leading-relaxed max-w-[90%] mx-auto">
+                    At <a href="https://worldsummit.ai" target="_blank" class="text-gray-400 underline decoration-gray-400/50 underline-offset-2 transition-all duration-300 hover:text-gray-600 hover:decoration-gray-600">World Summit AI 2018</a>
+                  </p>
+                </figcaption>
+              </figure>
+            </div>
+            <h2 class="text-xl font-medium mt-4 mb-2">Why work with us?</h2>
+            <p class="mb-4">
+              Despite the hype around AI, building truly useful, production-ready AI products remains challenging. Doing it well requires a rare combination of top-tier talent, continuous research, and years of hands-on experience. Yet many businesses lack access to this level of AI expertise. As a result, teams often take the wrong approach, and many AI initiatives fail to deliver in real-world settings.
+            </p>
+            <p class="mb-4">
+              We bridge this gap by bringing together applied experience, deep technical expertise, and ongoing AI research to deliver solutions that go beyond prototypes. We work as an extension of our clients’ teams, providing both strategic guidance and hands-on engineering.
+            </p>
+            <p class="mb-4">
+              This enables our clients to build scalable, maintainable AI systems aligned with their long-term business goals. We focus on turning AI from a buzzword into a reliable, high-impact business capability that solves real problems and delivers measurable value.
+            </p>
+            <h2 class="text-xl font-medium mt-6 mb-2">Who we work with</h2>
+            <p class="mb-4">
+              We work with technology companies, startups, and SMEs that are either exploring AI to solve business and operational challenges or building AI-powered products and services.
+            </p>
+            <p class="mb-4">
+              We typically work with founders, CXOs, or Heads of Data/AI who are responsible for driving technology strategy and execution. Our services cover the full AI lifecycle&mdash;from strategy and product engineering to deployment and ongoing improvement.
+            </p>
+          </div>
+        </div>
+      </main>
+    </div>
+    <!-- Footer -->
+    <footer class="bg-[#101010] text-white py-12">
+      <div class="container mx-auto px-6 md:px-12">
+        <!-- Top content: logo + columns -->
+        <div class="flex flex-col md:flex-row md:justify-between md:items-start gap-8">
+          <!-- Logo placeholder -->
+          <div class="flex-shrink-0 text-center md:text-left">
+            <img src="/logo_white.svg" alt="Company Logo" class="h-10 w-auto mb-4 mx-auto md:mx-0">
+            <!-- <p class="text-gray-400 text-sm">Your Company Tagline</p> -->
+          </div>
+          <!-- Menu column -->
+          <div class="text-center md:text-left">
+            <h3 class="text-sm font-semibold uppercase tracking-widest mb-4">Links</h3>
+            <ul class="space-y-2">
+              <li><a href="/" class="text-gray-400 hover:text-white transition-colors">Home</a></li>
+              <li><a href="/services" class="text-gray-400 hover:text-white transition-colors">Services</a></li>
+              <li><a href="/research" class="text-gray-400 hover:text-white transition-colors">Research</a></li>
+              <li><a href="/case-studies" class="text-gray-400 hover:text-white transition-colors">Case Studies</a></li>
+            </ul>
+          </div>
+          <!-- Contact/Social column -->
+          <div class="text-center md:text-left">
+            <h3 class="text-sm font-semibold uppercase tracking-widest mb-4">Contact</h3>
+            <p class="text-gray-400 mb-4">contact@conscient.ai</p>
+            <!-- <p class="text-gray-400 mb-4">+1 234 567 890</p> -->
+            <div class="flex justify-center md:justify-start gap-4">
+              <div class="w-8 h-8">
+                <a href="https://www.linkedin.com/company/conscientai" target="_blank" aria-label="LinkedIn" class="text-gray-400 hover:text-[#2867B2] transition">
+                  <!-- https://icons.getbootstrap.com/icons/linkedin/ -->
+                  <i class="bi bi-linkedin"></i>
+                </a>
+              </div>
+              <div class="w-8 h-8">
+                <a href="https://x.com/ConscientAI" target="_blank" aria-label="X" class="text-gray-400 hover:text-white transition">
+                  <!-- https://icons.getbootstrap.com/icons/twitter-x/ -->
+                  <i class="bi bi-twitter-x"></i>
+                </a>
+              </div>
+              <div class="w-8 h-8">
+                <a href="https://www.facebook.com/ConscientAI/" target="_blank" aria-label="Facebook" class="text-gray-400 hover:text-[#0866FF] transition">
+                  <!-- https://icons.getbootstrap.com/icons/facebook/ -->
+                  <i class="bi bi-facebook"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Bottom copyright -->
+        <p class="mt-12 text-center text-gray-500 text-sm">
+          &copy; 2017-<span id="current-year">2026</span> ConscientAI. All rights reserved.
+        </p>
+      </div>
+    </footer>
+    <script>
+      const btn = document.getElementById('hamburger-btn');
+      const menu = document.getElementById('mobile-menu');
+      const html = document.documentElement;
+      const body = document.body;
+
+      let scrollY = 0;
+
+      function openMenu() {
+        menu.classList.remove('hidden');
+        btn.classList.add('open');
+
+        // lock scroll position
+        scrollY = window.scrollY || window.pageYOffset;
+        body.style.top = `-${scrollY}px`;
+        html.classList.add('scroll-lock');
+        body.classList.add('scroll-lock');
+      }
+
+      function closeMenu() {
+        menu.classList.add('hidden');
+        btn.classList.remove('open');
+
+        html.classList.remove('scroll-lock');
+        body.classList.remove('scroll-lock');
+        body.style.top = '';
+        window.scrollTo(0, scrollY); // restore
+      }
+
+      btn.addEventListener('click', () => {
+        menu.classList.contains('hidden') ? openMenu() : closeMenu();
+      });
+
+      menu.querySelectorAll('a').forEach(a => a.addEventListener('click', closeMenu));
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') closeMenu();
+      });
+
+      // Dynamically set copyright current year
+      const now = new Date();
+      const currentYear = now.getUTCFullYear();
+      document.getElementById('current-year').textContent = currentYear;
+    </script>
+  </body>
+</html>
