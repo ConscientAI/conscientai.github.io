@@ -73,7 +73,7 @@
         position: absolute;
         inset: 0;
         z-index: -1;
-        opacity: 0.3;
+        opacity: 0.1;
         filter: contrast(120%) brightness(120%);
         background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
       }
@@ -81,58 +81,52 @@
   </head>
 
   <body class="relative flex flex-col min-h-screen">
-    <!-- Above-the-fold container -->
-    <div id="above-fold" class="flex flex-col">
-      <!-- Header -->
-      <header class="flex justify-between items-center p-4 bg-transparent relative z-50 shadow-[0_20px_50px_rgba(0,0,0,0.02)]">
-        <div class="flex items-center">
-          <a href="/">
-            <img src="/logo.svg" alt="Company Logo" class="h-10 w-auto">
-          </a>
-        </div>
-        <!-- Desktop Menu -->
-        <nav class="hidden sm:flex space-x-6 text-xs font-medium uppercase tracking-widest">
-          <a href="/services" class="group relative py-1">
-            Services
-            <span class="absolute bottom-[2px] left-0 h-[1px] w-0 bg-gray-900 transition-all duration-300 group-hover:w-full"></span>
-          </a>
-          <a href="/research" class="group relative py-1">
-            Research
-            <span class="absolute bottom-[2px] left-0 h-[1px] w-0 bg-gray-900 transition-all duration-300 group-hover:w-full"></span>
-          </a>
-          <a href="/case-studies" class="group relative py-1">
-            Case Studies
-            <span class="absolute bottom-[2px] left-0 h-[1px] w-0 bg-gray-900 transition-all duration-300 group-hover:w-full"></span>
-          </a>
-          <a href="/about" class="group relative py-1">
-            About
-            <span class="absolute bottom-[2px] left-0 h-[1px] w-0 bg-gray-900 transition-all duration-300 group-hover:w-full"></span>
-          </a>
-        </nav>
-        <!-- Mobile Hamburger -->
-        <div class="sm:hidden">
-          <button id="hamburger-btn" class="relative w-6 h-4 flex flex-col justify-between items-center">
-            <span class="block w-6 h-[2px] bg-gray-800 transition-all duration-300 ease-in-out"></span>
-            <span class="block w-6 h-[2px] bg-gray-800 transition-all duration-300 ease-in-out"></span>
-            <span class="block w-6 h-[2px] bg-gray-800 transition-all duration-300 ease-in-out"></span>
-          </button>
-        </div>
-      </header>
-
-      <!-- Mobile Menu -->
-      <nav id="mobile-menu" class="hidden fixed inset-0 w-full h-full bg-white flex flex-col items-center justify-center space-y-8 text-lg uppercase tracking-widest sm:hidden z-40">
-        <a href="/services" class="animate-mobile-menu-item opacity-0 [animation-delay:100ms] block transition-colors duration-200 active:text-gray-400">Services</a>
-        <a href="/research" class="animate-mobile-menu-item opacity-0 [animation-delay:200ms] block transition-colors duration-200 active:text-gray-400">Research</a>
-        <a href="/case-studies" class="animate-mobile-menu-item opacity-0 [animation-delay:300ms] block transition-colors duration-200 active:text-gray-400">Case Studies</a>
-        <a href="/about" class="animate-mobile-menu-item opacity-0 [animation-delay:400ms] block transition-colors duration-200 active:text-gray-400">About</a>
+    <div class="fixed top-0 left-0 w-full h-[600px] grainy-overlay bg-no-repeat bg-[length:auto_120%] md:bg-cover bg-[52%_0%] md:bg-[80%_40%] lg:bg-[100%_40%] xl:bg-[100%_60%] -z-10" style="background-image: url('/img/photos/research/research-bg.jpg');"></div>
+    <div class="fixed top-0 left-0 w-full h-[600px] bg-gradient-to-t from-transparent via-white/50 to-white/70 pointer-events-none -z-10"></div>
+    <!-- Header -->
+    <header id="main-header" class="fixed top-0 left-0 w-full flex justify-between items-center p-4 bg-transparent z-[110] transition-[background-color,backdrop-filter] duration-200">
+      <div class="flex items-center">
+        <a href="/">
+          <img src="/logo.svg" alt="Company Logo" class="h-10 w-auto">
+        </a>
+      </div>
+      <!-- Desktop Menu -->
+      <nav class="hidden sm:flex space-x-6 text-xs font-medium uppercase tracking-widest">
+        <a href="/services" class="group relative py-1">
+          Services
+          <span class="absolute bottom-[2px] left-0 h-[1px] w-0 bg-gray-900 transition-all duration-300 group-hover:w-full"></span>
+        </a>
+        <a href="/research" class="group relative py-1">
+          Research
+          <span class="absolute bottom-[2px] left-0 h-[1px] w-0 bg-gray-900 transition-all duration-300 group-hover:w-full"></span>
+        </a>
+        <a href="/case-studies" class="group relative py-1">
+          Case Studies
+          <span class="absolute bottom-[2px] left-0 h-[1px] w-0 bg-gray-900 transition-all duration-300 group-hover:w-full"></span>
+        </a>
+        <a href="/about" class="group relative py-1">
+          About
+          <span class="absolute bottom-[2px] left-0 h-[1px] w-0 bg-gray-900 transition-all duration-300 group-hover:w-full"></span>
+        </a>
       </nav>
-      <section class="w-full grainy-overlay bg-[#fde8ed] py-8 md:py-12">
+      <!-- Mobile Hamburger -->
+      <div class="sm:hidden">
+        <button id="hamburger-btn" class="relative w-6 h-4 flex flex-col justify-between items-center z-[120]">
+          <span class="block w-6 h-[2px] bg-gray-800 transition-all duration-300 ease-in-out"></span>
+          <span class="block w-6 h-[2px] bg-gray-800 transition-all duration-300 ease-in-out"></span>
+          <span class="block w-6 h-[2px] bg-gray-800 transition-all duration-300 ease-in-out"></span>
+        </button>
+      </div>
+    </header>
+    <!-- Above-the-fold container -->
+    <div id="above-fold" class="relative flex flex-col z-10 bg-transparent">
+      <section class="w-full pt-32 pb-24 md:py-36">
         <div class="max-w-4xl mx-auto px-8 md:pl-8 md:pr-12">
           <div class="flex flex-col md:grid md:grid-cols-4 gap-6 items-center">
             <div class="md:col-span-1 flex justify-center">
               <div class="w-24 h-24 md:w-40 md:h-40">
                 <svg viewBox="0 0 100 100" class="w-full h-full">
-                  <g fill="none" stroke="#5e081d" stroke-width="1">
+                  <g fill="none" stroke="#243842" stroke-width="1">
                     <!-- Sphere outline -->
                     <path d="M50,5 A45,45 0 1,1 50,95 A45,45 0 1,1 50,5"/>
                     <!-- Bottom half of equator (behind, dashed) -->
@@ -144,15 +138,14 @@
               </div>
             </div>
             <div class="md:col-span-3 text-center md:text-left">
-              <span class="text-xs font-bold uppercase tracking-[0.2em] text-[#5e081d] mb-2 block">
+              <span class="text-xs font-bold uppercase tracking-[0.2em] text-[#243842] mb-2 block">
                 Research
               </span>
               <h1 class="font-medium text-2xl sm:text-3xl tracking-wider md:pl-1" style="font-family: 'Geist', sans-serif;">
                 Exploring the frontiers of AI
               </h1>
-              <!-- Take background color (#fde8ed) and drop lightness (in HSL) to 35% from 95% -> #a40e32 -->
-              <hr class="border-0 border-t border-[#a40e32]/10 mt-2 mb-3">
-              <p class="text-[#2f040e] max-w-2xl">
+              <hr class="border-0 border-t border-[#4c7280]/10 mt-2 mb-3">
+              <p class="text-gray-600 max-w-2xl">
                 Research is at our core. Being involved in both theoretical and applied research keeps us at the cutting edge of AI.
               </p>
             </div>
@@ -160,7 +153,7 @@
         </div>
       </section>
     </div>
-    <main class="flex flex-col flex-1">
+    <main class="relative flex flex-col flex-1 z-20 bg-white">
       <div class="w-full max-w-4xl mx-auto p-8">
         <details class="group border-b border-gray-200 transition-all duration-300 hover:bg-gray-50">
           <summary class="flex flex-col sm:flex-row justify-between items-start py-6 px-2 list-none outline-none cursor-pointer">
@@ -545,13 +538,40 @@
         </p>
       </div>
     </footer>
+    <!-- Mobile Menu -->
+    <nav id="mobile-menu" class="hidden fixed inset-0 w-full h-full bg-white flex flex-col items-center justify-center space-y-8 text-lg uppercase tracking-widest sm:hidden z-[100]">
+      <a href="/services" class="animate-mobile-menu-item opacity-0 [animation-delay:100ms] block transition-colors duration-200 active:text-gray-400">Services</a>
+      <a href="/research" class="animate-mobile-menu-item opacity-0 [animation-delay:200ms] block transition-colors duration-200 active:text-gray-400">Research</a>
+      <a href="/case-studies" class="animate-mobile-menu-item opacity-0 [animation-delay:300ms] block transition-colors duration-200 active:text-gray-400">Case Studies</a>
+      <a href="/about" class="animate-mobile-menu-item opacity-0 [animation-delay:400ms] block transition-colors duration-200 active:text-gray-400">About</a>
+    </nav>
     <script>
+      const header = document.getElementById('main-header');
       const btn = document.getElementById('hamburger-btn');
       const menu = document.getElementById('mobile-menu');
       const html = document.documentElement;
       const body = document.body;
 
       let scrollY = 0;
+
+      function updateHeaderStyle() {
+        const isMenuOpen = !menu.classList.contains('hidden');
+        const isScrolled = window.scrollY > 20;
+
+        if (isMenuOpen) {
+          // When menu is open, header must match the mobile menu background exactly
+          header.classList.add('bg-white');
+          header.classList.remove('bg-transparent', 'backdrop-blur-md', 'bg-white/50');
+        } else if (isScrolled) {
+          // When scrolling down (menu closed)
+          header.classList.add('backdrop-blur-md', 'bg-white/50');
+          header.classList.remove('bg-transparent', 'bg-white');
+        } else {
+          // At the very top (menu closed)
+          header.classList.add('bg-transparent');
+          header.classList.remove('backdrop-blur-md', 'bg-white/50', 'bg-white');
+        }
+      }
 
       function openMenu() {
         menu.classList.remove('hidden');
@@ -562,17 +582,34 @@
         body.style.top = `-${scrollY}px`;
         html.classList.add('scroll-lock');
         body.classList.add('scroll-lock');
+
+        updateHeaderStyle();
       }
 
       function closeMenu() {
+        // Disable the transition temporarily to prevent the "laggy" fade
+        header.style.transition = 'none';
+
         menu.classList.add('hidden');
         btn.classList.remove('open');
 
         html.classList.remove('scroll-lock');
         body.classList.remove('scroll-lock');
         body.style.top = '';
-        window.scrollTo(0, scrollY); // restore
+        // Restore scroll
+        window.scrollTo(0, scrollY);
+        // Immediately update style while transition is 'none'
+        updateHeaderStyle();
+
+        // Force a "reflow" so the browser applies the styles instantly,
+        // then turn the transition back on for normal scrolling
+        requestAnimationFrame(() => {
+          header.style.transition = '';
+        });
       }
+
+      // Single scroll listener
+      window.addEventListener('scroll', updateHeaderStyle);
 
       btn.addEventListener('click', () => {
         menu.classList.contains('hidden') ? openMenu() : closeMenu();
