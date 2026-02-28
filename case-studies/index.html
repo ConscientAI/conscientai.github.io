@@ -431,7 +431,7 @@
       // Grid content
       const grid = document.getElementById('case-study-grid');
       grid.innerHTML = caseStudies.map(caseStudy => `
-        <div onclick="openModal('${caseStudy.id}')" class="group flex flex-col p-4 bg-white cursor-pointer h-full border border-[#0c4e5a] shadow-sm transition-shadow duration-300 hover:shadow-lg rounded-lg">
+        <div onclick="openModal('${caseStudy.id}')" class="group flex flex-col p-4 bg-white cursor-pointer h-full border border-gray-100 shadow-sm transition-shadow duration-300 hover:shadow-md rounded-lg">
           <div class="mb-4">
             <div class="w-24 h-24 mb-2 overflow-hidden">
               <img src="${caseStudy.logo}" alt="${caseStudy.name} logo" class="w-full h-full object-cover">
