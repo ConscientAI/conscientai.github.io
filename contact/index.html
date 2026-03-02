@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - ConscientAI</title>
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="icon" sizes="32x32" href="favicon-32x32.png" type="image/png">
+    <link rel="icon" sizes="16x16" href="favicon-16x16.png" type="image/png">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    <style>
+      #hamburger-btn.open span:nth-child(1) {
+        transform: translateY(7px) rotate(45deg);
+      }
+
+      #hamburger-btn.open span:nth-child(2) {
+        opacity: 0;
+      }
+
+      #hamburger-btn.open span:nth-child(3) {
+        transform: translateY(-7px) rotate(-45deg);
+      }
+
+      .scroll-lock {
+        position: fixed;
+        inset: 0;
+        width: 100%;
+        overflow: hidden;
+      }
+
+      /* Smooth scroll behavior */
+      html {
+        -webkit-overflow-scrolling: touch;
+      }
+      /* Mobile menu animation */
+      @keyframes fade-in {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .animate-mobile-menu-item {
+        animation: fade-in 0.6s ease-out forwards;
+      }
+    </style>
+  </head>
+
+  <body class="relative flex flex-col min-h-screen">
+    <!-- Above-the-fold container -->
+    <div id="above-fold" class="flex flex-col min-h-[100svh]">
+      <!-- Header -->
+      <header class="flex justify-between items-center p-4 bg-transparent relative z-50 shadow-[0_20px_50px_rgba(0,0,0,0.02)]">
+        <div class="flex items-center">
+          <a href="/">
+            <img src="/logo.svg" alt="Company Logo" class="h-10 w-auto">
+          </a>
+        </div>
+        <!-- Desktop Menu -->
+        <nav class="hidden sm:flex space-x-6 text-xs font-medium uppercase tracking-widest">
+          <a href="/services" class="group relative py-1">
+            Services
+            <span class="absolute bottom-[2px] left-0 h-[1px] w-0 bg-gray-900 transition-all duration-300 group-hover:w-full"></span>
+          </a>
+          <a href="/research" class="group relative py-1">
+            Research
+            <span class="absolute bottom-[2px] left-0 h-[1px] w-0 bg-gray-900 transition-all duration-300 group-hover:w-full"></span>
+          </a>
+          <a href="/case-studies" class="group relative py-1">
+            Case Studies
+            <span class="absolute bottom-[2px] left-0 h-[1px] w-0 bg-gray-900 transition-all duration-300 group-hover:w-full"></span>
+          </a>
+          <a href="/about" class="group relative py-1">
+            About
+            <span class="absolute bottom-[2px] left-0 h-[1px] w-0 bg-gray-900 transition-all duration-300 group-hover:w-full"></span>
+          </a>
+        </nav>
+        <!-- Mobile Hamburger -->
+        <div class="sm:hidden">
+          <button id="hamburger-btn" class="relative w-6 h-4 flex flex-col justify-between items-center">
+            <span class="block w-6 h-[2px] bg-gray-800 transition-all duration-300 ease-in-out"></span>
+            <span class="block w-6 h-[2px] bg-gray-800 transition-all duration-300 ease-in-out"></span>
+            <span class="block w-6 h-[2px] bg-gray-800 transition-all duration-300 ease-in-out"></span>
+          </button>
+        </div>
+      </header>
+
+      <!-- Mobile Menu -->
+      <nav id="mobile-menu" class="hidden fixed inset-0 w-full h-full bg-white flex flex-col items-center justify-center space-y-8 text-lg uppercase tracking-widest sm:hidden z-40">
+        <a href="/services" class="animate-mobile-menu-item opacity-0 [animation-delay:100ms] block transition-colors duration-200 active:text-gray-400">Services</a>
+        <a href="/research" class="animate-mobile-menu-item opacity-0 [animation-delay:200ms] block transition-colors duration-200 active:text-gray-400">Research</a>
+        <a href="/case-studies" class="animate-mobile-menu-item opacity-0 [animation-delay:300ms] block transition-colors duration-200 active:text-gray-400">Case Studies</a>
+        <a href="/about" class="animate-mobile-menu-item opacity-0 [animation-delay:400ms] block transition-colors duration-200 active:text-gray-400">About</a>
+      </nav>
+      <main id="hero-section" class="flex-1 flex flex-col items-center justify-center bg-white px-6 py-12 sm:py-20">
+        <div class="w-full max-w-5xl grid grid-cols-1 lg:grid-cols-3 gap-8 items-start">
+          <div class="lg:col-span-1 flex flex-col mt-10 md:mt-0">
+            <div class="space-y-6">
+              <h1 class="font-medium text-2xl sm:text-3xl tracking-wide leading-relaxed md:leading-relaxed" style="font-family: 'Geist', sans-serif;">
+                Start your<br>
+                <span class="whitespace-nowrap">
+                AI transformation<i class="bi bi-arrow-right inline-block pl-1 translate-y-[2px]"></i>
+                </span>
+              </h1>
+              <p class="text-gray-600 leading-relaxed">
+                Let&rsquo;s start the conversation. Fill out the form to connect with our team, or reach out directly via 
+                <a href="mailto:contact@conscient.ai" class="text-gray-800 underline decoration-gray-300 underline-offset-4 transition-colors duration-300 hover:decoration-gray-600">
+                contact@conscient.ai
+                </a>.
+              </p>
+            </div>
+          </div>
+          <div class="lg:col-span-2 p-8 sm:p-10 rounded-lg border border-gray-100 shadow-sm bg-white">
+            <form action="#" class="space-y-10">
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-8">
+                <div class="flex flex-col space-y-2">
+                  <label for="first_name" class="text-sm text-gray-600">First name <span class="text-red-400">*</span></label>
+                  <input type="text" id="first_name" required placeholder="Jane" class="bg-transparent border border-gray-400 p-2 focus:border-gray-900 focus:outline-none transition-colors text-gray-900">
+                </div>
+                <div class="flex flex-col space-y-2">
+                  <label for="last_name" class="text-sm text-gray-600">Last name <span class="text-red-400">*</span></label>
+                  <input type="text" id="last_name" required placeholder="Doe" class="bg-transparent border border-gray-400 p-2 focus:border-gray-900 focus:outline-none transition-colors text-gray-900">
+                </div>
+              </div>
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-8">
+                <div class="flex flex-col space-y-2">
+                  <label for="email" class="text-sm text-gray-600">Email <span class="text-red-400">*</span></label>
+                  <input type="email" id="email" required placeholder="john@company.com" class="bg-transparent border border-gray-400 p-2 focus:border-gray-900 focus:outline-none transition-colors text-gray-900">
+                </div>
+                <div class="flex flex-col space-y-2">
+                  <label for="organization" class="text-sm text-gray-600">Organization <span class="text-red-400">*</span></label>
+                  <input type="text" id="organization" required placeholder="Company Name" class="bg-transparent border border-gray-400 p-2 focus:border-gray-900 focus:outline-none transition-colors text-gray-900">
+                </div>
+              </div>
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-8">
+                <div class="flex flex-col space-y-2">
+                  <label for="country" class="text-sm text-gray-600">Country <span class="text-red-400">*</span></label>
+                  <input type="text" id="country" required placeholder="United States" class="bg-transparent border border-gray-400 p-2 focus:border-gray-900 focus:outline-none transition-colors text-gray-900">
+                </div>
+                <div class="flex flex-col space-y-2">
+                  <label for="phone" class="text-sm text-gray-600">Phone</label>
+                  <input type="tel" id="phone" placeholder="+1 (555) 000-0000" class="bg-transparent border border-gray-400 p-2 focus:border-gray-900 focus:outline-none transition-colors text-gray-900">
+                </div>
+              </div>
+              <div class="flex flex-col space-y-2">
+                <label for="message" class="text-sm text-gray-600">Message <span class="text-red-400">*</span></label>
+                <textarea id="message" required rows="3" placeholder="How can we help?" class="bg-transparent border border-gray-400 p-2 focus:border-gray-900 focus:outline-none transition-colors text-gray-900 resize-none"></textarea>
+              </div>
+              <div class="pt-1">
+                <button type="submit" class="group relative overflow-hidden w-full sm:w-auto px-6 py-3 text-sm font-medium bg-gray-900 text-white uppercase tracking-wider rounded-full shadow-sm transition-all duration-300 hover:bg-black hover:shadow-lg">
+                <span class="relative z-10">Send Message</span>
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </main>
+    </div>
+    <!-- Footer -->
+    <footer class="bg-[#101010] text-white py-12">
+      <div class="container mx-auto px-6 md:px-12">
+        <!-- Top content: logo + columns -->
+        <div class="flex flex-col md:flex-row md:justify-between md:items-start gap-8">
+          <!-- Logo placeholder -->
+          <div class="flex-shrink-0 text-center md:text-left">
+            <img src="/logo-white.svg" alt="Company Logo" class="h-10 w-auto mb-4 mx-auto md:mx-0">
+            <!-- <p class="text-gray-400 text-sm">Your Company Tagline</p> -->
+          </div>
+          <!-- Menu column -->
+          <div class="text-center md:text-left">
+            <h3 class="text-sm font-semibold uppercase tracking-widest mb-4">Links</h3>
+            <ul class="space-y-2">
+              <li><a href="/" class="text-gray-400 hover:text-white transition-colors">Home</a></li>
+              <li><a href="/services" class="text-gray-400 hover:text-white transition-colors">Services</a></li>
+              <li><a href="/research" class="text-gray-400 hover:text-white transition-colors">Research</a></li>
+              <li><a href="/case-studies" class="text-gray-400 hover:text-white transition-colors">Case Studies</a></li>
+            </ul>
+          </div>
+          <!-- Contact/Social column -->
+          <div class="text-center md:text-left">
+            <h3 class="text-sm font-semibold uppercase tracking-widest mb-4">Contact</h3>
+            <p class="text-gray-400 mb-4">contact@conscient.ai</p>
+            <!-- <p class="text-gray-400 mb-4">+1 234 567 890</p> -->
+            <div class="flex justify-center md:justify-start gap-4">
+              <div class="w-8 h-8">
+                <a href="https://www.linkedin.com/company/conscientai" target="_blank" aria-label="LinkedIn" class="text-gray-400 hover:text-[#2867B2] transition">
+                  <!-- https://icons.getbootstrap.com/icons/linkedin/ -->
+                  <i class="bi bi-linkedin"></i>
+                </a>
+              </div>
+              <div class="w-8 h-8">
+                <a href="https://x.com/ConscientAI" target="_blank" aria-label="X" class="text-gray-400 hover:text-white transition">
+                  <!-- https://icons.getbootstrap.com/icons/twitter-x/ -->
+                  <i class="bi bi-twitter-x"></i>
+                </a>
+              </div>
+              <div class="w-8 h-8">
+                <a href="https://www.facebook.com/ConscientAI/" target="_blank" aria-label="Facebook" class="text-gray-400 hover:text-[#0866FF] transition">
+                  <!-- https://icons.getbootstrap.com/icons/facebook/ -->
+                  <i class="bi bi-facebook"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Bottom copyright -->
+        <p class="mt-12 text-center text-gray-500 text-sm">
+          &copy; 2017-<span id="current-year">2026</span> ConscientAI. All rights reserved.
+        </p>
+      </div>
+    </footer>
+    <script>
+      const btn = document.getElementById('hamburger-btn');
+      const menu = document.getElementById('mobile-menu');
+      const html = document.documentElement;
+      const body = document.body;
+
+      let scrollY = 0;
+
+      function openMenu() {
+        menu.classList.remove('hidden');
+        btn.classList.add('open');
+
+        // lock scroll position
+        scrollY = window.scrollY || window.pageYOffset;
+        body.style.top = `-${scrollY}px`;
+        html.classList.add('scroll-lock');
+        body.classList.add('scroll-lock');
+      }
+
+      function closeMenu() {
+        menu.classList.add('hidden');
+        btn.classList.remove('open');
+
+        html.classList.remove('scroll-lock');
+        body.classList.remove('scroll-lock');
+        body.style.top = '';
+        window.scrollTo(0, scrollY); // restore
+      }
+
+      btn.addEventListener('click', () => {
+        menu.classList.contains('hidden') ? openMenu() : closeMenu();
+      });
+
+      menu.querySelectorAll('a').forEach(a => a.addEventListener('click', closeMenu));
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') closeMenu();
+      });
+
+      // Dynamically set copyright current year
+      const now = new Date();
+      const currentYear = now.getUTCFullYear();
+      document.getElementById('current-year').textContent = currentYear;
+    </script>
+  </body>
+</html>
