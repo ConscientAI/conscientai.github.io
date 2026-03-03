@@ -120,7 +120,7 @@
             </div>
           </div>
           <div class="lg:col-span-2 p-8 sm:p-10 rounded-lg border border-gray-100 shadow-sm bg-white">
-            <form action="https://formspree.io/f/xzdalyvw" method="POST" class="space-y-10">
+            <form id="contact-form" action="https://formspree.io/f/xzdalyvw" method="POST" class="space-y-10">
               <div class="grid grid-cols-1 sm:grid-cols-2 gap-8">
                 <div class="flex flex-col space-y-2">
                   <label for="first_name" class="text-sm text-gray-600">First name <span class="text-red-400">*</span></label>
@@ -156,9 +156,14 @@
                 <textarea id="message" name="message" required rows="3" placeholder="How can we help?" class="bg-transparent border border-gray-400 p-2 focus:border-gray-900 focus:outline-none transition-colors text-gray-900 resize-none"></textarea>
               </div>
               <div class="pt-1">
-                <button type="submit" class="group relative overflow-hidden w-full sm:w-auto px-6 py-3 text-sm font-medium bg-gray-900 text-white uppercase tracking-wider rounded-full shadow-sm transition-all duration-300 hover:bg-black hover:shadow-lg">
-                <span class="relative z-10">Send Message</span>
+                <button type="submit" id="submit-btn" class="group relative overflow-hidden w-full sm:w-auto px-6 py-3 text-sm font-medium bg-gray-900 text-white uppercase tracking-wider rounded-full shadow-sm transition-all duration-300 hover:bg-black hover:shadow-lg disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:bg-gray-900 disabled:hover:shadow-sm">
+                  <span id="btn-text" class="relative z-10">Send Message</span>
                 </button>
+                <div id="form-status" class="grid grid-rows-[0fr] transition-all duration-500 opacity-0">
+                  <div class="overflow-hidden">
+                    <p id="status-text" class="pt-4 text-sm text-gray-600 leading-relaxed flex items-start gap-2"></p>
+                  </div>
+                </div>
               </div>
             </form>
           </div>
@@ -254,6 +259,51 @@
       menu.querySelectorAll('a').forEach(a => a.addEventListener('click', closeMenu));
       document.addEventListener('keydown', (e) => {
         if (e.key === 'Escape') closeMenu();
+      });
+
+      // Form submission script
+      document.addEventListener('DOMContentLoaded', () => {
+        const form = document.getElementById('contact-form');
+        const statusContainer = document.getElementById('form-status');
+        const statusText = document.getElementById('status-text');
+        const submitBtn = document.getElementById('submit-btn');
+        const btnText = document.getElementById('btn-text');
+
+        form.addEventListener('submit', async (event) => {
+          event.preventDefault();
+
+          statusContainer.classList.add('opacity-0', 'translate-y-1');
+          submitBtn.disabled = true;
+
+          const formData = new FormData(event.target);
+          const FORM_ENDPOINT = 'https://formspree.io/f/xzdalyvw';
+
+          try {
+            const response = await fetch(FORM_ENDPOINT, {
+              method: 'POST',
+              body: formData,
+              headers: {
+                'Accept': 'application/json'
+              }
+            });
+            if (response.ok) {
+              form.reset();
+              statusText.innerHTML = '<i class="bi bi-check-circle text-xl text-green-700 mt-[-3px]"></i>Thank you for your interest. We will be in touch shortly.';
+              // Smoothly expand and fade in
+              statusContainer.classList.remove('grid-rows-[0fr]', 'opacity-0');
+              statusContainer.classList.add('grid-rows-[1fr]', 'opacity-100');
+            } else {
+              throw new Error('Form submission error');
+            }
+          } catch (error) {
+            statusText.innerHTML = '<i class="bi bi-x-circle text-xl text-red-700 mt-[-3px]"></i>Something went wrong on our end. Please reach out via email so we can assist you.';
+            // Smoothly expand and fade in
+            statusContainer.classList.remove('grid-rows-[0fr]', 'opacity-0');
+            statusContainer.classList.add('grid-rows-[1fr]', 'opacity-100');
+            // Re-enable button
+            submitBtn.disabled = false;
+          }
+        });
       });
 
       // Dynamically set copyright current year
