@@ -208,28 +208,37 @@
     <footer class="bg-[#101010] text-white py-12">
       <div class="container mx-auto px-6 md:px-12">
         <!-- Top content: logo + columns -->
-        <div class="flex flex-col md:flex-row md:justify-between md:items-start gap-8">
+        <div class="flex flex-col md:flex-row md:justify-between md:items-start gap-14">
           <!-- Logo placeholder -->
-          <div class="flex-shrink-0 text-center md:text-left">
-            <img src="/logo-white.svg" alt="Company Logo" class="h-10 w-auto mb-4 mx-auto md:mx-0">
+          <div class="flex-shrink-0 text-left">
+            <img src="/logo-white.svg" alt="Company Logo" class="h-10 w-auto mb-4">
             <!-- <p class="text-gray-400 text-sm">Your Company Tagline</p> -->
           </div>
           <!-- Menu column -->
-          <div class="text-center md:text-left">
-            <h3 class="text-sm font-semibold uppercase tracking-widest mb-4">Links</h3>
-            <ul class="space-y-2">
-              <li><a href="/" class="text-gray-400 hover:text-white transition-colors">Home</a></li>
-              <li><a href="/services" class="text-gray-400 hover:text-white transition-colors">Services</a></li>
-              <li><a href="/research" class="text-gray-400 hover:text-white transition-colors">Research</a></li>
-              <li><a href="/case-studies" class="text-gray-400 hover:text-white transition-colors">Case Studies</a></li>
-            </ul>
+          <div class="grid grid-cols-2 gap-8 md:flex md:gap-24 lg:gap-32">
+            <div class="text-left">
+              <h3 class="text-xs font-semibold uppercase tracking-widest mb-4">Work</h3>
+              <ul class="space-y-2">
+                <li><a href="/services" class="text-gray-400 hover:text-white transition-colors">Services</a></li>
+                <li><a href="/research" class="text-gray-400 hover:text-white transition-colors">Research</a></li>
+                <li><a href="/case-studies" class="text-gray-400 hover:text-white transition-colors">Case Studies</a></li>
+              </ul>
+            </div>
+            <div class="text-left">
+              <h3 class="text-xs font-semibold uppercase tracking-widest mb-4">Company</h3>
+              <ul class="space-y-2">
+                <li><a href="/" class="text-gray-400 hover:text-white transition-colors">Home</a></li>
+                <li><a href="/about" class="text-gray-400 hover:text-white transition-colors">About</a></li>
+                <li><a href="/contact" class="text-gray-400 hover:text-white transition-colors">Contact</a></li>
+              </ul>
+            </div>
           </div>
           <!-- Contact/Social column -->
-          <div class="text-center md:text-left">
-            <h3 class="text-sm font-semibold uppercase tracking-widest mb-4">Contact</h3>
-            <p class="text-gray-400 mb-4">contact@conscient.ai</p>
+          <div class="text-left">
+            <h3 class="text-xs font-semibold uppercase tracking-widest mb-4">Connect</h3>
+            <a href="mailto:contact@conscient.ai" class="text-gray-400 hover:text-white transition-colors block mb-4">contact@conscient.ai</a>
             <!-- <p class="text-gray-400 mb-4">+1 234 567 890</p> -->
-            <div class="flex justify-center md:justify-start gap-4">
+            <div class="flex justify-start gap-4">
               <div class="w-8 h-8">
                 <a href="https://www.linkedin.com/company/conscientai" target="_blank" aria-label="LinkedIn" class="text-gray-400 hover:text-[#2867B2] transition">
                   <!-- https://icons.getbootstrap.com/icons/linkedin/ -->
@@ -252,7 +261,7 @@
           </div>
         </div>
         <!-- Bottom copyright -->
-        <p class="mt-12 text-center text-gray-500 text-sm">
+        <p class="mt-14 md:mt-20 text-center text-gray-500 text-sm">
           &copy; 2017-<span id="current-year">2026</span> ConscientAI. All rights reserved.
         </p>
       </div>
