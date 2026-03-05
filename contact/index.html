@@ -22,6 +22,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/choices.js@11.1.0/public/assets/styles/choices.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/choices.js@11.1.0/public/assets/scripts/choices.min.js"></script>
     <style>
       #hamburger-btn.open span:nth-child(1) {
         transform: translateY(7px) rotate(45deg);
@@ -60,6 +62,37 @@
 
       .animate-mobile-menu-item {
         animation: fade-in 0.6s ease-out forwards;
+      }
+
+      /* Customize Choices.js to match overall theme */
+      .choices {
+        z-index: 20 !important; /* Keeps the dropdown at the top */
+      }
+
+      .choices__inner {
+        background-color: transparent !important;
+        border: 1px solid #9ca3af !important; /* gray-400 */
+        border-radius: 0px !important;
+        padding: 4px !important;
+        min-height: 42px !important;
+        display: flex;
+        align-items: center;
+      }
+
+      .choices__list--dropdown {
+        border-radius: 0px !important;
+        border: 1px solid #111827 !important; /* gray-900 */
+      }
+
+      .is-focused .choices__inner {
+        border-color: #111827 !important;
+      }
+
+      .choices__list--single,
+      .choices__input,
+      .choices__item {
+        font-size: 16px !important;
+        color: #111827 !important;
       }
     </style>
   </head>
@@ -153,7 +186,9 @@
               <div class="grid grid-cols-1 sm:grid-cols-2 gap-8">
                 <div class="flex flex-col space-y-2">
                   <label for="country" class="text-sm text-gray-600">Country <span class="text-red-400">*</span></label>
-                  <input type="text" id="country" name="country" required placeholder="United States" class="bg-transparent border border-gray-400 p-2 focus:border-gray-900 focus:outline-none transition-colors text-gray-900">
+                  <select id="country" name="country" required class="bg-transparent border border-gray-400 p-2 focus:border-gray-900 focus:outline-none transition-colors text-gray-900">
+                    <option value="">Select a country</option>
+                  </select>
                 </div>
                 <div class="flex flex-col space-y-2">
                   <label for="phone" class="text-sm text-gray-600">Phone</label>
@@ -278,6 +313,28 @@
       document.addEventListener('keydown', (e) => {
         if (e.key === 'Escape') closeMenu();
       });
+
+      // Initialize the searchable country select
+      const countrySelect = document.getElementById('country');
+      const choices = new Choices(countrySelect, {
+        searchEnabled: true,
+        itemSelectText: '',
+        shouldSort: true,
+        placeholder: true,
+        placeholderValue: 'Select a country'
+      });
+      // Fetch countries
+      fetch('https://restcountries.com/v3.1/all?fields=name')
+        .then(response => response.json())
+        .then(data => {
+          const countries = data.map(c => ({
+            value: c.name.common,
+            label: c.name.common
+          })).sort((a, b) => a.label.localeCompare(b.label));
+
+          choices.setChoices(countries, 'value', 'label', false);
+        })
+        .catch(err => console.error('Error fetching countries:', err));
 
       // Form submission script
       document.addEventListener('DOMContentLoaded', () => {
