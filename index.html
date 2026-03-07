@@ -121,6 +121,16 @@
         animation-delay: 1s;
         will-change: transform;
       }
+
+      .paused {
+        animation-play-state: paused !important;
+      }
+
+      #mobile-marquee a {
+        -webkit-tap-highlight-color: transparent;
+        -webkit-touch-callout: none; /* Disables system popup on long press */
+        user-select: none;
+      }
     </style>
   </head>
 
@@ -195,21 +205,21 @@
           </p>
           <!-- Mobile recognition logo marquee -->
           <div class="block sm:hidden w-full overflow-hidden mb-8">
-            <div class="flex animate-marquee w-max">
+            <div id="mobile-marquee" class="flex animate-marquee w-max">
               <div class="flex items-center flex-shrink-0">
-                <img src="/img/logos/recognition/natgeo.svg" alt="National Geographic" class="h-6 mx-5">
-                <img src="/img/logos/recognition/tech-in-asia.svg" alt="Tech in Asia" class="h-4 mx-5">
-                <img src="/img/logos/recognition/nvidia-inception.png" alt="NVIDIA Inception" class="h-6 mx-5">
-                <img src="/img/logos/recognition/jica.svg" alt="Japan International Cooperation Agency" class="h-7 mx-5">
-                <img src="/img/logos/recognition/seedstars.svg" alt="Seedstars" class="h-3 mx-5">
+                <img src="/img/logos/recognition/natgeo.svg" alt="National Geographic" class="h-6 mx-5 pointer-events-none">
+                <img src="/img/logos/recognition/tech-in-asia.svg" alt="Tech in Asia" class="h-4 mx-5 pointer-events-none">
+                <img src="/img/logos/recognition/nvidia-inception.png" alt="NVIDIA Inception" class="h-6 mx-5 pointer-events-none">
+                <img src="/img/logos/recognition/jica.svg" alt="Japan International Cooperation Agency" class="h-7 mx-5 pointer-events-none">
+                <img src="/img/logos/recognition/seedstars.svg" alt="Seedstars" class="h-3 mx-5 pointer-events-none">
               </div>
               <!-- Same logos are repeated for smooth transition -->
               <div class="flex items-center flex-shrink-0">
-                <img src="/img/logos/recognition/natgeo.svg" alt="National Geographic" class="h-6 mx-5">
-                <img src="/img/logos/recognition/tech-in-asia.svg" alt="Tech in Asia" class="h-4 mx-5">
-                <img src="/img/logos/recognition/nvidia-inception.png" alt="NVIDIA Inception" class="h-6 mx-5">
-                <img src="/img/logos/recognition/jica.svg" alt="Japan International Cooperation Agency" class="h-7 mx-5">
-                <img src="/img/logos/recognition/seedstars.svg" alt="Seedstars" class="h-3 mx-5">
+                <img src="/img/logos/recognition/natgeo.svg" alt="National Geographic" class="h-6 mx-5 pointer-events-none">
+                <img src="/img/logos/recognition/tech-in-asia.svg" alt="Tech in Asia" class="h-4 mx-5 pointer-events-none">
+                <img src="/img/logos/recognition/nvidia-inception.png" alt="NVIDIA Inception" class="h-6 mx-5 pointer-events-none">
+                <img src="/img/logos/recognition/jica.svg" alt="Japan International Cooperation Agency" class="h-7 mx-5 pointer-events-none">
+                <img src="/img/logos/recognition/seedstars.svg" alt="Seedstars" class="h-3 mx-5 pointer-events-none">
               </div>
             </div>
           </div>
@@ -517,6 +527,24 @@
       let lastScrollY = window.scrollY;
       window.addEventListener('scroll', () => {
         lastScrollY = window.scrollY;
+      }, { passive: true });
+
+      // Marquee animation behavior on mobile
+      const marquee = document.getElementById('mobile-marquee');
+
+      // Stop marquee animation on long press
+      marquee.addEventListener('touchstart', () => {
+        marquee.classList.add('paused');
+      }, { passive: true });
+
+      // Start marquee animation on release
+      marquee.addEventListener('touchend', () => {
+        marquee.classList.remove('paused');
+      }, { passive: true });
+
+      // Start marquee animation if long press is interrupted (e.g., a system alert)
+      marquee.addEventListener('touchcancel', () => {
+        marquee.classList.remove('paused');
       }, { passive: true });
 
       // Dynamically set copyright current year
