@@ -131,6 +131,24 @@
         -webkit-touch-callout: none; /* Disables system popup on long press */
         user-select: none;
       }
+      /* Fade in/fade out effect */
+      .marquee-container {
+        position: relative;
+        -webkit-mask-image: linear-gradient(
+          to right,
+          transparent 0%,
+          black 10%,
+          black 90%,
+          transparent 100%
+        );
+        mask-image: linear-gradient(
+          to right,
+          transparent 0%,
+          black 10%,
+          black 90%,
+          transparent 100%
+        );
+      }
     </style>
   </head>
 
@@ -204,7 +222,7 @@
             A globally recognized AI solutions provider driving transformation since 2017
           </p>
           <!-- Mobile recognition logo marquee -->
-          <div class="block sm:hidden w-full overflow-hidden mb-8">
+          <div class="block sm:hidden w-full overflow-hidden mb-8 marquee-container">
             <div id="mobile-marquee" class="flex animate-marquee w-max">
               <div class="flex items-center flex-shrink-0">
                 <a href="https://www.nationalgeographic.com/environment/article/artificial-intelligence-climate-change#:~:text=Montreal%20Institute%20for%20Learning%20Algorithms%20(MILA)%2C%20Microsoft%2C%20and%20ConscientAI%20Labs%20used%20GANs%2C%20a%20type%20of%20AI" target="_blank" class="mx-5">
