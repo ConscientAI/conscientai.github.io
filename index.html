@@ -84,6 +84,13 @@
         animation: highlight 2s ease-out 0.5s both;
       }
 
+      /* Delay to let 3 cards appear before highlighting starts on non-mobile screens */
+      @media (min-width: 640px) {
+        .animate-highlight {
+          animation-delay: 2.5s;
+        }
+      }
+
       /* Call to action button shimmer */
       @keyframes shimmer {
         from {
@@ -149,12 +156,55 @@
           transparent 100%
         );
       }
+
+      /* Fade in effect for the entire header/hero area */
+      @keyframes hero-fade-in {
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      @media (min-width: 640px) {
+        .hero-entrance {
+          opacity: 0;
+          animation: hero-fade-in 2s cubic-bezier(0.215, 0.61, 0.355, 1) forwards;
+        }
+      }
+
+      /* Cards initial state: invisible and 20px lower */
+      .reveal-card {
+        opacity: 0;
+        transform: translateY(12px);
+        transition: opacity 1.2s cubic-bezier(0.215, 0.61, 0.355, 1),
+                    transform 1.2s cubic-bezier(0.215, 0.61, 0.355, 1);
+        will-change: opacity, transform;
+      }
+
+      /* Cards final state: fully visible and at the intended position */
+      .reveal-card.is-visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      /* Card delays */
+      .services-card-delay {
+        transition-delay: 200ms;
+      }
+
+      .research-card-delay {
+        transition-delay: 600ms;
+      }
+
+      .case-studies-card-delay {
+        transition-delay: 1000ms;
+      }
     </style>
   </head>
 
   <body class="relative flex flex-col min-h-screen">
     <!-- Above-the-fold container -->
-    <div id="above-fold" class="flex flex-col sm:min-h-screen">
+    <div id="above-fold" class="flex flex-col sm:min-h-screen hero-entrance">
       <!-- Header -->
       <header class="flex justify-between items-center p-4 bg-transparent relative z-50">
         <div class="flex items-center">
@@ -295,7 +345,7 @@
         <!-- 3-column content -->
         <section class="grid grid-cols-1 sm:grid-cols-3 flex-1 sm:flex-[0.4] gap-4 p-4">
           <!-- Services card -->
-          <a href="/services" class="group block h-full">
+          <a href="/services" class="group block h-full reveal-card services-card-delay">
             <div class="relative flex flex-col h-full p-6 grainy-overlay rounded-lg shadow-sm transition-shadow duration-300 hover:shadow-md overflow-hidden min-h-[300px]">
               <img src="/img/photos/services/services-bg-small.webp" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 pointer-events-none">
               <div class="absolute inset-0 bg-gradient-to-b from-white/20 via-transparent to-transparent pointer-events-none"></div>
@@ -331,7 +381,7 @@
             </div>
           </a>
           <!-- Research card -->
-          <a href="/research" class="group block h-full">
+          <a href="/research" class="group block h-full reveal-card research-card-delay">
             <div class="relative flex flex-col h-full p-6 grainy-overlay rounded-lg shadow-sm transition-shadow duration-300 hover:shadow-md overflow-hidden min-h-[300px]">
               <img src="/img/photos/research/research-bg-small.webp" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 pointer-events-none">
               <div class="absolute inset-0 bg-gradient-to-t from-transparent via-white/50 to-white/70 pointer-events-none"></div>
@@ -364,7 +414,7 @@
             </div>
           </a>
           <!-- Case studies card -->
-          <a href="/case-studies" class="group block h-full">
+          <a href="/case-studies" class="group block h-full reveal-card case-studies-card-delay">
             <div class="relative flex flex-col h-full p-6 grainy-overlay rounded-lg shadow-sm transition-shadow duration-300 hover:shadow-md overflow-hidden min-h-[300px]">
               <img src="/img/photos/case-studies/case-studies-bg-small.webp" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 pointer-events-none">
               <div class="absolute inset-0 bg-gradient-to-t from-black/50 via-black/60 to-black/80 pointer-events-none"></div>
@@ -584,6 +634,26 @@
       marquee.addEventListener('touchcancel', () => {
         marquee.classList.remove('paused');
       }, { passive: true });
+
+      // Cards revealing related script
+      document.addEventListener('DOMContentLoaded', () => {
+        const observerOptions = {
+          threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('is-visible');
+              observer.unobserve(entry.target);
+            }
+          });
+        }, observerOptions);
+
+        document.querySelectorAll('.reveal-card').forEach((card) => {
+          observer.observe(card);
+        });
+      });
 
       // Dynamically set copyright current year
       const now = new Date();
