@@ -187,17 +187,17 @@
         transform: translateY(0);
       }
 
-      /* Card delays */
-      .services-card-delay {
-        transition-delay: 200ms;
-      }
-
-      .research-card-delay {
-        transition-delay: 600ms;
-      }
-
-      .case-studies-card-delay {
-        transition-delay: 1000ms;
+      /* Card delays only on desktop/tablet, no delay on mobile */
+      @media (min-width: 640px) {
+        .services-card-delay {
+          transition-delay: 200ms;
+        }
+        .research-card-delay {
+          transition-delay: 600ms;
+        }
+        .case-studies-card-delay {
+          transition-delay: 1000ms;
+        }
       }
     </style>
   </head>
