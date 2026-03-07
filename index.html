@@ -109,6 +109,18 @@
         filter: contrast(150%) brightness(100%);
         background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
       }
+      /* Animate recognition logos on mobile */
+      @keyframes marquee {
+        0% { transform: translate3d(0, 0, 0); }
+        100% { transform: translate3d(-50%, 0, 0); } /* Moves exactly half-way */
+      }
+
+      .animate-marquee {
+        display: flex; /* Ensures the two inner divs sit side-by-side */
+        animation: marquee 20s linear infinite;
+        animation-delay: 1s;
+        will-change: transform;
+      }
     </style>
   </head>
 
@@ -178,10 +190,52 @@
             <span class="block">AI Solutions & Research</span>
           </h1>
           <!-- Sub text -->
-          <p class="md:font-light text-lg sm:text-xl mb-6 text-gray-500 max-w-2xl">
-            <!-- Some introductory text for the hero section. Add a short, compelling line that explains your value proposition. -->
-            From cutting-edge research to production-ready systems, helping businesses adopt AI with confidence since 2017.
+          <p class="md:font-light text-lg sm:text-xl mb-3 text-gray-500 max-w-2xl">
+            A globally recognized AI solutions provider driving transformation since 2017
           </p>
+          <!-- Mobile recognition logo marquee -->
+          <div class="block sm:hidden w-full overflow-hidden mb-8">
+            <div class="flex animate-marquee w-max">
+              <div class="flex items-center flex-shrink-0">
+                <img src="/natgeo.svg" alt="National Geographic" class="h-6 mx-5">
+                <img src="/tech-in-asia.svg" alt="Tech in Asia" class="h-4 mx-5">
+                <img src="/nvidia-inception.png" alt="NVIDIA Inception" class="h-6 mx-5">
+                <img src="/jica.svg" alt="Japan International Cooperation Agency" class="h-7 mx-5">
+                <img src="/seedstars.svg" alt="Seedstars" class="h-3 mx-5">
+              </div>
+              <!-- Same logos are repeated for smooth transition -->
+              <div class="flex items-center flex-shrink-0">
+                <img src="/natgeo.svg" alt="National Geographic" class="h-6 mx-5">
+                <img src="/tech-in-asia.svg" alt="Tech in Asia" class="h-4 mx-5">
+                <img src="/nvidia-inception.png" alt="NVIDIA Inception" class="h-6 mx-5">
+                <img src="/jica.svg" alt="Japan International Cooperation Agency" class="h-7 mx-5">
+                <img src="/seedstars.svg" alt="Seedstars" class="h-3 mx-5">
+              </div>
+            </div>
+          </div>
+          <!-- Recognition logos -->
+          <div class="hidden sm:flex flex-row items-center justify-center gap-6 sm:gap-8 mb-8 flex-nowrap overflow-hidden">
+            <a href="https://www.nationalgeographic.com/environment/article/artificial-intelligence-climate-change#:~:text=Montreal%20Institute%20for%20Learning%20Algorithms%20(MILA)%2C%20Microsoft%2C%20and%20ConscientAI%20Labs%20used%20GANs%2C%20a%20type%20of%20AI" target="_blank" class="grayscale hover:grayscale-0 transition-all duration-300">
+              <!-- https://upload.wikimedia.org/wikipedia/commons/f/fc/Natgeologo.svg -->
+              <img src="/natgeo.svg" alt="National Geographic" class="h-6 w-auto">
+            </a>
+            <a href="https://www.techinasia.com/empath-wins-tech-asia-singapore-2018-arena#:~:text=ConscientAI%20(Sri%20Lanka)%2C%20a%20startup%20that%20uses%20machine%20learning%20to%20provide%20insights%20on%20consumer%20behavior%20and%20trends%20in%20sectors%20like%20manufacturing%2C%20retail%2C%20healthcare%2C%20and%20insurance.%20It%20developed%20a%20SaaS%20product%20that%20analyzes%20clients’%20website%20impressions%20and%20customer%20sentiment." target="_blank" class="grayscale hover:grayscale-0 transition-all duration-300">
+              <!-- https://getlogovector.com/tech-in-asia-logo-vector-svg/ (modified) -->
+              <img src="/tech-in-asia.svg" alt="Tech in Asia" class="h-4 w-auto">
+            </a>
+            <a href="https://www.nvidia.com/en-us/startups/" target="_blank" class="grayscale hover:grayscale-0 transition-all duration-300">
+              <!-- https://tactun.com/wp-content/uploads/2024/08/NV_Inception_Program_Logo_NV_Inception_Logo_H_CMYK-1080x662-1-e1724183249153.webp (modified) -->
+              <img src="/nvidia-inception.png" alt="NVIDIA Inception" class="h-6 w-auto">
+            </a>
+            <a href="https://www.jica.go.jp/english/" target="_blank" class="grayscale hover:grayscale-0 transition-all duration-300">
+              <!-- https://upload.wikimedia.org/wikipedia/commons/5/5b/Japan_International_Cooperation_Agency_logo.svg -->
+              <img src="/jica.svg" alt="Japan International Cooperation Agency" class="h-7 w-auto">
+            </a>
+            <a href="https://www.seedstarsworld.com/event/seedstars-colombo-2019/" target="_blank" class="grayscale hover:grayscale-0 transition-all duration-300">
+              <!-- https://www.seedstars.com/static/img/seedstars_blue.fcbd2a36c116.svg -->
+              <img src="/seedstars.svg" alt="Seedstars" class="h-3 w-auto">
+            </a>
+          </div>
           <!-- Call to action -->
           <a href="/contact" class="inline-block group relative overflow-hidden pl-6 pr-5 text-sm font-medium bg-gray-900 text-white py-3 rounded-full shadow-sm transition-all duration-300 hover:bg-black hover:shadow-lg">
             <!-- Button text -->
