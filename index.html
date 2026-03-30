@@ -434,24 +434,13 @@
                   <!-- Case studies icon -->
                   <svg class="w-16 h-16 sm:w-24 sm:h-24 text-gray-300 transition-transform duration-700 group-hover:-translate-y-1" viewBox="0 0 100 100">
                     <g fill="none" stroke="currentcolor" stroke-width="1">
-                      <!-- Top left -->
-                      <line x1="5" y1="50" x2="50" y2="5"/>
-                      <!-- Top middle -->
-                      <line x1="50" y1="5" x2="50" y2="72.5"/>
-                      <!-- Top right -->
-                      <line x1="50" y1="5" x2="95" y2="50"/>
-                      <!-- Middle left -->
-                      <line x1="5" y1="50" x2="50" y2="72.5"/>
-                      <!-- Middle right -->
-                      <line x1="95" y1="50" x2="50" y2="72.5"/>
-                      <!-- Bottom right -->
-                      <line x1="95" y1="50" x2="50" y2="95"/>
-                      <!-- Bottom middle -->
-                      <line x1="50" y1="95" x2="50" y2="72.5"/>
-                      <!-- Bottom left -->
-                      <line x1="5" y1="50" x2="50" y2="95"/>
-                      <line x1="5" y1="50" x2="50" y2="27.5"stroke-dasharray="2,2"/>
-                      <line x1="95" y1="50" x2="50" y2="27.5" stroke-dasharray="2,2"/>
+                      <!--Quadrilateral outline-->
+                      <path d="M50 5 L98.71 33.13 L50 95 L1.29 33.13 Z"/>
+                      <!--Internal edges-->
+                      <line x1="50" y1="5" x2="50" y2="61.25" stroke-dasharray="2,2"/>
+                      <line x1="1.29" y1="33.13" x2="50" y2="61.25"/>
+                      <line x1="98.71" y1="33.13" x2="50" y2="61.25"/>
+                      <line x1="50" y1="61.25" x2="50" y2="95"/>
                     </g>
                   </svg>
                 </div>
