@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-Z8VS5W8EJR"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-Z8VS5W8EJR');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The biggest challenge of AI is not people or technology - ConscientAI</title>
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="icon" sizes="32x32" href="/favicon-32x32.png" type="image/png">
+    <link rel="icon" sizes="16x16" href="/favicon-16x16.png" type="image/png">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Geist:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    <style>
+      #hamburger-btn.open span:nth-child(1) {
+        transform: translateY(7px) rotate(45deg);
+      }
+
+      #hamburger-btn.open span:nth-child(2) {
+        opacity: 0;
+      }
+
+      #hamburger-btn.open span:nth-child(3) {
+        transform: translateY(-7px) rotate(-45deg);
+      }
+
+      .scroll-lock {
+        position: fixed;
+        inset: 0;
+        width: 100%;
+        overflow: hidden;
+      }
+
+      /* Smooth scroll behavior */
+      html {
+        -webkit-overflow-scrolling: touch;
+      }
+      /* Mobile menu animation */
+      @keyframes fade-in {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .animate-mobile-menu-item {
+        animation: fade-in 0.6s ease-out forwards;
+      }
+    </style>
+  </head>
+
+  <body class="relative flex flex-col min-h-screen">
+    <!-- Header -->
+    <header id="main-header" class="fixed top-0 left-0 w-full flex justify-between items-center p-4 bg-transparent z-[110] transition-[background-color,backdrop-filter] duration-200 shadow-[0_20px_50px_rgba(0,0,0,0.02)]">
+      <div class="flex items-center">
+        <a href="/">
+          <img src="/logo.svg" alt="Company Logo" class="h-10 w-auto">
+        </a>
+      </div>
+      <!-- Desktop Menu -->
+      <nav class="hidden sm:flex space-x-6 text-xs font-medium uppercase tracking-widest">
+        <a href="/services" class="group relative py-1">
+          Services
+          <span class="absolute bottom-[2px] left-0 h-[1px] w-0 bg-gray-900 transition-all duration-300 group-hover:w-full"></span>
+        </a>
+        <a href="/research" class="group relative py-1">
+          Research
+          <span class="absolute bottom-[2px] left-0 h-[1px] w-0 bg-gray-900 transition-all duration-300 group-hover:w-full"></span>
+        </a>
+        <a href="/case-studies" class="group relative py-1">
+          Case Studies
+          <span class="absolute bottom-[2px] left-0 h-[1px] w-0 bg-gray-900 transition-all duration-300 group-hover:w-full"></span>
+        </a>
+        <a href="/about" class="group relative py-1">
+          About
+          <span class="absolute bottom-[2px] left-0 h-[1px] w-0 bg-gray-900 transition-all duration-300 group-hover:w-full"></span>
+        </a>
+        <a href="/contact" class="group relative py-1">
+          Contact
+          <span class="absolute bottom-[2px] left-0 h-[1px] w-0 bg-gray-900 transition-all duration-300 group-hover:w-full"></span>
+        </a>
+      </nav>
+      <!-- Mobile Hamburger -->
+      <div class="sm:hidden">
+        <button id="hamburger-btn" class="relative w-6 h-4 flex flex-col justify-between items-center z-[120]">
+          <span class="block w-6 h-[2px] bg-gray-800 transition-all duration-300 ease-in-out"></span>
+          <span class="block w-6 h-[2px] bg-gray-800 transition-all duration-300 ease-in-out"></span>
+          <span class="block w-6 h-[2px] bg-gray-800 transition-all duration-300 ease-in-out"></span>
+        </button>
+      </div>
+    </header>
+    <main class="relative flex flex-col flex-1 z-20 bg-white">
+      <section class="w-full pt-32 pb-10 sm:pt-40">
+        <div class="max-w-3xl mx-auto px-6">
+          <nav aria-label="Breadcrumb" class="flex items-center gap-2 mb-6">
+            <a href="/" class="text-[10px] font-bold uppercase tracking-widest text-[#0c4e5a]">
+              Home
+            </a>
+            <i class="bi bi-chevron-right text-[8px] text-gray-500"></i>
+            <a href="/insights" class="text-[10px] font-bold uppercase tracking-widest text-[#0c4e5a]">
+              Insights
+            </a>
+            <i class="bi bi-chevron-right text-[8px] text-gray-500"></i>
+          </nav>
+          <h1 class="text-3xl md:text-4xl font-semibold !leading-[1.3] tracking-tight mb-6">
+            The biggest challenge of AI is not people or technology
+          </h1>
+          <div class="flex items-center text-xs uppercase tracking-widest text-gray-400 gap-2 mb-8">
+            <time datetime="2018-05-02">May 2, 2018</time> &middot; 4 min read
+          </div>
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-y-6 gap-x-6 border-t border-gray-100 py-8 w-full">
+            <div class="flex items-center gap-3">
+              <div class="w-10 h-10 rounded-full overflow-hidden flex-shrink-0 border border-gray-100">
+                <img src="/img/photos/team/cd-athuraliya.png" alt="CD Athuraliya" class="w-full h-full object-cover">
+              </div>
+              <div class="flex flex-col min-w-0">
+                <span class="text-sm font-semibold truncate">CD Athuraliya</span>
+                <span class="text-xs text-gray-500">Co-founder, ConscientAI</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <article class="w-full max-w-3xl mx-auto px-6 pb-24">
+        <div class="max-w-none text-gray-800 !leading-relaxed">
+          <figure class="mb-8 group md:w-[85%] mx-auto">
+            <div class="relative w-full rounded-lg overflow-hidden grainy-image-overlay shadow-sm">
+              <img src="/img/photos/insights/ai-engineering.webp" alt="AI Engineering" class="w-full h-auto object-cover">
+            </div>
+            <figcaption class="mt-3 text-center">
+              <p class="text-sm text-gray-400 max-w-[90%] mx-auto">
+                Image by author
+              </p>
+            </figcaption>
+          </figure>
+          <p class="mb-6">
+            Yes, that&rsquo;s correct. Well, I think so and let me explain.
+          </p>
+          <p class="mb-6">
+            I think the biggest challenge of AI right now is making it an industry or an engineering field. All the other challenges were there for a while if you really think about it. There can be slow downs and booms in fundamental research, talent can be in short supply, we still make progress. But I think we are yet to define AI as an industry. And we need to do it right away!
+          </p>
+          <p class="mb-6">
+            But why..? We all can see how AI is changing the world; from the photos we take to how we move around. It is becoming more common and ubiquitous every day. From a technical point of view, this means the systems we use in our day-to-day life have much more AI underneath.
+          </p>
+          <p class="mb-6">
+            AI as a field has existed for more than six decades. But most of its lifetime as a science not as an industry. With the emergence of deep learning and its recent successes, big players (Google et al.) saw the potential and started using AI in their products and services. Now it&rsquo;s quite a race among them. But do we yet have a field called &ldquo;AI engineering&rdquo;? You may say yes because there are few <a href="https://www.udacity.com/course/aws-machine-learning-engineer-nanodegree--nd189" target="_blank" class="underline decoration-gray-300 underline-offset-4 transition-colors duration-300 hover:decoration-gray-600">MOOCs</a> and <a href="https://www.indeed.com/q-Artificial-Intelligence-Engineer-jobs.html" target="_blank" class="underline decoration-gray-300 underline-offset-4 transition-colors duration-300 hover:decoration-gray-600">many job openings</a>. Of course it&rsquo;s good but not enough to define a new field.
+          </p>
+          <p class="mb-6">
+            If you think about it, software engineering as a field is decades old and it has evolved as an engineering field for a while. It has been taught at schools, hundreds of books have been written, frameworks and paradigms have been introduced. AI needs to reach that maturity soon. But still, why do I think it is the biggest challenge? Let me explain a little bit more.
+          </p>
+          <p class="text-lg md:text-xl text-gray-500 mb-6 !leading-relaxed pl-6 border-l-4 border-gray-200">
+            Software engineering or software development as a field has evolved under the assumption that everything is deterministic. True that your code stops working randomly and infrastructure fails for no reason (we think!). But those are not intended to be like that. We write code and build infrastructure to work in the same way, all the time. But AI, especially more commonly used machine learning or deep learning, is mostly probabilistic. We don&rsquo;t build things to work in the same way 100% of the time. That&rsquo;s also the beauty of AI. This might not be new to you if you at least know the basics of machine learning. And nothing should bother you much as long as you do your research implementation or ML hobby project. But think about building production systems that involve the complete software development life cycle with that probabilistic behavior in mind.
+          </p>
+          <p class="mb-6">
+            We started thinking about all this as soon as we started working with clients. From requirement analysis to system testing, everything changes when you&rsquo;re working with probabilities underneath. Instead of (ideally) 100% uptime, now we&rsquo;re talking about 70% of the time in one state and 30% in another. Don&rsquo;t forget that these are probabilities, 60/40 is also acceptable. In reality, it gets more complicated than this.
+          </p>
+          <p class="mb-6">
+            &ldquo;All this is fine but why today? We have some time right?&rdquo; you may ask. Ideally, it should have been yesterday! As I said at the beginning, we see AI products everywhere but everyone is building AI products in their own ways. We don&rsquo;t have common frameworks (I&rsquo;m not talking about tools here) or engineering paradigms for AI product development yet. We can be missing compatibility, interoperability, security, scalability, resilience &hellip; you name it. I know what you think, I should be out of my mind to think that they don&rsquo;t maintain these at Google or Tesla. Yes, they do, but it&rsquo;s very likely that those are their own standards and frameworks. It is highly unlikely that these different companies follow the same paradigms of AI product development even at a high level as we have been doing in software engineering. And that is why we need to define a new engineering field for AI. We need to talk more, we need to write textbooks, we need to develop courses for schools.
+          </p>
+          <p class="mb-6">
+            I have some good news too! Things are not as bad as you think. I can remember a few <a href="https://docs.google.com/document/d/1j4_1ZU-hCGLgQGXj_FGBG2KRceCBSz1JB3sKkHBGw8Y/" target="_blank" class="underline decoration-gray-300 underline-offset-4 transition-colors duration-300 hover:decoration-gray-600">related sessions at SOCML 2017</a>, maybe because the sessions were suggested by attendees. Unfortunately, I had to skip &ldquo;ML in Production&rdquo; for something more interesting (!) but (in my defense) I was at &ldquo;Software Frameworks for Machine Learning&rdquo;. Hopefully, we&rsquo;ll be able to see more discussions and events around AI as an engineering field in the coming months and years. I think AI incubated in 2010s and it will reach its maturity in 2020s. But there&rsquo;s a lot to be done!
+          </p>
+          <p class="italic mb-6">
+            This article was also published on <a href="https://medium.com/@cdathuraliya/the-biggest-challenge-of-ai-is-not-people-or-technology-372047d5e5d6" target="_blank" class="underline decoration-gray-300 underline-offset-4 transition-colors duration-300 hover:decoration-gray-600">Medium</a>.
+          </p>
+        </div>
+        <div class="mt-16 pt-6 border-t border-gray-100 flex justify-end items-center gap-6 pr-2 md:pr-4">
+          <span class="text-xs font-bold uppercase tracking-wide text-gray-400">Share:</span>
+          <a href="#" class="text-gray-400 hover:text-[#2867B2] transition-colors" title="Share on LinkedIn">
+            <i class="bi bi-linkedin"></i>
+          </a>
+          <a href="#" class="text-gray-400 hover:text-black transition-colors" title="Share on X">
+            <i class="bi bi-twitter-x"></i>
+          </a>
+          <a href="#" class="text-gray-400 hover:text-[#0866FF] transition-colors" title="Share on Facebook">
+            <i class="bi bi-facebook"></i>
+          </a>
+        </div>
+      </article>
+    </main>
+    <!-- Footer -->
+    <footer class="bg-[#101010] text-white py-12">
+      <div class="container mx-auto px-6 md:px-12">
+        <!-- Top content: logo + columns -->
+        <div class="flex flex-col md:flex-row md:justify-between md:items-start gap-14">
+          <!-- Logo placeholder -->
+          <div class="flex-shrink-0 text-left">
+            <img src="/logo-white.svg" alt="Company Logo" class="h-10 w-auto mb-4">
+            <!-- <p class="text-gray-400 text-sm">Your Company Tagline</p> -->
+          </div>
+          <!-- Menu column -->
+          <div class="grid grid-cols-2 gap-8 md:flex md:gap-24 lg:gap-32">
+            <div class="text-left">
+              <h3 class="text-xs font-semibold uppercase tracking-widest mb-4">Work</h3>
+              <ul class="space-y-2">
+                <li><a href="/services" class="text-gray-400 hover:text-white transition-colors">Services</a></li>
+                <li><a href="/research" class="text-gray-400 hover:text-white transition-colors">Research</a></li>
+                <li><a href="/case-studies" class="text-gray-400 hover:text-white transition-colors">Case Studies</a></li>
+              </ul>
+            </div>
+            <div class="text-left">
+              <h3 class="text-xs font-semibold uppercase tracking-widest mb-4">Company</h3>
+              <ul class="space-y-2">
+                <li><a href="/" class="text-gray-400 hover:text-white transition-colors">Home</a></li>
+                <li><a href="/about" class="text-gray-400 hover:text-white transition-colors">About</a></li>
+                <li><a href="/contact" class="text-gray-400 hover:text-white transition-colors">Contact</a></li>
+              </ul>
+            </div>
+          </div>
+          <!-- Contact/Social column -->
+          <div class="text-left">
+            <h3 class="text-xs font-semibold uppercase tracking-widest mb-4">Connect</h3>
+            <a href="mailto:contact@conscient.ai" class="text-gray-400 hover:text-white transition-colors block mb-4">contact@conscient.ai</a>
+            <!-- <p class="text-gray-400 mb-4">+1 234 567 890</p> -->
+            <div class="flex justify-start gap-4">
+              <div class="w-8 h-8">
+                <a href="https://www.linkedin.com/company/conscientai" target="_blank" aria-label="LinkedIn" class="text-gray-400 hover:text-[#2867B2] transition">
+                  <!-- https://icons.getbootstrap.com/icons/linkedin/ -->
+                  <i class="bi bi-linkedin"></i>
+                </a>
+              </div>
+              <div class="w-8 h-8">
+                <a href="https://x.com/ConscientAI" target="_blank" aria-label="X" class="text-gray-400 hover:text-white transition">
+                  <!-- https://icons.getbootstrap.com/icons/twitter-x/ -->
+                  <i class="bi bi-twitter-x"></i>
+                </a>
+              </div>
+              <div class="w-8 h-8">
+                <a href="https://www.facebook.com/ConscientAI/" target="_blank" aria-label="Facebook" class="text-gray-400 hover:text-[#0866FF] transition">
+                  <!-- https://icons.getbootstrap.com/icons/facebook/ -->
+                  <i class="bi bi-facebook"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Bottom copyright -->
+        <p class="mt-14 md:mt-20 text-center text-gray-500 text-sm">
+          &copy; 2017-<span id="current-year">2026</span> ConscientAI. All rights reserved.
+        </p>
+      </div>
+    </footer>
+    <!-- Mobile Menu -->
+    <nav id="mobile-menu" class="hidden fixed inset-0 w-full h-full bg-white flex flex-col items-center justify-center space-y-8 text-lg uppercase tracking-widest sm:hidden z-[100]">
+      <a href="/services" class="animate-mobile-menu-item opacity-0 [animation-delay:100ms] block transition-colors duration-200 active:text-gray-400">Services</a>
+      <a href="/research" class="animate-mobile-menu-item opacity-0 [animation-delay:200ms] block transition-colors duration-200 active:text-gray-400">Research</a>
+      <a href="/case-studies" class="animate-mobile-menu-item opacity-0 [animation-delay:300ms] block transition-colors duration-200 active:text-gray-400">Case Studies</a>
+      <a href="/about" class="animate-mobile-menu-item opacity-0 [animation-delay:400ms] block transition-colors duration-200 active:text-gray-400">About</a>
+      <a href="/contact" class="animate-mobile-menu-item opacity-0 [animation-delay:500ms] block transition-colors duration-200 active:text-gray-400">Contact</a>
+    </nav>
+    <script>
+      const header = document.getElementById('main-header');
+      const btn = document.getElementById('hamburger-btn');
+      const menu = document.getElementById('mobile-menu');
+      const html = document.documentElement;
+      const body = document.body;
+
+      let scrollY = 0;
+
+      function updateHeaderStyle() {
+        const isMenuOpen = !menu.classList.contains('hidden');
+        const isScrolled = window.scrollY > 20;
+
+        if (isMenuOpen) {
+          // When menu is open, header must match the mobile menu background exactly
+          header.classList.add('bg-white');
+          header.classList.remove('bg-transparent', 'backdrop-blur-md', 'bg-white/50');
+        } else if (isScrolled) {
+          // When scrolling down (menu closed)
+          header.classList.add('backdrop-blur-md', 'bg-white/50');
+          header.classList.remove('bg-transparent', 'bg-white');
+        } else {
+          // At the very top (menu closed)
+          header.classList.add('bg-transparent');
+          header.classList.remove('backdrop-blur-md', 'bg-white/50', 'bg-white');
+        }
+      }
+
+      function openMenu() {
+        menu.classList.remove('hidden');
+        btn.classList.add('open');
+
+        // lock scroll position
+        scrollY = window.scrollY || window.pageYOffset;
+        body.style.top = `-${scrollY}px`;
+        html.classList.add('scroll-lock');
+        body.classList.add('scroll-lock');
+
+        updateHeaderStyle();
+      }
+
+      function closeMenu() {
+        // Disable the transition temporarily to prevent the "laggy" fade
+        header.style.transition = 'none';
+
+        menu.classList.add('hidden');
+        btn.classList.remove('open');
+
+        html.classList.remove('scroll-lock');
+        body.classList.remove('scroll-lock');
+        body.style.top = '';
+        // Restore scroll
+        window.scrollTo(0, scrollY);
+        // Immediately update style while transition is 'none'
+        updateHeaderStyle();
+
+        // Force a "reflow" so the browser applies the styles instantly,
+        // then turn the transition back on for normal scrolling
+        requestAnimationFrame(() => {
+          header.style.transition = '';
+        });
+      }
+
+      // Single scroll listener
+      window.addEventListener('scroll', updateHeaderStyle);
+
+      btn.addEventListener('click', () => {
+        menu.classList.contains('hidden') ? openMenu() : closeMenu();
+      });
+
+      menu.querySelectorAll('a').forEach(a => a.addEventListener('click', closeMenu));
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') closeMenu();
+      });
+
+      // Dynamically set copyright current year
+      const now = new Date();
+      const currentYear = now.getUTCFullYear();
+      document.getElementById('current-year').textContent = currentYear;
+    </script>
+  </body>
+</html>
