@@ -1,0 +1,66 @@
+[
+  {
+    "id": 1,
+    "category": "Opinion",
+    "date": "May 2, 2018",
+    "title": "The biggest challenge of AI is not people or technology",
+    "author": "CD Athuraliya",
+    "url": "/insights/the-biggest-challenge-of-ai-is-not-people-or-technology",
+    "excerpt": "Yes, that’s correct. Well, I think so and let me explain. I think the biggest challenge of AI right now is making it an industry or an engineering field. All the other challenges were there for a while if you really think about it. There can be slow downs and booms in fundamental research, talent can be in short supply, we still make progress. But I think we are yet to define AI as an industry. And we need to do it right away!",
+    "image": "/img/photos/insights/ai-engineering.webp",
+    "priority": 2
+  },
+  {
+    "id": 2,
+    "category": "Business",
+    "date": "Jul 13, 2018",
+    "title": "AI can solve all your business problems. Or maybe not!",
+    "author": "Janak Gunatilleke",
+    "url": "#",
+    "excerpt": "A 2017 survey of more than 3,000 executives by MIT Sloan Management Review and Boston Consulting Group revealed that almost 85% believed that Artificial Intelligence (AI) will give their companies or help them maintain a competitive advantage. Non-public AI companies raised $15.2B funding in 2017, an increase of 141% compared to 2016.",
+    "image": null
+  },
+  {
+    "id": 3,
+    "category": "Event",
+    "date": "Oct 30, 2018",
+    "title": "Musings after Amsterdam (and World Summit AI 2018)",
+    "author": "Janak Gunatilleke",
+    "url": "#",
+    "excerpt": "A couple of weeks ago I attended the World Summit AI 2018 in Amsterdam. Coming from a non-technology background (I originally trained as a medical doctor) and as someone who had since worked as a management consultant and more recently have been working with various startups (including ConscientAI), I was keen to understand more about AI from a business point of view.",
+    "image": "/img/photos/insights/world-summit-ai-2018.webp",
+    "priority": 2
+  },
+  {
+    "id": 4,
+    "category": "Business",
+    "date": "Dec 31, 2018",
+    "title": "5 things to consider to make your AI project a success",
+    "author": "Janak Gunatilleke",
+    "url": "#",
+    "excerpt": "According to Gartner analysts, up to 85% of big data projects fail. I suspect that for AI projects, especially if you count the ones that never start, the failure rate is even higher. What are the reasons for the high failure rate with AI projects? Drawing on my technology consulting experience from working at Accenture UK and wider transformation project experience within the highly complex environment of the UK National Health Service (NHS), I wanted to identify the causes and potential solutions.",
+    "image": null
+  },
+  {
+    "id": 5,
+    "category": "Engineering",
+    "date": "Mar 11, 2019",
+    "title": "Online prediction and model pipelining for Google BERT",
+    "author": "CD Athuraliya",
+    "url": "/insights/online-prediction-and-model-pipelining-for-google-bert",
+    "excerpt": "This is going to be a short one. While others argue over GPT-2, we had to dig a little deeper into Google BERT. If you are a follower of deep learning research, especially on NLP side, BERT needs no introduction at this point in time. Since its initial release last October, dozens more resources have been added highlighting the significance of this work by Google. The official blog post itself is a very good resource to understand the basics.",
+    "image": "/img/photos/insights/google-bert.webp",
+    "priority": 2
+  },
+  {
+    "id": 6,
+    "category": "Event",
+    "date": "May 12, 2019",
+    "title": "5 takeaways from AI Everything Summit for Sri Lanka",
+    "author": "Janak Gunatilleke",
+    "url": "#",
+    "excerpt": "Keen to explore the latest developments in AI and to learn more about how it was being used in the region, I attended the inaugural AI Everything summit in Dubai. Having also recently been thinking about the current state of AI in Sri Lanka and what it could be (or should be) in the future, I found that the summit provided some very useful perspectives.",
+    "image": "/img/photos/insights/ai-everything-summit-2019.webp",
+    "priority": 1
+  }
+]
