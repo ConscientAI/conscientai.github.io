@@ -12,11 +12,11 @@
     </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The biggest challenge of AI is not people or technology - ConscientAI</title>
-    <meta property="og:title" content="The biggest challenge of AI is not people or technology - ConscientAI" />
+    <title>Online prediction and model pipelining for Google BERT - ConscientAI</title>
+    <meta property="og:title" content="Online prediction and model pipelining for Google BERT - ConscientAI" />
     <meta property="og:type" content="article" />
-    <meta property="og:url" content="https://conscient.ai/insights/the-biggest-challenge-of-ai-is-not-people-or-technology/" />
-    <meta property="og:image" content="https://conscient.ai/img/photos/insights/ai-engineering.webp" />
+    <meta property="og:url" content="https://conscient.ai/blog/online-prediction-and-model-pipelining-for-google-bert/" />
+    <meta property="og:image" content="https://conscient.ai/img/photos/blog/google-bert.webp" />
     <link rel="icon" href="/favicon.ico" type="image/x-icon">
     <link rel="icon" sizes="32x32" href="/favicon-32x32.png" type="image/png">
     <link rel="icon" sizes="16x16" href="/favicon-16x16.png" type="image/png">
@@ -26,6 +26,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Geist:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
     <style>
       #hamburger-btn.open span:nth-child(1) {
@@ -110,23 +111,23 @@
       </div>
     </header>
     <main class="relative flex flex-col flex-1 z-20 bg-white">
-      <section class="w-full pt-32 pb-10 sm:pt-40">
+      <section class="w-full pt-32 pb-6 sm:pt-40">
         <div class="max-w-3xl mx-auto px-6">
           <nav aria-label="Breadcrumb" class="flex items-center gap-2 mb-6">
             <a href="/" class="text-[10px] font-bold uppercase tracking-widest text-[#0c4e5a]">
               Home
             </a>
             <i class="bi bi-chevron-right text-[8px] text-gray-500"></i>
-            <a href="/insights" class="text-[10px] font-bold uppercase tracking-widest text-[#0c4e5a]">
-              Insights
+            <a href="/blog" class="text-[10px] font-bold uppercase tracking-widest text-[#0c4e5a]">
+              Blog
             </a>
             <i class="bi bi-chevron-right text-[8px] text-gray-500"></i>
           </nav>
           <h1 class="text-3xl md:text-4xl font-semibold !leading-[1.3] tracking-tight mb-6">
-            The biggest challenge of AI is not people or technology
+            Online prediction and model pipelining for Google BERT
           </h1>
           <div class="flex items-center text-xs uppercase tracking-widest text-gray-400 gap-2 mb-8">
-            <time datetime="2018-05-02">May 2, 2018</time> &middot; 4 min read
+            <time datetime="2018-05-02">Mar 11, 2019</time> &middot; 2 min read
           </div>
           <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-y-6 gap-x-6 border-t border-gray-100 py-8 w-full">
             <div class="flex items-center gap-3">
@@ -144,55 +145,37 @@
       <article class="w-full max-w-3xl mx-auto px-6 pb-24">
         <div class="max-w-none text-gray-800 !leading-relaxed">
           <figure class="mb-8 group md:w-[85%] mx-auto">
-            <div class="relative w-full rounded-lg overflow-hidden grainy-image-overlay shadow-sm">
-              <img src="/img/photos/insights/ai-engineering.webp" alt="AI Engineering" class="w-full h-auto object-cover">
+            <div class="relative w-full rounded-lg overflow-hidden grainy-image-overlay">
+              <img src="/img/photos/blog/google-bert.webp" alt="AI Engineering" class="w-full h-auto object-cover">
             </div>
             <figcaption class="mt-3 text-center">
               <p class="text-sm text-gray-400 max-w-[90%] mx-auto">
-                Image by author
+                Model architecture from <a href="https://arxiv.org/abs/1810.04805" target="_blank" class="text-gray-400 underline decoration-gray-400/50 underline-offset-2 transition-all duration-300 hover:text-gray-600 hover:decoration-gray-600">the paper</a> and Bert photo from <a href="https://www.syracuse.com/tv/2018/09/bert_ernie_gay_sesame_street.html" target="_blank" class="text-gray-400 underline decoration-gray-400/50 underline-offset-2 transition-all duration-300 hover:text-gray-600 hover:decoration-gray-600">Syracuse.com</a>
               </p>
             </figcaption>
           </figure>
           <p class="mb-6">
-            Yes, that&rsquo;s correct. Well, I think so and let me explain.
+            This is going to be a short one. While others <a href="https://thegradient.pub/openai-please-open-source-your-language-model/" target="_blank" class="underline decoration-gray-300 underline-offset-4 transition-colors duration-300 hover:decoration-gray-600">argue over GPT-2</a>, we had to dig a little deeper into <a href="https://arxiv.org/abs/1810.04805" target="_blank" class="underline decoration-gray-300 underline-offset-4 transition-colors duration-300 hover:decoration-gray-600">Google BERT</a>. If you are a follower of deep learning research, especially on NLP side, BERT needs no introduction at this point in time. Since its initial release last October, dozens more resources have been added highlighting the significance of this work by Google. The <a href="https://research.google/blog/open-sourcing-bert-state-of-the-art-pre-training-for-natural-language-processing/" target="_blank" class="underline decoration-gray-300 underline-offset-4 transition-colors duration-300 hover:decoration-gray-600">official blog post</a> itself is a very good resource to understand the basics.
           </p>
           <p class="mb-6">
-            I think the biggest challenge of AI right now is making it an industry or an engineering field. All the other challenges were there for a while if you really think about it. There can be slow downs and booms in fundamental research, talent can be in short supply, we still make progress. But I think we are yet to define AI as an industry. And we need to do it right away!
+            Besides the significance, I think the code release with good documentation (a not-so-common practice in research, sadly) immensely contributed to the popularity it gained in such a short period. The <a href="https://github.com/google-research/bert" target="_blank" class="underline decoration-gray-300 underline-offset-4 transition-colors duration-300 hover:decoration-gray-600">repository</a> covered almost all the essentials, with very few exceptions. One was online prediction support. While I was searching through the issues and pull requests, I found <a href="https://github.com/google-research/bert/issues/94#issuecomment-437883736" target="_blank" class="underline decoration-gray-300 underline-offset-4 transition-colors duration-300 hover:decoration-gray-600">this</a> very useful issue comment. For our requirement, we had to implement an additional <a href="https://github.com/google-research/bert/pull/327" target="_blank" class="underline decoration-gray-300 underline-offset-4 transition-colors duration-300 hover:decoration-gray-600">data processor for SST-2</a> (we used a custom version for the actual use case), a helper class for online prediction and then use them in a pipeline with multiple BERT models. Considering BERT&rsquo;s popularity in multiple downstream NLP tasks, we thought of sharing our extensions with everyone. Of course this is far from a proper code release and I wouldn&rsquo;t call it <span class="italic">production-ready</span>. But in case you were looking for the same thing, hope this would help. I have added a Jupyter Notebook to demonstrate the usage of <a href="https://github.com/cdathuraliya/bert-inference/blob/master/prediction.py" target="_blank" class="tracking-tight underline decoration-gray-300 underline-offset-4 transition-colors duration-300 hover:decoration-gray-600" style="font-family: 'Roboto Mono', serif;">prediction.py</a>. Hope it is simple enough, but do send a pull request if you notice anything that needs to be changed.
           </p>
           <p class="mb-6">
-            But why..? We all can see how AI is changing the world; from the photos we take to how we move around. It is becoming more common and ubiquitous every day. From a technical point of view, this means the systems we use in our day-to-day life have much more AI underneath.
-          </p>
-          <p class="mb-6">
-            AI as a field has existed for more than six decades. But most of its lifetime as a science not as an industry. With the emergence of deep learning and its recent successes, big players (Google et al.) saw the potential and started using AI in their products and services. Now it&rsquo;s quite a race among them. But do we yet have a field called &ldquo;AI engineering&rdquo;? You may say yes because there are few <a href="https://www.udacity.com/course/aws-machine-learning-engineer-nanodegree--nd189" target="_blank" class="underline decoration-gray-300 underline-offset-4 transition-colors duration-300 hover:decoration-gray-600">MOOCs</a> and <a href="https://www.indeed.com/q-Artificial-Intelligence-Engineer-jobs.html" target="_blank" class="underline decoration-gray-300 underline-offset-4 transition-colors duration-300 hover:decoration-gray-600">many job openings</a>. Of course it&rsquo;s good but not enough to define a new field.
-          </p>
-          <p class="mb-6">
-            If you think about it, software engineering as a field is decades old and it has evolved as an engineering field for a while. It has been taught at schools, hundreds of books have been written, frameworks and paradigms have been introduced. AI needs to reach that maturity soon. But still, why do I think it is the biggest challenge? Let me explain a little bit more.
-          </p>
-          <p class="md:font-light text-lg md:text-xl text-gray-500 mb-6 !leading-relaxed pl-4 md:pl-6 border-l-4 border-gray-200">
-            Software engineering or software development as a field has evolved under the assumption that everything is deterministic. True that your code stops working randomly and infrastructure fails for no reason (we think!). But those are not intended to be like that. We write code and build infrastructure to work in the same way, all the time. But AI, especially more commonly used machine learning or deep learning, is mostly probabilistic. We don&rsquo;t build things to work in the same way 100% of the time. That&rsquo;s also the beauty of AI. This might not be new to you if you at least know the basics of machine learning. And nothing should bother you much as long as you do your research implementation or ML hobby project. But think about building production systems that involve the complete software development life cycle with that probabilistic behavior in mind.
-          </p>
-          <p class="mb-6">
-            We started thinking about all this as soon as we started working with clients. From requirement analysis to system testing, everything changes when you&rsquo;re working with probabilities underneath. Instead of (ideally) 100% uptime, now we&rsquo;re talking about 70% of the time in one state and 30% in another. Don&rsquo;t forget that these are probabilities, 60/40 is also acceptable. In reality, it gets more complicated than this.
-          </p>
-          <p class="mb-6">
-            &ldquo;All this is fine but why today? We have some time right?&rdquo; you may ask. Ideally, it should have been yesterday! As I said at the beginning, we see AI products everywhere but everyone is building AI products in their own ways. We don&rsquo;t have common frameworks (I&rsquo;m not talking about tools here) or engineering paradigms for AI product development yet. We can be missing compatibility, interoperability, security, scalability, resilience &hellip; you name it. I know what you think, I should be out of my mind to think that they don&rsquo;t maintain these at Google or Tesla. Yes, they do, but it&rsquo;s very likely that those are their own standards and frameworks. It is highly unlikely that these different companies follow the same paradigms of AI product development even at a high level as we have been doing in software engineering. And that is why we need to define a new engineering field for AI. We need to talk more, we need to write textbooks, we need to develop courses for schools.
-          </p>
-          <p class="mb-6">
-            I have some good news too! Things are not as bad as you think. I can remember a few <a href="https://docs.google.com/document/d/1j4_1ZU-hCGLgQGXj_FGBG2KRceCBSz1JB3sKkHBGw8Y/" target="_blank" class="underline decoration-gray-300 underline-offset-4 transition-colors duration-300 hover:decoration-gray-600">related sessions at SOCML 2017</a>, maybe because the sessions were suggested by attendees. Unfortunately, I had to skip &ldquo;ML in Production&rdquo; for something more interesting (!) but (in my defense) I was at &ldquo;Software Frameworks for Machine Learning&rdquo;. Hopefully, we&rsquo;ll be able to see more discussions and events around AI as an engineering field in the coming months and years. I think AI incubated in 2010s and it will reach its maturity in 2020s. But there&rsquo;s a lot to be done!
+            Thanks <a href="https://github.com/brightmart" target="_blank" class="underline decoration-gray-300 underline-offset-4 transition-colors duration-300 hover:decoration-gray-600">@brightmart</a> for opening the issue and for sharing your script! Also kudos to BERT authors for their amazing work!
           </p>
           <p class="italic mb-6">
-            This article was also published on <a href="https://medium.com/@cdathuraliya/the-biggest-challenge-of-ai-is-not-people-or-technology-372047d5e5d6" target="_blank" class="underline decoration-gray-300 underline-offset-4 transition-colors duration-300 hover:decoration-gray-600">Medium</a>.
+            This article was also published on <a href="https://medium.com/@cdathuraliya/online-prediction-and-model-pipelining-for-google-bert-8ace3c85b4f6" target="_blank" class="underline decoration-gray-300 underline-offset-4 transition-colors duration-300 hover:decoration-gray-600">Medium</a>.
           </p>
         </div>
         <div class="mt-16 pt-6 border-t border-gray-100 flex justify-end items-center gap-6 pr-2 md:pr-4">
           <span class="text-xs font-bold uppercase tracking-wide text-gray-400">Share:</span>
-          <a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3A%2F%2Fconscient.ai%2Finsights%2Fthe-biggest-challenge-of-ai-is-not-people-or-technology%2F" target="_blank" class="text-gray-400 hover:text-[#2867B2] transition-colors" title="Share on LinkedIn">
+          <a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3A%2F%2Fconscient.ai%2Fblog%2Fonline-prediction-and-model-pipelining-for-google-bert%2F" target="_blank" class="text-gray-400 hover:text-[#2867B2] transition-colors" title="Share on LinkedIn">
             <i class="bi bi-linkedin"></i>
           </a>
-          <a href="https://twitter.com/intent/tweet?text=The%20biggest%20challenge%20of%20AI%20is%20not%20people%20or%20technology&url=https%3A%2F%2Fconscient.ai%2Finsights%2Fthe-biggest-challenge-of-ai-is-not-people-or-technology%2F" target="_blank" class="text-gray-400 hover:text-black transition-colors" title="Share on X">
+          <a href="https://twitter.com/intent/tweet?text=Online%20prediction%20and%20model%20pipelining%20for%20Google%20BERT&url=https%3A%2F%2Fconscient.ai%2Fblog%2Fonline-prediction-and-model-pipelining-for-google-bert%2F" target="_blank" class="text-gray-400 hover:text-black transition-colors" title="Share on X">
             <i class="bi bi-twitter-x"></i>
           </a>
-          <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fconscient.ai%2Finsights%2Fthe-biggest-challenge-of-ai-is-not-people-or-technology%2F" target="_blank" class="text-gray-400 hover:text-[#0866FF] transition-colors" title="Share on Facebook">
+          <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fconscient.ai%2Fblog%2Fonline-prediction-and-model-pipelining-for-google-bert%2F" target="_blank" class="text-gray-400 hover:text-[#0866FF] transition-colors" title="Share on Facebook">
             <i class="bi bi-facebook"></i>
           </a>
         </div>
