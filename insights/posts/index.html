@@ -127,9 +127,10 @@
           </h1>
         </div>
       </section>
-      <section class="w-full pt-12 pb-36">
+      <section class="w-full pt-12 pb-28">
         <div class="max-w-5xl mx-auto px-6">
           <div id="posts-grid" class="grid grid-cols-1 md:grid-cols-3 gap-16"></div>
+          <div id="pagination-controls" class="mt-16 pt-8 border-t border-gray-100 flex justify-center items-center gap-3"></div>
         </div>
       </section>
     </main>
@@ -280,15 +281,31 @@
 
       // Start dynamically loading posts
       const postsGridContainer = document.getElementById('posts-grid');
+      const paginationControls = document.getElementById('pagination-controls');
+      const postsPerPage = 9;
+
+      const urlParams = new URLSearchParams(window.location.search);
+      let currentPage = parseInt(urlParams.get('page')) || 1;
 
       fetch('/insights/posts.json')
         .then(response => response.json())
         .then(data => {
           const sortedPosts = data.sort((a, b) => new Date(b.date) - new Date(a.date));
 
-          if (sortedPosts.length > 0) {
-            renderPostsGrid(sortedPosts);
+          const totalPosts = sortedPosts.length;
+          const totalPages = Math.max(1, Math.ceil(totalPosts / postsPerPage));
+
+          if (currentPage < 1) currentPage = 1;
+          if (currentPage > totalPages) currentPage = totalPages;
+
+          const startIndex = (currentPage - 1) * postsPerPage;
+          const endIndex = startIndex + postsPerPage;
+          const paginatedSlice = sortedPosts.slice(startIndex, endIndex);
+
+          if (paginatedSlice.length > 0) {
+            renderPostsGrid(paginatedSlice);
           }
+          renderPaginationControls(currentPage, totalPages);
         });
 
       function renderPostsGrid(posts) {
@@ -319,6 +336,24 @@
           `;
           postsGridContainer.appendChild(el);
         });
+      }
+
+      function renderPaginationControls(current, total) {
+        paginationControls.innerHTML = '';
+
+        for (let i = 1; i <= total; i++) {
+          const pageLink = document.createElement('a');
+          pageLink.href = `?page=${i}`;
+          pageLink.innerText = i;
+
+          if (i === current) {
+            pageLink.className = "w-10 h-10 flex items-center justify-center text-xs font-semibold rounded-full bg-gray-900 text-white pointer-events-none";
+          } else {
+            pageLink.className = "w-10 h-10 flex items-center justify-center text-xs text-gray-500 hover:text-gray-900 border border-transparent hover:border-gray-200 font-medium rounded-full transition-all duration-200";
+          }
+
+          paginationControls.appendChild(pageLink);
+        }
       }
       // End dynamically loading posts
 
