@@ -176,19 +176,14 @@
           <div id="primary-featured"></div>
         </div>
       </section>
-      <section class="w-full bg-white py-16">
+      <section class="w-full bg-white pt-16 pb-28">
         <div class="max-w-5xl mx-auto px-6">
           <div id="secondary-grid" class="grid grid-cols-1 md:grid-cols-3 gap-16"></div>
-        </div>
-      </section>
-      <div class="w-full flex items-center">
-        <svg class="w-full h-[1px]" xmlns="http://www.w3.org/2000/svg">
-          <line x1="0" y1="0" x2="100%" y2="0" class="stroke-gray-300" stroke-width="1" stroke-dasharray="5, 5" />
-        </svg>
-      </div>
-      <section class="w-full bg-gray-50 pt-16 pb-36">        
-        <div class="max-w-5xl mx-auto px-6">
-          <div id="posts-feed" class="space-y-16"></div>
+          <div class="w-full flex justify-center mt-16">
+            <a href="/blog/posts" class="group relative overflow-hidden px-6 py-3 text-sm font-medium bg-gray-900 text-white uppercase tracking-wider rounded-full shadow-sm text-center inline-flex items-center justify-center transition-all duration-300 hover:bg-black hover:shadow-lg">
+              <span class="relative z-10">View all posts</span>
+            </a>
+          </div>
         </div>
       </section>
     </main>
@@ -342,7 +337,6 @@
 
       const primaryContainer = document.getElementById('primary-featured');
       const secondaryContainer = document.getElementById('secondary-grid');
-      const feedContainer = document.getElementById('posts-feed');
 
       fetch('/blog/posts.json')
         .then(response => response.json())
@@ -352,12 +346,8 @@
           const primary = allPosts.find(p => p.priority === 1);
           const secondary = allPosts.filter(p => p.priority === 2).slice(0, 3);
 
-          const usedIds = [primary?.id, ...secondary.map(s => s.id)];
-          allPosts = allPosts.filter(p => !usedIds.includes(p.id));
-
           if (primary) renderPrimary(primary);
           if (secondary.length > 0) renderSecondary(secondary);
-          renderFeed(allPosts);
         });
 
       function renderPrimary(post) {
@@ -412,35 +402,6 @@
             </div>
           `;
           secondaryContainer.appendChild(el);
-        });
-      }
-
-      function renderFeed(posts) {
-        feedContainer.innerHTML = '';
-        posts.forEach(post => {
-          const article = document.createElement('a');
-          article.href = post.url;
-          article.className = "group block";
-          
-          article.innerHTML = `
-            <div>
-              <div class="flex items-center gap-3 mb-3">
-                <span class="text-[10px] font-bold uppercase tracking-widest text-[#15899e]">
-                  ${post.category}
-                </span>
-                <span class="text-xs uppercase tracking-widest text-gray-400">
-                  ${post.date}
-                </span>
-              </div>
-              <h3 class="text-xl font-semibold text-gray-900 mb-4">
-                ${post.title}
-              </h3>
-              <p class="text-gray-800 text-sm leading-relaxed line-clamp-3">
-                ${post.excerpt}
-              </p>
-            </div>
-          `;
-          feedContainer.appendChild(article);
         });
       }
       // End dynamically loading posts
