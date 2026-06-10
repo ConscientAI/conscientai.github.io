@@ -344,10 +344,10 @@
           allPosts = data.sort((a, b) => new Date(b.date) - new Date(a.date));
 
           const featuredPost = allPosts.find(p => p.featured === true) || allPosts[0];
-          const secondary = allPosts.filter(p => p.id !== featuredPost?.id).slice(0, 6);
+          const gridPosts = allPosts.filter(p => p.id !== featuredPost?.id).slice(0, 6);
 
           if (featuredPost) renderPrimary(featuredPost);
-          if (secondary.length > 0) renderSecondary(secondary);
+          if (gridPosts.length > 0) renderSecondary(gridPosts);
         });
 
       function renderPrimary(post) {
