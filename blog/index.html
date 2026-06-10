@@ -173,7 +173,7 @@
     <main class="relative flex flex-col flex-1 z-20 bg-white">
       <section class="w-full bg-white xl:pt-16">
         <div class="group max-w-5xl mx-auto px-6 pt-24 pb-16 bg-gray-50 xl:px-8 xl:py-8 xl:rounded-lg relative">
-          <div id="primary-featured"></div>
+          <div id="featured-post"></div>
         </div>
       </section>
       <section class="w-full bg-white pt-16 pb-28">
@@ -335,7 +335,7 @@
       // Start dynamically loading posts
       let allPosts = [];
 
-      const featuredContainer = document.getElementById('primary-featured');
+      const featuredContainer = document.getElementById('featured-post');
       const postsGridContainer = document.getElementById('secondary-grid');
 
       fetch('/blog/posts.json')
