@@ -336,7 +336,7 @@
       let allPosts = [];
 
       const featuredContainer = document.getElementById('primary-featured');
-      const secondaryContainer = document.getElementById('secondary-grid');
+      const postsGridContainer = document.getElementById('secondary-grid');
 
       fetch('/blog/posts.json')
         .then(response => response.json())
@@ -401,7 +401,7 @@
               </p>
             </div>
           `;
-          secondaryContainer.appendChild(el);
+          postsGridContainer.appendChild(el);
         });
       }
       // End dynamically loading posts
