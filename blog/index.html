@@ -343,7 +343,7 @@
         .then(data => {
           allPosts = data.sort((a, b) => new Date(b.date) - new Date(a.date));
 
-          const primary = allPosts.find(p => p.priority === 1);
+          const primary = allPosts.find(p => p.featured === true);
           const secondary = allPosts.filter(p => p.id !== primary?.id).slice(0, 6);
 
           if (primary) renderPrimary(primary);
