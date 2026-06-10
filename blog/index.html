@@ -346,11 +346,11 @@
           const featuredPost = allPosts.find(p => p.featured === true) || allPosts[0];
           const gridPosts = allPosts.filter(p => p.id !== featuredPost?.id).slice(0, 6);
 
-          if (featuredPost) renderPrimary(featuredPost);
+          if (featuredPost) renderFeaturedPost(featuredPost);
           if (gridPosts.length > 0) renderSecondary(gridPosts);
         });
 
-      function renderPrimary(post) {
+      function renderFeaturedPost(post) {
         // 'after:absolute after:inset-0' makes the entire parent container hyperlinked
         featuredContainer.innerHTML = `
                 <a href="${post.url}" class="block after:absolute after:inset-0">
