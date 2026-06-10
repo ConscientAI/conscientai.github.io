@@ -347,7 +347,7 @@
           const gridPosts = allPosts.filter(p => p.id !== featuredPost?.id).slice(0, 6);
 
           if (featuredPost) renderFeaturedPost(featuredPost);
-          if (gridPosts.length > 0) renderSecondary(gridPosts);
+          if (gridPosts.length > 0) renderPostsGrid(gridPosts);
         });
 
       function renderFeaturedPost(post) {
@@ -377,7 +377,7 @@
               `;
       }
 
-      function renderSecondary(posts) {
+      function renderPostsGrid(posts) {
         posts.forEach(post => {
           const el = document.createElement('a');
           el.href = post.url;
