@@ -335,7 +335,7 @@
       // Start dynamically loading posts
       let allPosts = [];
 
-      const primaryContainer = document.getElementById('primary-featured');
+      const featuredContainer = document.getElementById('primary-featured');
       const secondaryContainer = document.getElementById('secondary-grid');
 
       fetch('/blog/posts.json')
@@ -352,7 +352,7 @@
 
       function renderPrimary(post) {
         // 'after:absolute after:inset-0' makes the entire parent container hyperlinked
-        primaryContainer.innerHTML = `
+        featuredContainer.innerHTML = `
                 <a href="${post.url}" class="block after:absolute after:inset-0">
                   <div class="flex flex-col md:flex-row gap-10 lg:gap-16 items-center">
                     <div class="w-full md:w-3/5 aspect-[16/9] rounded-lg overflow-hidden bg-gray-100 border border-gray-50 shadow-sm">
