@@ -378,6 +378,8 @@
       }
 
       function renderPostsGrid(posts) {
+        postsGridContainer.innerHTML = '';
+
         posts.forEach(post => {
           const el = document.createElement('a');
           el.href = post.url;
