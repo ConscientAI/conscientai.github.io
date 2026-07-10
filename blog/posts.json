@@ -63,6 +63,17 @@
     "url": "/blog/5-takeaways-from-ai-everything-summit-2019-for-sri-lanka",
     "excerpt": "Keen to explore the latest developments in AI and to learn more about how it was being used in the region, I attended the inaugural AI Everything summit in Dubai. Having also recently been thinking about the current state of AI in Sri Lanka and what it could be (or should be) in the future, I found that the summit provided some very useful perspectives.",
     "image": "/img/photos/blog/ai-everything-summit-2019.webp",
+    "featured": false
+  },
+  {
+    "id": 7,
+    "category": "Event",
+    "date": "May 29, 2026",
+    "title": "Showcasing collaborative research at the BCS AI & Data Analytics Summit 2026",
+    "author": null,
+    "url": "/blog/showcasing-collaborative-research-at-the-bcs-ai-and-data-analytics-summit-2026",
+    "excerpt": "We were delighted to be part of the BCS AI & Data Analytics Summit 2026, organized by the Sri Lanka Section of BCS, The Chartered Institute for IT. Held in Colombo, the summit brought together policymakers, researchers, industry leaders and technology professionals to discuss the future of AI and data analytics in Sri Lanka, with a strong focus on collaboration, innovation and real-world impact.",
+    "image": "/img/photos/blog/roles-in-the-ai-ecosystem.webp",
     "featured": true
   }
 ]
