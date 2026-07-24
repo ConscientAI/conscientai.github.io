@@ -68,6 +68,17 @@
   {
     "id": 7,
     "category": "Event",
+    "date": "Nov 25, 2025",
+    "title": "Discussing the opportunities and challenges of AI on Business Best",
+    "author": null,
+    "url": "/blog/discussing-the-opportunities-and-challenges-of-ai-on-business-best",
+    "excerpt": "We were excited to be featured on Business Best, a business interview program on Ada Derana 24. The conversation provided an opportunity to share our journey in artificial intelligence, discuss how the AI landscape is evolving and explore what it takes to build meaningful AI solutions from Sri Lanka for a global market.",
+    "image": "/img/photos/blog/cd-athuraliya-ada-derana-business-best.webp",
+    "featured": false
+  },
+  {
+    "id": 8,
+    "category": "Event",
     "date": "May 29, 2026",
     "title": "Showcasing collaborative research at the BCS AI & Data Analytics Summit 2026",
     "author": null,
