@@ -79,6 +79,17 @@
   {
     "id": 8,
     "category": "Research",
+    "date": "Dec 11, 2025",
+    "title": "Improving medical research summarization with domain-adapted AI",
+    "author": null,
+    "url": "/blog/improving-medical-research-summarization-with-domain-adapted-ai",
+    "excerpt": "We are pleased to share that our research paper, Domain Adaptation for Multi‑document Summarisation: A Case Study in the Medical Research Domain, has been accepted and presented at the Pacific Asia Conference on Language, Information and Computation (PACLIC) 2025, the 39th edition of an established international conference focused on language, information, and computational linguistics. The conference proceedings are published in the ACL Anthology, reflecting its place within the broader computational linguistics and natural language processing research community.",
+    "image": "/img/photos/blog/summary-comparison-paclic-2025.webp",
+    "featured": false
+  },
+  {
+    "id": 9,
+    "category": "Research",
     "date": "Mar 16, 2026",
     "title": "Advancing opinion summarization through agentic model training",
     "author": null,
@@ -88,7 +99,7 @@
     "featured": false
   },
   {
-    "id": 9,
+    "id": 10,
     "category": "Event",
     "date": "May 29, 2026",
     "title": "Showcasing collaborative research at the BCS AI & Data Analytics Summit 2026",
