@@ -78,6 +78,17 @@
   },
   {
     "id": 8,
+    "category": "Research",
+    "date": "Mar 16, 2026",
+    "title": "Advancing opinion summarization through agentic model training",
+    "author": null,
+    "url": "/blog/advancing-opinion-summarization-through-agentic-model-training",
+    "excerpt": "We are pleased to share that our research paper, Adapter-based Multi-document Summarisation: Opinion Summarisation Use Case, was accepted and presented at the International Conference on Agents and Artificial Intelligence (ICAART) 2026, the 18th edition of an internationally recognized conference covering research and applications in artificial intelligence.",
+    "image": "/img/photos/blog/agentic-training-framework-icaart-2026.webp",
+    "featured": false
+  },
+  {
+    "id": 9,
     "category": "Event",
     "date": "May 29, 2026",
     "title": "Showcasing collaborative research at the BCS AI & Data Analytics Summit 2026",
