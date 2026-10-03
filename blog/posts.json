@@ -67,6 +67,17 @@
   },
   {
     "id": 7,
+    "category": "Research",
+    "date": "Apr 21, 2025",
+    "title": "Contributing to more efficient model training for multi-document summarization",
+    "author": null,
+    "url": "/blog/contributing-to-more-efficient-model-training-for-multi-document-summarization",
+    "excerpt": "We are pleased to share that our research work on Adapter‑based Fine‑tuning for PRIMERA was presented at the Applied Data Science & Artificial Intelligence Conference (ADScAI) 2025. This work explores a practical approach for efficiently adapting AI models to multi‑document summarization, building on our broader research in this area.",
+    "image": "/img/photos/blog/adscai-2025-poster.webp",
+    "featured": false
+  },
+  {
+    "id": 8,
     "category": "Event",
     "date": "Nov 25, 2025",
     "title": "Discussing the opportunities and challenges of AI on Business Best",
@@ -77,7 +88,7 @@
     "featured": false
   },
   {
-    "id": 8,
+    "id": 9,
     "category": "Research",
     "date": "Dec 11, 2025",
     "title": "Improving medical research summarization with domain-adapted AI",
@@ -88,7 +99,7 @@
     "featured": false
   },
   {
-    "id": 9,
+    "id": 10,
     "category": "Research",
     "date": "Mar 16, 2026",
     "title": "Advancing opinion summarization through agentic model training",
@@ -99,7 +110,7 @@
     "featured": false
   },
   {
-    "id": 10,
+    "id": 11,
     "category": "Event",
     "date": "May 29, 2026",
     "title": "Showcasing collaborative research at the BCS AI & Data Analytics Summit 2026",
