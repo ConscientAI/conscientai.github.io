@@ -79,6 +79,17 @@
   {
     "id": 8,
     "category": "Research",
+    "date": "Sep 5, 2023",
+    "title": "Exploring multi-document summarization through a comparative evaluation",
+    "author": null,
+    "url": "/blog/exploring-multi-document-summarization-through-a-comparative-evaluation",
+    "excerpt": "We are pleased to share that our research paper, Multi‑document Summarization: A Comparative Evaluation, was accepted and presented at the 17th IEEE International Conference on Industrial and Information Systems (ICIIS) 2023. This was the first publication in our research into multi‑document summarization, exploring the state of the field, evaluating existing approaches, and identifying directions for further research, such as improving how models generalize across domains.",
+    "image": "/img/photos/blog/multi-document-summarization.webp",
+    "featured": false
+  },
+  {
+    "id": 9,
+    "category": "Research",
     "date": "Sep 25, 2024",
     "title": "Introducing M2DS, a multilingual dataset for multi-document summarization",
     "author": null,
@@ -88,7 +99,7 @@
     "featured": false
   },
   {
-    "id": 9,
+    "id": 10,
     "category": "Research",
     "date": "Apr 21, 2025",
     "title": "Contributing to more efficient model training for multi-document summarization",
@@ -99,7 +110,7 @@
     "featured": false
   },
   {
-    "id": 10,
+    "id": 11,
     "category": "Event",
     "date": "Nov 25, 2025",
     "title": "Discussing the opportunities and challenges of AI on Business Best",
@@ -110,7 +121,7 @@
     "featured": false
   },
   {
-    "id": 11,
+    "id": 12,
     "category": "Research",
     "date": "Dec 11, 2025",
     "title": "Improving medical research summarization with domain-adapted AI",
@@ -121,7 +132,7 @@
     "featured": false
   },
   {
-    "id": 12,
+    "id": 13,
     "category": "Research",
     "date": "Mar 16, 2026",
     "title": "Advancing opinion summarization through agentic model training",
@@ -132,7 +143,7 @@
     "featured": false
   },
   {
-    "id": 13,
+    "id": 14,
     "category": "Event",
     "date": "May 29, 2026",
     "title": "Showcasing collaborative research at the BCS AI & Data Analytics Summit 2026",
