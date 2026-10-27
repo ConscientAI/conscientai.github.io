@@ -79,6 +79,17 @@
   {
     "id": 8,
     "category": "Research",
+    "date": "Jun 26, 2019",
+    "title": "Research contributions at the AI for Social Good workshops",
+    "author": null,
+    "url": "/blog/research-contributions-at-the-ai-for-social-good-workshops",
+    "excerpt": "We are pleased to share that two of our research papers were presented at the AI for Social Good Workshops held at the International Conference on Learning Representations (ICLR) 2019 in May and the International Conference on Machine Learning (ICML) 2019 in June. Both works explored how artificial intelligence could help address challenges associated with climate change, from making its potential consequences more tangible to improving how we monitor environmental conditions and support decision-making in agriculture and disaster management.",
+    "image": "/img/photos/blog/generated-flooded-houses-ai-for-social-good-workshop-icml-2019.webp",
+    "featured": false
+  },
+  {
+    "id": 9,
+    "category": "Research",
     "date": "Sep 5, 2023",
     "title": "Exploring multi-document summarization through a comparative evaluation",
     "author": null,
@@ -88,7 +99,7 @@
     "featured": false
   },
   {
-    "id": 9,
+    "id": 10,
     "category": "Research",
     "date": "Sep 25, 2024",
     "title": "Introducing M2DS, a multilingual dataset for multi-document summarization",
@@ -99,7 +110,7 @@
     "featured": false
   },
   {
-    "id": 10,
+    "id": 11,
     "category": "Research",
     "date": "Apr 21, 2025",
     "title": "Contributing to more efficient model training for multi-document summarization",
@@ -110,7 +121,7 @@
     "featured": false
   },
   {
-    "id": 11,
+    "id": 12,
     "category": "Event",
     "date": "Nov 25, 2025",
     "title": "Discussing the opportunities and challenges of AI on Business Best",
@@ -121,7 +132,7 @@
     "featured": false
   },
   {
-    "id": 12,
+    "id": 13,
     "category": "Research",
     "date": "Dec 11, 2025",
     "title": "Improving medical research summarization with domain-adapted AI",
@@ -132,7 +143,7 @@
     "featured": false
   },
   {
-    "id": 13,
+    "id": 14,
     "category": "Research",
     "date": "Mar 16, 2026",
     "title": "Advancing opinion summarization through agentic model training",
@@ -143,7 +154,7 @@
     "featured": false
   },
   {
-    "id": 14,
+    "id": 15,
     "category": "Event",
     "date": "May 29, 2026",
     "title": "Showcasing collaborative research at the BCS AI & Data Analytics Summit 2026",
