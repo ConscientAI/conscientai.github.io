@@ -34,6 +34,17 @@
   },
   {
     "id": 4,
+    "category": "Announcement",
+    "date": "Oct 9, 2018",
+    "title": "ConscientAI selected for the ICTA Spiralation program",
+    "author": null,
+    "url": "/blog/conscientai-selected-for-the-icta-spiralation-program",
+    "excerpt": "We are pleased to announce that ConscientAI has been selected for the 2018 edition of Spiralation, a startup support program initiated by the Information Communication Technology Agency of Sri Lanka (ICTA). As the apex ICT institution of the Government of Sri Lanka, ICTA plays an important role in advancing the country’s technology sector and promoting the use of information and communication technology across government and industry. Through initiatives such as Spiralation, ICTA also supports emerging technology companies and entrepreneurs working to bring innovative ideas to market.",
+    "image": "/img/photos/blog/icta-spiralation.webp",
+    "featured": false
+  },
+  {
+    "id": 5,
     "category": "Event",
     "date": "Oct 30, 2018",
     "title": "Musings after Amsterdam (and World Summit AI 2018)",
@@ -44,7 +55,7 @@
     "featured": false
   },
   {
-    "id": 5,
+    "id": 6,
     "category": "Business",
     "date": "Dec 31, 2018",
     "title": "5 things to consider to make your AI project a success",
@@ -55,7 +66,7 @@
     "featured": false
   },
   {
-    "id": 6,
+    "id": 7,
     "category": "Engineering",
     "date": "Mar 11, 2019",
     "title": "Online prediction and model pipelining for Google BERT",
@@ -66,7 +77,7 @@
     "featured": false
   },
   {
-    "id": 7,
+    "id": 8,
     "category": "Event",
     "date": "May 12, 2019",
     "title": "5 takeaways from AI Everything Summit for Sri Lanka",
@@ -77,7 +88,7 @@
     "featured": false
   },
   {
-    "id": 8,
+    "id": 9,
     "category": "Research",
     "date": "Jun 26, 2019",
     "title": "Research contributions at the AI for Social Good workshops",
@@ -88,7 +99,7 @@
     "featured": false
   },
   {
-    "id": 9,
+    "id": 10,
     "category": "Research",
     "date": "Jul 25, 2019",
     "title": "Featured in National Geographic: Visualizing climate change with AI",
@@ -99,7 +110,7 @@
     "featured": false
   },
   {
-    "id": 10,
+    "id": 11,
     "category": "Research",
     "date": "Sep 5, 2023",
     "title": "Exploring multi-document summarization through a comparative evaluation",
@@ -110,7 +121,7 @@
     "featured": false
   },
   {
-    "id": 11,
+    "id": 12,
     "category": "Research",
     "date": "Sep 25, 2024",
     "title": "Introducing M2DS, a multilingual dataset for multi-document summarization",
@@ -121,7 +132,7 @@
     "featured": false
   },
   {
-    "id": 12,
+    "id": 13,
     "category": "Research",
     "date": "Apr 21, 2025",
     "title": "Contributing to more efficient model training for multi-document summarization",
@@ -132,7 +143,7 @@
     "featured": false
   },
   {
-    "id": 13,
+    "id": 14,
     "category": "Event",
     "date": "Nov 25, 2025",
     "title": "Discussing the opportunities and challenges of AI on Business Best",
@@ -143,7 +154,7 @@
     "featured": false
   },
   {
-    "id": 14,
+    "id": 15,
     "category": "Research",
     "date": "Dec 11, 2025",
     "title": "Improving medical research summarization with domain-adapted AI",
@@ -154,7 +165,7 @@
     "featured": false
   },
   {
-    "id": 15,
+    "id": 16,
     "category": "Research",
     "date": "Mar 16, 2026",
     "title": "Advancing opinion summarization through agentic model training",
@@ -165,7 +176,7 @@
     "featured": false
   },
   {
-    "id": 16,
+    "id": 17,
     "category": "Event",
     "date": "May 29, 2026",
     "title": "Showcasing collaborative research at the BCS AI & Data Analytics Summit 2026",
