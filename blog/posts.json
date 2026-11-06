@@ -1,6 +1,17 @@
 [
   {
     "id": 1,
+    "category": "Event",
+    "date": "Sep 5, 2017",
+    "title": "ConscientAI selected to pitch at the SLASSCOM–ICT Norway startup event",
+    "author": null,
+    "url": "/blog/conscientai-selected-to-pitch-at-the-slasscom-ict-norway-startup-event",
+    "excerpt": "We are pleased to share that ConscientAI was among eight Sri Lankan startups selected to pitch at an event jointly organized by the Sri Lanka Association for Software and Services Companies (SLASSCOM) and ICT Norway on August 30. The event provided local startups with an opportunity to present their ideas to a panel of industry representatives, with the three most promising teams set to receive sponsorship from ICT Norway to attend Oslo Innovation Week in Norway from September 25 to 29.",
+    "image": "/img/photos/blog/slasscom-ict-norway-pitching-event-2017.webp",
+    "featured": false
+  },
+  {
+    "id": 2,
     "category": "Opinion",
     "date": "May 2, 2018",
     "title": "The biggest challenge of AI is not people or technology",
@@ -11,7 +22,7 @@
     "featured": false
   },
   {
-    "id": 2,
+    "id": 3,
     "category": "Business",
     "date": "Jul 13, 2018",
     "title": "AI can solve all your business problems. Or maybe not!",
@@ -22,7 +33,7 @@
     "featured": false
   },
   {
-    "id": 3,
+    "id": 4,
     "category": "Research",
     "date": "Sep 25, 2018",
     "title": "Improving multi-label classification with context-aware capsule networks",
@@ -33,7 +44,7 @@
     "featured": false
   },
   {
-    "id": 4,
+    "id": 5,
     "category": "Announcement",
     "date": "Oct 9, 2018",
     "title": "ConscientAI selected for the ICTA Spiralation program",
@@ -44,7 +55,7 @@
     "featured": false
   },
   {
-    "id": 5,
+    "id": 6,
     "category": "Event",
     "date": "Oct 30, 2018",
     "title": "Musings after Amsterdam (and World Summit AI 2018)",
@@ -55,7 +66,7 @@
     "featured": false
   },
   {
-    "id": 6,
+    "id": 7,
     "category": "Business",
     "date": "Dec 31, 2018",
     "title": "5 things to consider to make your AI project a success",
@@ -66,7 +77,7 @@
     "featured": false
   },
   {
-    "id": 7,
+    "id": 8,
     "category": "Engineering",
     "date": "Mar 11, 2019",
     "title": "Online prediction and model pipelining for Google BERT",
@@ -77,7 +88,7 @@
     "featured": false
   },
   {
-    "id": 8,
+    "id": 9,
     "category": "Event",
     "date": "May 12, 2019",
     "title": "5 takeaways from AI Everything Summit for Sri Lanka",
@@ -88,7 +99,7 @@
     "featured": false
   },
   {
-    "id": 9,
+    "id": 10,
     "category": "Research",
     "date": "Jun 26, 2019",
     "title": "Research contributions at the AI for Social Good workshops",
@@ -99,7 +110,7 @@
     "featured": false
   },
   {
-    "id": 10,
+    "id": 11,
     "category": "Research",
     "date": "Jul 25, 2019",
     "title": "Featured in National Geographic: Visualizing climate change with AI",
@@ -110,7 +121,7 @@
     "featured": false
   },
   {
-    "id": 11,
+    "id": 12,
     "category": "Research",
     "date": "Sep 5, 2023",
     "title": "Exploring multi-document summarization through a comparative evaluation",
@@ -121,7 +132,7 @@
     "featured": false
   },
   {
-    "id": 12,
+    "id": 13,
     "category": "Research",
     "date": "Sep 25, 2024",
     "title": "Introducing M2DS, a multilingual dataset for multi-document summarization",
@@ -132,7 +143,7 @@
     "featured": false
   },
   {
-    "id": 13,
+    "id": 14,
     "category": "Research",
     "date": "Apr 21, 2025",
     "title": "Contributing to more efficient model training for multi-document summarization",
@@ -143,7 +154,7 @@
     "featured": false
   },
   {
-    "id": 14,
+    "id": 15,
     "category": "Event",
     "date": "Nov 25, 2025",
     "title": "Discussing the opportunities and challenges of AI on Business Best",
@@ -154,7 +165,7 @@
     "featured": false
   },
   {
-    "id": 15,
+    "id": 16,
     "category": "Research",
     "date": "Dec 11, 2025",
     "title": "Improving medical research summarization with domain-adapted AI",
@@ -165,7 +176,7 @@
     "featured": false
   },
   {
-    "id": 16,
+    "id": 17,
     "category": "Research",
     "date": "Mar 16, 2026",
     "title": "Advancing opinion summarization through agentic model training",
@@ -176,7 +187,7 @@
     "featured": false
   },
   {
-    "id": 17,
+    "id": 18,
     "category": "Event",
     "date": "May 29, 2026",
     "title": "Showcasing collaborative research at the BCS AI & Data Analytics Summit 2026",
